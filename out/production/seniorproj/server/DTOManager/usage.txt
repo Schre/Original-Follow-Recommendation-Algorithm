@@ -1,0 +1,4 @@
+This package contains Data Transfer Objects. Data Transfer Objects are POJOs which will be used to store information from the database into main memory,
+and store information from main memory to the database.
+
+I.e., this package will act as a bridge between our Database and when we have stored in main memory.
