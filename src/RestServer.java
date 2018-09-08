@@ -3,6 +3,7 @@ import org.eclipse.jetty.server.session.SessionHandler;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 
+import org.glassfish.hk2.internal.PerThreadContext;
 import server.RestServices.MessengerRestService.MessengerRestService;
 import server.etc.Constants;
 
@@ -23,6 +24,8 @@ public class RestServer {
         jerseyServlet.setInitOrder(0);
 
         registerRestServices(jerseyServlet);
+
+
 
         try {
             jettyServer.start();
