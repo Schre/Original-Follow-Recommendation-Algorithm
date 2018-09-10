@@ -3,6 +3,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import server.etc.Constants;
 import server.restapi.hellorestservice.HelloRestService;
+import shared.SharedObjects;
 
 /**
  Register your rest services here! ( in registerRestServices() )
@@ -22,6 +23,9 @@ public class RestServer {
 
         registerRestServices(jerseyServlet);
 
+        // Initialized shared objects
+        SharedObjects.initialize();
+        ;
         try {
             jettyServer.start();
             jettyServer.join();

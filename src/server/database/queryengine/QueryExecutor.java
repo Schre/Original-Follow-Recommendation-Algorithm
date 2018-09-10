@@ -1,6 +1,6 @@
 package server.database.queryengine;
 
-import thread.ThreadContext;
+import shared.SharedObjects;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -26,8 +26,7 @@ public class QueryExecutor {
     private static Connection getFinancialDbConnection() {
         Connection conn = null;
         try {
-            ThreadContext threadContext = ThreadContext.get();
-            conn = threadContext.getFinancialDbConnectionPool().getConnection();
+            conn = SharedObjects.getFinancialDbConnectionPool().getConnection();
             System.out.println("Obtained connection from connection pool.");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
