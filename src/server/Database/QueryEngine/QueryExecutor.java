@@ -1,8 +1,12 @@
 package server.Database.QueryEngine;
 
-import server.etc.Constants;
+import thread.ThreadContext;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 /**
  * TODO:
@@ -24,10 +28,11 @@ import java.sql.*;
 
 public class QueryExecutor {
 
-    private static Connection getLocalDbConnection() {
+    private static Connection getFinancialDbConnection() {
         Connection conn = null;
         try {
-            conn = DriverManager.getConnection(Constants.getFinancialsDbName(true), Constants.adminUser, Constants.adminPassword);
+            ThreadContext threadContext = ThreadContext.get();
+            conn = threadContext.getFinancialDbConnectionPool().getConnection();
             System.out.println("Connected to the PostgreSQL server successfully.");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -36,15 +41,47 @@ public class QueryExecutor {
         return conn;
     }
 
-    public static ResultSet runQuery(String query) throws SQLException {
-        Connection con = getLocalDbConnection();
-        if (con == null) {
-            throw new SQLException("Failed to establish a connection with the local database");
-        }
+    public static ArrayList<String> runQuery(String query) {
+        Statement stmt = null;
+        Connection con = null;
+        ResultSet rs = null;
+        int index = 0;
+        ArrayList<String> ret = new ArrayList<>();
+        try {
+            con = getFinancialDbConnection();
+            if (con == null) {
+                throw new SQLException("Failed to establish a connection with the local database");
+            }
 
-        Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery(query);
-        return rs;
+            stmt = con.createStatement();
+            rs = stmt.executeQuery(query);
+
+            while (rs.next()) {
+                ret.add(rs.getArray(++index).toString()); // columns start from 1
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            /* Close an clean up connection. Upon closing this connection, we will
+               return the connection back to the connection pool.
+             */
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+
+            }
+            try {
+                rs.close();
+            } catch (SQLException e) {
+
+            }
+            try {
+                con.close();
+            } catch (SQLException e) {
+
+            }
+        }
+        return ret;
     }
 
 }

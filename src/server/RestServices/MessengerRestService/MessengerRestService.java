@@ -1,13 +1,15 @@
 package server.RestServices.MessengerRestService;
 
 import org.json.JSONObject;
-import server.RestServices.RestService;
 import server.Database.QueryEngine.QueryExecutor;
+import server.RestServices.RestService;
 
-import javax.ws.rs.*;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.sql.ResultSet;
+import java.util.ArrayList;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Path("messenger")
@@ -18,10 +20,9 @@ public class MessengerRestService extends RestService {
         String message = "";
         JSONObject json = new JSONObject();
         try {
-           ResultSet rs = QueryExecutor.runQuery("SELECT message FROM hello_world where code='00000'");
+            ArrayList<String> rs = QueryExecutor.runQuery("SELECT message FROM hello_world where code='00000'");
            // rs is not pointing to any row... position it to first row
-            rs.next();
-            message = rs.getString(1);
+            message = rs.get(0);
             json.put( "Message", message );
         }
         catch ( Exception e ) {

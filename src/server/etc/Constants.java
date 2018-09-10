@@ -12,6 +12,9 @@ public class Constants {
     static public String POSTGRE_SQL = "postgresql";
     static public String DB_HOST = "";
     static public int FINANCIALS_DB_PORT = 5432;
+    static public int CONNCETION_POOL_MAX_CONNECTIONS_PER_PARTITION = 10;
+    static public int CONNECTION_POOL_MIN_CONNECTIONS_PER_PARTITION = 5;
+    static public int CONNECTION_POOL_PARTITION_COUNT = 1;
 
     /**
      * TODO:
@@ -23,7 +26,7 @@ public class Constants {
     static public String adminUser = "postgres";
     static public String adminPassword = "postgres";
 
-    static public String getFinancialsDbName( boolean localHost ) {
+    static public String getFinancialsDbPath(boolean localHost) {
         if (localHost) {
             return Constants.JDBC + ":" + POSTGRE_SQL + "://" + LOCAL_HOST + ':' + Integer.toString(FINANCIALS_DB_PORT)  + "/" + FINANCIALS_DB;
         }

@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a2aba4d-5f02-4b85-a054-e0273f3c9542" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/ui/react/src/scss/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/react/src/scss/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/react/src/views/Dashboard/Dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/react/src/views/Dashboard/Dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/RestServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/RestServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/seniorproj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/seniorproj.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/server/Database/QueryEngine/QueryExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/server/Database/QueryEngine/QueryExecutor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/server/RestServices/MessengerRestService/MessengerRestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/server/RestServices/MessengerRestService/MessengerRestService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/seniorproj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/seniorproj.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RestServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/etc/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/etc/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/thread/ThreadContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/ThreadContext.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -14,6 +25,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/seniorproj$RestServer.ic" NAME="RestServer Coverage Results" MODIFIED="1536381467756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-486613575">
       <usages-collector id="statistics.lifecycle.project">
@@ -21,53 +35,84 @@
           <entry key="project.closed" value="2" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.16" value="1" />
+          <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.opened" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="css" value="1" />
           <entry key="gradle" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="9" />
+          <entry key="java" value="18" />
+          <entry key="js" value="1" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CSS" value="1" />
           <entry key="Groovy" value="1" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="9" />
+          <entry key="JAVA" value="18" />
+          <entry key="JavaScript" value="1" />
           <entry key="PLAIN_TEXT" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="9" />
-          <entry key="gradle" value="1" />
-          <entry key="java" value="707" />
-          <entry key="txt" value="910" />
+          <entry key="gradle" value="3" />
+          <entry key="java" value="5969" />
+          <entry key="txt" value="952" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="707" />
-          <entry key="PLAIN_TEXT" value="919" />
+          <entry key="Groovy" value="3" />
+          <entry key="JAVA" value="5969" />
+          <entry key="PLAIN_TEXT" value="961" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/RestServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="381">
+              <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/thread/ThreadContext.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+              <folding>
+                <element signature="e#195#337#0" expanded="true" />
+                <element signature="e#336#337#0" expanded="true" />
+                <element signature="e#590#591#0" expanded="true" />
+                <element signature="e#636#637#0" expanded="true" />
+                <element signature="e#667#668#0" expanded="true" />
+                <element signature="e#688#689#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ui/react/src/scss/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30855">
+              <caret line="2057" column="21" selection-start-line="2057" selection-start-column="21" selection-end-line="2057" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -82,10 +127,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/RestServices/RestService.java">
+        <entry file="file://$PROJECT_DIR$/src/server/etc/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="210">
+              <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -93,26 +138,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/RestServices/MessengerRestService/MessengerRestService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/Database/POJO/CostObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/etc/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
+            <state relative-caret-position="180">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -120,35 +150,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/server/Database/POJO/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="405">
+              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/ServiceManager.java">
+        <entry file="file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            <state relative-caret-position="171">
+              <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/Engine/DataAnalysis/BvsA.java">
+        <entry file="file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+            <state relative-caret-position="30">
+              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -162,8 +186,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>financial_db</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/ui/react" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
     <option name="projectSyncType">
@@ -184,11 +213,15 @@
         <option value="$PROJECT_DIR$/src/server/Database/POJO/User.java" />
         <option value="$PROJECT_DIR$/src/server/etc/OptionalFeature.java" />
         <option value="$PROJECT_DIR$/src/server/etc/OptionalFeatures.java" />
-        <option value="$PROJECT_DIR$/src/RestServer.java" />
-        <option value="$PROJECT_DIR$/src/server/RestServices/MessengerRestService/MessengerRestService.java" />
         <option value="$PROJECT_DIR$/src/server/Database/POJO/CostObject.java" />
+        <option value="$PROJECT_DIR$/src/server/Database/QueryEngine/QueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/server/RestServices/MessengerRestService/MessengerRestService.java" />
+        <option value="$PROJECT_DIR$/src/ThreadContext.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java" />
         <option value="$PROJECT_DIR$/src/server/etc/Constants.java" />
+        <option value="$PROJECT_DIR$/src/thread/ThreadContext.java" />
+        <option value="$PROJECT_DIR$/src/RestServer.java" />
       </list>
     </option>
   </component>
@@ -245,11 +278,11 @@
       <path value="$PROJECT_DIR$/src/ui/react/src/views/Widgets/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="292" />
-    <option name="y" value="124" />
-    <option name="width" value="897" />
-    <option name="height" value="789" />
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="67" />
+    <option name="y" value="25" />
+    <option name="width" value="927" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -258,8 +291,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -287,7 +320,39 @@
             </path>
             <path>
               <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="seniorproj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="Database" type="462c0819:PsiDirectoryNode" />
+              <item name="QueryEngine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="seniorproj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="thread" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="jetty-server-9.1.1.v20140108.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="jetty-server-9.1.1.v20140108.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="jetty-server-9.1.1.v20140108.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="jetty-server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -296,10 +361,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="postgresql&#9;FILE&#9;jar:///home/samuel/.gradle/caches/modules-2/files-2.1/postgresql/postgresql/9.0-801.jdbc4/dbcd12f02b9527ab56b4ee7bd599d7a90999d260/postgresql-9.0-801.jdbc4-sources.jar!/org/postgresql&#10;postgre&#9;FILE&#9;jar:///home/samuel/.gradle/caches/modules-2/files-2.1/postgresql/postgresql/9.0-801.jdbc4/dbcd12f02b9527ab56b4ee7bd599d7a90999d260/postgresql-9.0-801.jdbc4-sources.jar!/org/postgresql&#10;e&#9;FILE&#9;file:///home/samuel/seniorproj/src/RestServer.java" />
+    <property name="SearchEverywhereHistoryKey" value="thread&#9;FILE&#9;file:///home/samuel/seniorproj/src/thread/ThreadContext.java&#10;const&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/etc/Constants.java&#10;consta&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/etc/Constants.java&#10;constants&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/etc/Constants.java&#10;jettyser&#9;FILE&#9;jar:///home/samuel/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.1.1.v20140108/59cbe94bceb7916119103b24d3576570f1413e0/jetty-server-9.1.1.v20140108.jar!/META-INF/maven/org.eclipse.jetty/jetty-server&#10;postgresql&#9;FILE&#9;jar:///home/samuel/.gradle/caches/modules-2/files-2.1/postgresql/postgresql/9.0-801.jdbc4/dbcd12f02b9527ab56b4ee7bd599d7a90999d260/postgresql-9.0-801.jdbc4-sources.jar!/org/postgresql&#10;postgre&#9;FILE&#9;jar:///home/samuel/.gradle/caches/modules-2/files-2.1/postgresql/postgresql/9.0-801.jdbc4/dbcd12f02b9527ab56b4ee7bd599d7a90999d260/postgresql-9.0-801.jdbc4-sources.jar!/org/postgresql&#10;e&#9;FILE&#9;file:///home/samuel/seniorproj/src/RestServer.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536342932464" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536545886023" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -345,17 +410,27 @@
       <updated>1535486506301</updated>
       <workItem from="1535486509354" duration="7928000" />
       <workItem from="1536257703425" duration="4285000" />
-      <workItem from="1536342658243" duration="274000" />
+      <workItem from="1536342658243" duration="9803000" />
+      <workItem from="1536544272898" duration="1613000" />
     </task>
+    <task id="LOCAL-00001" summary="Add thread context for tracking objects">
+      <created>1536385388215</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1536385388215</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12487000" />
+    <option name="totallyTimeSpent" value="23629000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="67" y="25" width="927" height="1055" extended-state="4" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26286662" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24971624" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -364,17 +439,17 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4997233" weight="0.32972974" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4980631" weight="0.32972974" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4982974" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50249034" side_tool="true" visible="true" weight="0.014054054" />
-      <window_info anchor="bottom" id="Messages" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50056756" side_tool="true" weight="0.32972974" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49943247" weight="0.32972974" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.4975097" visible="true" weight="0.014054054" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49602723" visible="true" weight="0.3708108" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -385,6 +460,7 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.67650396" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -392,6 +468,84 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add thread context for tracking objects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add thread context for tracking objects" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java</url>
+          <line>39</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/server/RestServices/MessengerRestService/MessengerRestService.java</url>
+          <line>20</line>
+          <properties />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>rs.getString(1)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rs.next()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rs.getString(2)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rs.getString(&quot;2&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rs.getString(&quot;1&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rs.getString(&quot;*&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rs.getString(0)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>((Jdbc4ResultSet) rs).current_row</expression-string>
+        <language-id>JAVA</language-id>
+        <custom-info>org.postgresql.jdbc4.Jdbc4ResultSet</custom-info>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>rs.getString(&quot;message&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/seniorproj.iml">
@@ -422,34 +576,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/RestServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Messenger/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/RestServices/RestService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/RestServices/MessengerRestService/MessengerRestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -460,20 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/etc/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/ServiceManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/Engine/DataAnalysis/BvsA.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -481,17 +597,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/Database/POJO/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Messenger/MessageQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryEngineConstants.java" />
+    <entry file="file://$PROJECT_DIR$/src/server/ServiceManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/react/src/views/Dashboard/Dashboard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ui/react/src/scss/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30855">
+          <caret line="2057" column="21" selection-start-line="2057" selection-start-column="21" selection-end-line="2057" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Messenger/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/RestServices/MessengerRestService/MessengerRestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/etc/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/thread/ThreadContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding>
+            <element signature="e#195#337#0" expanded="true" />
+            <element signature="e#336#337#0" expanded="true" />
+            <element signature="e#590#591#0" expanded="true" />
+            <element signature="e#636#637#0" expanded="true" />
+            <element signature="e#667#668#0" expanded="true" />
+            <element signature="e#688#689#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/RestServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

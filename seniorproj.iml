@@ -3,8 +3,8 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output/>
     <content url="file://$MODULE_DIR$/">
-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false"/>
       <sourceFolder url="file://$MODULE_DIR$" isTestSource="false"/>
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false"/>
       <excludeFolder url="file://$MODULE_DIR$/.gradle"/>
       <excludeFolder url="file://$MODULE_DIR$/build"/>
       <excludeFolder url="file://$MODULE_DIR$/out"/>
@@ -102,10 +102,12 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="file:///home/samuel/.gradle/caches/modules-2/files-2.1/com.jolbox/bonecp-parent/0.7.1.RELEASE/f26f0ae6f6f07fc96127366b7a8adb363b892248/bonecp-parent-0.7.1.RELEASE.pom"/>
+          <root url="jar:///home/samuel/.gradle/caches/modules-2/files-2.1/com.jolbox/bonecp/0.8.0.RELEASE/cec24ee9345b3678472bb1b8fdd6aa6b9428beb8/bonecp-0.8.0.RELEASE.jar!/"/>
         </CLASSES>
         <JAVADOC/>
-        <SOURCES/>
+        <SOURCES>
+          <root url="jar:///home/samuel/.gradle/caches/modules-2/files-2.1/com.jolbox/bonecp/0.8.0.RELEASE/f8b6d5414837c881740594109e0400dfb65d4c0b/bonecp-0.8.0.RELEASE-sources.jar!/"/>
+        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -270,6 +272,28 @@
         <JAVADOC/>
         <SOURCES>
           <root url="jar:///home/samuel/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/ab3976d4574c48d22dc1abf6a9e8bd0fdf928223/javax.servlet-api-3.1.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/samuel/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/15.0/ed727a8d9f247e2050281cb083f1c77b09dcb5cd/guava-15.0.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/samuel/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/15.0/36b6a585c0f0c63bd85fb04db0dcb7b217298956/guava-15.0-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar:///home/samuel/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.2/81d61b7f33ebeab314e07de0cc596f8e858d97/slf4j-api-1.7.2.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/samuel/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.2/58d38f68d4a867d4552ae27960bb348d7eaa1297/slf4j-api-1.7.2-sources.jar!/"/>
         </SOURCES>
       </library>
     </orderEntry>
