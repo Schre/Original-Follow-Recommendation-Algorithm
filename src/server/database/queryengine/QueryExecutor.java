@@ -1,4 +1,4 @@
-package server.Database.QueryEngine;
+package server.database.queryengine;
 
 import thread.ThreadContext;
 
@@ -20,11 +20,6 @@ import java.util.ArrayList;
  * on the particular instantiated QueryExecutor's configuration.
  */
 
-/**
- * TODO:
- * Use bonecp for database connection pool manager so that we do not have to keep
- * reconnecting to database for query (REEEEEEEEEEEEALLY SLOW!!!)
- */
 
 public class QueryExecutor {
 
@@ -33,7 +28,7 @@ public class QueryExecutor {
         try {
             ThreadContext threadContext = ThreadContext.get();
             conn = threadContext.getFinancialDbConnectionPool().getConnection();
-            System.out.println("Connected to the PostgreSQL server successfully.");
+            System.out.println("Obtained connection from connection pool.");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

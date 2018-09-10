@@ -1,4 +1,4 @@
-package server.RestServices;
+package server.restapi;
 
 import javax.ws.rs.core.Response;
 

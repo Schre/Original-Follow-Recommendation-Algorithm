@@ -1,4 +1,4 @@
-package server.Database.POJO;
+package server.database.pojo;
 
 public class User {
     public String username;

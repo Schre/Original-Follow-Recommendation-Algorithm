@@ -1,11 +1,8 @@
-import com.jolbox.bonecp.BoneCP;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
-import server.RestServices.MessengerRestService.MessengerRestService;
 import server.etc.Constants;
-
-import java.sql.Connection;
+import server.restapi.hellorestservice.HelloRestService;
 
 /**
  Register your rest services here! ( in registerRestServices() )
@@ -25,17 +22,10 @@ public class RestServer {
 
         registerRestServices(jerseyServlet);
 
-
-        /* Establish Database connection and add to connection pool */
-        BoneCP connectionPool = null;
-        Connection connection = null;
-
-
         try {
             jettyServer.start();
             jettyServer.join();
         } finally {
-            connection.close();
             jettyServer.destroy();
         }
     }
@@ -43,6 +33,6 @@ public class RestServer {
     private static void registerRestServices(ServletHolder jerseyServlet) {
         jerseyServlet.setInitParameter(
                 "jersey.config.server.provider.classnames",
-                MessengerRestService.class.getCanonicalName());
+                HelloRestService.class.getCanonicalName());
     }
 }

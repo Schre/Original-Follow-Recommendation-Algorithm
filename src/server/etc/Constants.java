@@ -1,7 +1,8 @@
 package server.etc;
 
 /**
- * Many of these should actually be configuration options!
+ * We should consider splitting these constants up into different files.
+ * I.e., database related constants in one file, jetty related in another.
  */
 public class Constants {
     static public int JETTY_PORT_NUMBER = 7080;
@@ -18,7 +19,7 @@ public class Constants {
 
     /**
      * TODO:
-     * We need to encrypt this at some point. This is find for now,
+     * We need to encrypt this at some point. This is fine for now,
      * but obviously plain text is a bad idea. Also we need to come up
      * with a more complex user and pwd obviously.
      */

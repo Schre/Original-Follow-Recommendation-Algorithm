@@ -1,4 +1,4 @@
-package server.Database.POJO;
+package server.database.pojo;
 
 public class CostObject {
     public String name;

@@ -1,8 +1,8 @@
-package server.RestServices.MessengerRestService;
+package server.restapi.hellorestservice;
 
 import org.json.JSONObject;
-import server.Database.QueryEngine.QueryExecutor;
-import server.RestServices.RestService;
+import server.database.queryengine.QueryExecutor;
+import server.restapi.RestService;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Path("messenger")
-public class MessengerRestService extends RestService {
+public class HelloRestService extends RestService {
     @GET
     @Path("hello")
     public Response printHelloWorld() {
