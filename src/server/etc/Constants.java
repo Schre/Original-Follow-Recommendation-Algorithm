@@ -21,7 +21,10 @@ public class Constants {
      * TODO:
      * We need to encrypt this at some point. This is fine for now,
      * but obviously plain text is a bad idea. Also we need to come up
-     * with a more complex user and pwd obviously.
+     * with a more complex user and pwd.
+     *
+     * In the future, each individual user will have their own unique username and pwd,
+     * but for now we will do all of our development with our admin account.
      */
 
     static public String adminUser = "postgres";

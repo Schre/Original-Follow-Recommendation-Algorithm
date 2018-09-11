@@ -14,11 +14,11 @@ import java.sql.SQLException;
 public class SharedObjects {
     private static BoneCP financialDbConnectionPool;
 
-    public static void initialize() {
+    public static synchronized void initialize() {
         setUpFinancialDbConnectionPool();
     }
 
-    public static void setFinancialDbConnectionPool(BoneCP connectionPool) {
+    public static synchronized void setFinancialDbConnectionPool(BoneCP connectionPool) {
         try {
             SharedObjects.financialDbConnectionPool = new BoneCP(connectionPool.getConfig());
         } catch (SQLException e) {
@@ -30,7 +30,7 @@ public class SharedObjects {
         return financialDbConnectionPool;
     }
 
-    private static void setUpFinancialDbConnectionPool() {
+    private static synchronized void setUpFinancialDbConnectionPool() {
         BoneCP connectionPool = null;
         Connection connection = null;
         try {

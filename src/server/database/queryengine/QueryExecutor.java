@@ -1,5 +1,6 @@
 package server.database.queryengine;
 
+import server.database.pojo.CostObject;
 import shared.SharedObjects;
 
 import java.sql.Connection;
@@ -35,7 +36,21 @@ public class QueryExecutor {
         return conn;
     }
 
-    public static ArrayList<String> runQuery(String query) {
+    static public boolean insertCostObject(CostObject co) {
+        String query = "insert into cost_obj (user_id, username, password)" +
+                " VALUES (" + co.name + "," + co.objectId + "," + co.cost
+                + "," + co.userId + ")";
+
+        try {
+            runQuery(query);
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public static ArrayList<String> runQuery(String query) throws SQLException {
         Statement stmt = null;
         Connection con = null;
         ResultSet rs = null;
@@ -53,8 +68,6 @@ public class QueryExecutor {
             while (rs.next()) {
                 ret.add(rs.getArray(++index).toString()); // columns start from 1
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         } finally {
             /* Close an clean up connection. Upon closing this connection, we will
                return the connection back to the connection pool.
