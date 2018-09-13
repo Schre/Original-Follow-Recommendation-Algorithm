@@ -16,6 +16,10 @@ public class Constants {
     static public int CONNCETION_POOL_MAX_CONNECTIONS_PER_PARTITION = 10;
     static public int CONNECTION_POOL_MIN_CONNECTIONS_PER_PARTITION = 5;
     static public int CONNECTION_POOL_PARTITION_COUNT = 1;
+    static public String COST_OBJ_ID = "cost_obj_id";
+    static public String USR_ID = "user_id";
+    static public String COST_OBJECT = "cost_obj";
+    static public String ACCOUNT = "account";
 
     /**
      * TODO:

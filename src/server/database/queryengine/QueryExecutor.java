@@ -1,13 +1,14 @@
 package server.database.queryengine;
 
-import server.database.pojo.CostObject;
+import org.json.JSONObject;
+import server.dto.Serializers.CostObjectSerializer;
+import server.dto.dto.CostObjectDTO;
+import server.etc.Constants;
 import shared.SharedObjects;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * TODO:
@@ -36,10 +37,57 @@ public class QueryExecutor {
         return conn;
     }
 
-    static public boolean insertCostObject(CostObject co) {
+
+    static public CostObjectDTO getCostObjectForUser(String uid, String cid) {
+        CostObjectDTO ret = null;
+        /*String query = "SELECT * FROM account, cost_obj where account." + Constants.USR_ID + " = cost_obj." + Constants.USR_ID + " AND account.user_id = "
+                + uid + " and cost_obj_id = " + cid + ";";*/
+        JSONObject queryReturnValue = null;
+        List<String> tablesToJoin = new ArrayList<>();
+        tablesToJoin.add(Constants.ACCOUNT);
+        tablesToJoin.add(Constants.COST_OBJECT);
+        String query = new QueryBuilder()
+                .select()
+                .star()
+                .from()
+                .cartesianProduct(tablesToJoin)
+                .where()
+                .addString(Constants.ACCOUNT)
+                .accessMember(Constants.USR_ID)
+                .equals()
+                .addString(Constants.COST_OBJECT)
+                .accessMember(Constants.USR_ID)
+                .and()
+                .addString(Constants.COST_OBJECT)
+                .accessMember(Constants.USR_ID)
+                .equals()
+                .addString(uid)
+                .and()
+                .addString(Constants.COST_OBJECT)
+                .accessMember(Constants.COST_OBJ_ID)
+                .equals()
+                .addString(cid)
+                .build();
+
+        try {
+            queryReturnValue = QueryExecutor.runQuery(query);
+            ret = new CostObjectSerializer().deserialize(queryReturnValue.toString());
+            /* TODO: Set cost object attributes based on return value */
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // run query
+
+        return ret;
+    }
+
+    static public boolean insertCostObject(CostObjectDTO co) {
         String query = "insert into cost_obj (user_id, username, password)" +
-                " VALUES (" + co.name + "," + co.objectId + "," + co.cost
-                + "," + co.userId + ")";
+                " VALUES (" + co.name + "," + co.user_id + "," + co.cost
+                + "," + co.user_id + ")";
 
         try {
             runQuery(query);
@@ -50,10 +98,12 @@ public class QueryExecutor {
         }
     }
 
-    public static ArrayList<String> runQuery(String query) throws SQLException {
+    /* TODO: Return json. Find a way to convert result set to JSON */
+    public static JSONObject runQuery(String query) throws SQLException {
         Statement stmt = null;
         Connection con = null;
         ResultSet rs = null;
+        JSONObject jsonObject = new JSONObject();
         int index = 0;
         ArrayList<String> ret = new ArrayList<>();
         try {
@@ -65,9 +115,19 @@ public class QueryExecutor {
             stmt = con.createStatement();
             rs = stmt.executeQuery(query);
 
+            // Use this for gettting col names
+            ResultSetMetaData rsmd = rs.getMetaData();
+
             while (rs.next()) {
-                ret.add(rs.getArray(++index).toString()); // columns start from 1
+                int numColumns = rsmd.getColumnCount();
+                for (index = 0; index < numColumns; ++index) {
+                    String columnName = rsmd.getColumnName(index + 1);
+                    jsonObject.put(columnName, rs.getArray(index + 1).toString());
+                }
+                //ret.add(rs.getArray(++index).toString()); // columns start from 1
             }
+        } catch (Exception e) {
+            System.err.println("Error executing query: " + e.getMessage());
         } finally {
             /* Close an clean up connection. Upon closing this connection, we will
                return the connection back to the connection pool.
@@ -88,7 +148,7 @@ public class QueryExecutor {
 
             }
         }
-        return ret;
+        return jsonObject;
     }
 
 }
