@@ -1,22 +1,22 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Layout, LocaleProvider } from 'antd';
-import { IntlProvider } from 'react-intl';
-import { Debounce } from 'react-throttle';
+import {Component} from 'react';
+import {connect} from 'react-redux';
+import {Layout, LocaleProvider} from 'antd';
+import {IntlProvider} from 'react-intl';
+import {Debounce} from 'react-throttle';
 import WindowResizeListener from 'react-window-size-listener';
-import { ThemeProvider } from 'styled-components';
+import {ThemeProvider} from 'styled-components';
 import authAction from '../../redux/auth/actions';
 import appActions from '../../redux/app/actions';
 import Sidebar from '../Sidebar/Sidebar';
 import Topbar from '../Topbar/Topbar';
 import ThemeSwitcher from '../../containers/ThemeSwitcher';
 import AppRouter from './AppRouter';
-import { siteConfig } from '../../settings';
-import { AppLocale } from '../../dashApp';
-import themes from '../../settings/themes';
+import {siteConfig} from '../../settings';
+import {AppLocale} from '../../dashApp';
 import AppHolder from './commonStyle';
 import './global.css';
 
+var API = require('../../utils/api');
 const { Content, Footer } = Layout;
 const { logout } = authAction;
 const { toggleAll } = appActions;
@@ -26,6 +26,8 @@ export class App extends Component {
     const { locale, selectedTheme, height } = this.props;
     const currentAppLocale = AppLocale[locale];
     const appHeight = window.innerHeight;
+    API.get('http://localhost:7080/api/messenger/hello');
+
     return (
       <LocaleProvider locale={currentAppLocale.antd}>
         <IntlProvider
@@ -86,6 +88,7 @@ export class App extends Component {
   }
 }
 
+/* Map state to props, map dispatch to props */
 export default connect(
   state => ({
     auth: state.Auth,

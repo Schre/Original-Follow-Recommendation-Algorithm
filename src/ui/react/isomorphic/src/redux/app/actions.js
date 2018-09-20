@@ -14,6 +14,8 @@ const actions = {
   TOGGLE_ALL: "TOGGLE_ALL",
   CHANGE_CURRENT: "CHANGE_CURRENT",
   CLEAR_MENU: "CLEAR_MENU",
+
+
   toggleCollapsed: () => ({
     type: actions.COLLPSE_CHANGE
   }),

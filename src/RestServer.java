@@ -1,6 +1,8 @@
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.servlet.FilterHolder;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import org.eclipse.jetty.servlets.CrossOriginFilter;
 import server.etc.Constants;
 import server.restapi.financialqueryrestservice.QueryRestService;
 import server.restapi.hellorestservice.HelloRestService;
@@ -12,8 +14,15 @@ import shared.SharedObjects;
 
 public class RestServer {
     public static void main(String[] args) throws Exception {
+        // Allowed Origins:
+        FilterHolder filterHolder = new FilterHolder(CrossOriginFilter.class);
+        filterHolder.setInitParameter("allowedOrigins", "*");
+        filterHolder.setInitParameter("allowedMethods", "GET, POST");
+
+
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
         context.setContextPath(Constants.API_PATH);
+        context.addFilter(filterHolder, "/*", null);
 
         Server jettyServer = new Server(Constants.JETTY_PORT_NUMBER);
         jettyServer.setHandler(context);
