@@ -1,5 +1,5 @@
 CREATE TABLE account(
-user_id serial PRIMARY KEY,
-username VARCHAR(50) UNIQUE NOT NULL,
-password VARCHAR (50) NOT NULL
+id serial PRIMARY KEY,
+username VARCHAR(64) UNIQUE NOT NULL,
+password VARCHAR (64) NOT NULL
 );

@@ -9,17 +9,24 @@ public class Constants {
     static public String API_PATH = "/api";
     static public String JDBC = "jdbc";
     static public String LOCAL_HOST = "localhost";
+
+    /*** Query Constants
+     * These should really be moved to their own file at some point.
+     * */
     static public String FINANCIALS_DB = "financial_db";
     static public String POSTGRE_SQL = "postgresql";
+    static public String TRANSACTION = "transaction";
+    static public String ID = "id";
+    static public String USR_ID = "uid";
+    static public String TRANSACTIONAL_ITEM_TABLE = "transactionalItem";
+    static public String ACCOUNT = "account";
+    /***/
     static public String DB_HOST = "";
     static public int FINANCIALS_DB_PORT = 5432;
     static public int CONNCETION_POOL_MAX_CONNECTIONS_PER_PARTITION = 10;
     static public int CONNECTION_POOL_MIN_CONNECTIONS_PER_PARTITION = 5;
     static public int CONNECTION_POOL_PARTITION_COUNT = 1;
-    static public String COST_OBJ_ID = "cost_obj_id";
-    static public String USR_ID = "user_id";
-    static public String COST_OBJECT = "cost_obj";
-    static public String ACCOUNT = "account";
+    static public String PASSWORD_HASH_BLOWFISH = "2a";
 
     /**
      * TODO:
@@ -30,6 +37,8 @@ public class Constants {
      * In the future, each individual user will have their own unique username and pwd,
      * but for now we will do all of our development with our admin account.
      */
+
+    static public int JSON_INDENT_FACTOR = 4;
 
     static public String adminUser = "postgres";
     static public String adminPassword = "postgres";
