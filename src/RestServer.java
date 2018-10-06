@@ -16,8 +16,10 @@ public class RestServer {
     public static void main(String[] args) throws Exception {
         // Allowed Origins:
         FilterHolder filterHolder = new FilterHolder(CrossOriginFilter.class);
+
+        // TODO: Tweak this to only allow UI as an origin
         filterHolder.setInitParameter("allowedOrigins", "*");
-        filterHolder.setInitParameter("allowedMethods", "GET, POST");
+        filterHolder.setInitParameter("allowedMethods", "GET, POST, PUT");
 
 
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
@@ -52,9 +54,9 @@ public class RestServer {
                 QueryRestService.class.getCanonicalName());
 */
 
-
         jerseyServlet.setInitParameter(
                 "jersey.config.server.provider.classnames",
-                HelloRestService.class.getCanonicalName() + ',' + QueryRestService.class.getCanonicalName());
+                HelloRestService.class.getCanonicalName() +
+                        ',' + QueryRestService.class.getCanonicalName());
     }
 }

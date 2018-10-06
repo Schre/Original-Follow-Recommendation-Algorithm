@@ -8,6 +8,7 @@ public class UserDTO {
     public String passwordHash;
     public String firstName;
     public String lastName;
-    public String user_id;
+    public String id;
     public int permissionLevel;
+
 }

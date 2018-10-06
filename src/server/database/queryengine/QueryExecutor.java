@@ -1,8 +1,10 @@
 package server.database.queryengine;
 
 import org.json.JSONObject;
-import server.dto.Serializers.CostObjectSerializer;
-import server.dto.dto.CostObjectDTO;
+import server.dto.Serializers.TransactionItemSerializer;
+import server.dto.Serializers.UserSerializer;
+import server.dto.dto.TransactionalItemDTO;
+import server.dto.dto.UserDTO;
 import server.etc.Constants;
 import shared.SharedObjects;
 
@@ -37,15 +39,43 @@ public class QueryExecutor {
         return conn;
     }
 
+    static public UserDTO getUserGivenUsername(String username) {
+        UserDTO ret = null;
+        JSONObject queryReturnValue = null;
+        String query = new QueryBuilder()
+                .select()
+                .star()
+                .from()
+                .addString(Constants.ACCOUNT)
+                .where()
+                .addString("username")
+                .equals()
+                .addString(username)
+                .build();
 
-    static public CostObjectDTO getCostObjectForUser(String uid, String cid) {
-        CostObjectDTO ret = null;
-        /*String query = "SELECT * FROM account, cost_obj where account." + Constants.USR_ID + " = cost_obj." + Constants.USR_ID + " AND account.user_id = "
-                + uid + " and cost_obj_id = " + cid + ";";*/
+        try {
+            queryReturnValue = QueryExecutor.runQuery(query).getJSONObject("obj0");
+            ret = new UserSerializer().deserialize(queryReturnValue.toString());
+            /* TODO: Set cost object attributes based on return value */
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return ret;
+    }
+
+    // given transaction name and uid
+    static public TransactionalItemDTO getTransactionalItemForUserByTransactionID(String uid, String transaction) {
+        TransactionalItemDTO ret = null;
+        /*String query = "SELECT * FROM account, transactionalItem where account." + Constants.USR_ID + " = transactionalItem." + Constants.USR_ID + " AND account.user_id = "
+                + uid + " and transactionalItem_id = " + cid + ";";*/
         JSONObject queryReturnValue = null;
         List<String> tablesToJoin = new ArrayList<>();
         tablesToJoin.add(Constants.ACCOUNT);
-        tablesToJoin.add(Constants.COST_OBJECT);
+        tablesToJoin.add(Constants.TRANSACTIONAL_ITEM_TABLE);
         String query = new QueryBuilder()
                 .select()
                 .star()
@@ -53,27 +83,25 @@ public class QueryExecutor {
                 .cartesianProduct(tablesToJoin)
                 .where()
                 .addString(Constants.ACCOUNT)
-                .accessMember(Constants.USR_ID)
+                .accessMember(Constants.ID)
                 .equals()
-                .addString(Constants.COST_OBJECT)
+                .addString(Constants.TRANSACTIONAL_ITEM_TABLE)
                 .accessMember(Constants.USR_ID)
                 .and()
-                .addString(Constants.COST_OBJECT)
+                .addString(Constants.TRANSACTIONAL_ITEM_TABLE)
                 .accessMember(Constants.USR_ID)
                 .equals()
                 .addString(uid)
                 .and()
-                .addString(Constants.COST_OBJECT)
-                .accessMember(Constants.COST_OBJ_ID)
+                .addString(Constants.TRANSACTIONAL_ITEM_TABLE)
+                .accessMember(Constants.ID)
                 .equals()
-                .addString(cid)
+                .addString(transaction)
                 .build();
 
         try {
-            queryReturnValue = QueryExecutor.runQuery(query);
-            ret = new CostObjectSerializer().deserialize(queryReturnValue.toString());
-            /* TODO: Set cost object attributes based on return value */
-
+            queryReturnValue = QueryExecutor.runQuery(query).getJSONObject("obj0");
+            ret = new TransactionItemSerializer().deserialize(queryReturnValue.toString());
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (Exception e) {
@@ -84,10 +112,54 @@ public class QueryExecutor {
         return ret;
     }
 
-    static public boolean insertCostObject(CostObjectDTO co) {
-        String query = "insert into cost_obj (user_id, username, password)" +
-                " VALUES (" + co.name + "," + co.user_id + "," + co.cost
-                + "," + co.user_id + ")";
+    // given uid and transaction id
+    static public List<TransactionalItemDTO> getTransactionalItemsForUser(String uid) {
+        List<TransactionalItemDTO> ret = new ArrayList<>();
+        /*String query = "SELECT * FROM account, transactionalItem where account." + Constants.USR_ID + " = transactionalItem." + Constants.USR_ID + " AND account.user_id = "
+                + uid + " and transactionalItem_id = " + cid + ";";*/
+        JSONObject queryReturnValue = null;
+        List<String> tablesToJoin = new ArrayList<>();
+        tablesToJoin.add(Constants.ACCOUNT);
+        tablesToJoin.add(Constants.TRANSACTIONAL_ITEM_TABLE);
+        String query = new QueryBuilder()
+                .select()
+                .star()
+                .from()
+                .cartesianProduct(tablesToJoin)
+                .where()
+                .addString(Constants.ACCOUNT)
+                .accessMember(Constants.ID)
+                .equals()
+                .addString(Constants.TRANSACTIONAL_ITEM_TABLE)
+                .accessMember(Constants.USR_ID)
+                .and()
+                .addString(Constants.TRANSACTIONAL_ITEM_TABLE)
+                .accessMember(Constants.USR_ID)
+                .equals()
+                .addString(uid)
+                .build();
+
+        try {
+            queryReturnValue = QueryExecutor.runQuery(query);
+            for (String key : queryReturnValue.keySet()) {
+                ret.add(new TransactionItemSerializer().deserialize(queryReturnValue.getJSONObject(key).toString()));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // run query
+
+        return ret;
+    }
+
+    static public boolean insertTransactionalItem(TransactionalItemDTO co) {
+        String query = "insert into transactionalItem (transaction, date, amount, description" +
+                ", paymentFrequency, category, id, uid)" +
+                " VALUES (" + co.transaction + "," + co.date + "," + co.amount
+                + "," + co.description + ", " + co.paymentFrequency + ", " +
+                co.category + "," + co.id + "," + co.uid + ")";
 
         try {
             runQuery(query);
@@ -98,7 +170,6 @@ public class QueryExecutor {
         }
     }
 
-    /* TODO: Return json. Find a way to convert result set to JSON */
     public static JSONObject runQuery(String query) throws SQLException {
         Statement stmt = null;
         Connection con = null;
@@ -117,14 +188,16 @@ public class QueryExecutor {
 
             // Use this for gettting col names
             ResultSetMetaData rsmd = rs.getMetaData();
-
+            int objCount = 0;
             while (rs.next()) {
                 int numColumns = rsmd.getColumnCount();
+                JSONObject tmp = new JSONObject();
                 for (index = 0; index < numColumns; ++index) {
                     String columnName = rsmd.getColumnName(index + 1);
-                    jsonObject.put(columnName, rs.getArray(index + 1).toString());
+                    tmp.put(columnName, rs.getArray(index + 1).toString());
                 }
-                //ret.add(rs.getArray(++index).toString()); // columns start from 1
+                // add this object to the main json object
+                jsonObject.put("obj" + Integer.toString(objCount++), tmp);
             }
         } catch (Exception e) {
             System.err.println("Error executing query: " + e.getMessage());
@@ -150,5 +223,4 @@ public class QueryExecutor {
         }
         return jsonObject;
     }
-
 }

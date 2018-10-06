@@ -6,20 +6,20 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import server.dto.dto.CostObjectDTO;
+import server.dto.dto.TransactionalItemDTO;
 
 import java.io.IOException;
 
-public class CostObjectSerializer {
+public class TransactionItemSerializer {
     private ObjectMapper objectMapper;
 
-    public CostObjectSerializer() throws Exception {
+    public TransactionItemSerializer() throws Exception {
         objectMapper = new ObjectMapper();
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
     }
 
     // TODO: Implement this
-    public String serialize(CostObjectDTO co) throws Exception {
+    public String serialize(TransactionalItemDTO co) throws Exception {
         String ret = "";
         try {
             ret = objectMapper.writeValueAsString(co);
@@ -31,21 +31,21 @@ public class CostObjectSerializer {
         return ret;
     }
 
-    public CostObjectDTO deserialize(String json) throws Exception {
-        CostObjectDTO ret = null;
+    public TransactionalItemDTO deserialize(String json) throws Exception {
+        TransactionalItemDTO ret = null;
         Exception ex = null;
         try {
-            ret = objectMapper.readValue(json, CostObjectDTO.class);
+            ret = objectMapper.readValue(json, TransactionalItemDTO.class);
         } catch (JsonParseException e) {
-            System.err.println("JSON Parsing exception while deserializing cost object" +
+            System.err.println("JSON Parsing exception while deserializing TransactionalItemDTO" +
                     ": " + e.getMessage());
             ex = e;
         } catch (JsonMappingException e) {
-            System.err.println("JSON Mapping exception while deserializing cost object" +
+            System.err.println("JSON Mapping exception while deserializing TransactionalItemDTO" +
                     ": " + e.getMessage());
             ex = e;
         } catch (IOException e) {
-            System.err.println("IO Exception exception while deserializing cost object" +
+            System.err.println("IO Exception exception while deserializing TransactionalItemDTO" +
                     ": " + e.getMessage());
             ex = e;
         }

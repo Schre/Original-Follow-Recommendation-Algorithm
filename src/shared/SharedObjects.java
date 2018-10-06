@@ -6,6 +6,8 @@ import server.etc.Constants;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * All objects which all threads will need to share
@@ -13,6 +15,7 @@ import java.sql.SQLException;
  */
 public class SharedObjects {
     private static BoneCP financialDbConnectionPool;
+    private static Set<String> loggedInUsers;
 
     public static synchronized void initialize() {
         setUpFinancialDbConnectionPool();
@@ -26,6 +29,33 @@ public class SharedObjects {
         }
     }
 
+    public static boolean loginUser(String username) {
+        if (loggedInUsers != null) {
+            if (!loggedInUsers.contains(username)) {
+                loggedInUsers.add(username);
+                return true;
+            }
+            return false;
+        }
+        loggedInUsers = new HashSet<>();
+        loggedInUsers.add(username);
+        return true;
+    }
+
+    public static boolean logoutUser(String username) {
+        if (loggedInUsers != null && loggedInUsers.contains(username)) {
+            loggedInUsers.remove(username);
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean userIsLoggedIn(String username) {
+        if (loggedInUsers != null) {
+            return loggedInUsers.contains(username);
+        }
+        return false;
+    }
     public static BoneCP getFinancialDbConnectionPool() {
         return financialDbConnectionPool;
     }
