@@ -22,6 +22,8 @@ dependencies {
     compile 'javax.xml.bind:jaxb-api:2.3.0'
     compile group: 'org.json', name: 'json', version: '20180813'
     compile group: 'postgresql', name: 'postgresql', version: '9.0-801.jdbc4'
+// https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.6'
     compile group: 'com.jolbox', name: 'bonecp', version: '0.8.0.RELEASE'
     // https://mvnrepository.com/artifact/com.querydsl/querydsl-core
     compile group: 'com.querydsl', name: 'querydsl-core', version: '4.0.1'

@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS hello_world;
+CREATE TABLE hello_world (
+	code	CHAR(5) PRIMARY KEY,
+	message VARCHAR(100)
+);
+
+INSERT INTO hello_world VALUES ('00000', 'Hello, World!');

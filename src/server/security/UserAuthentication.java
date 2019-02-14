@@ -9,6 +9,7 @@ import javax.security.auth.login.CredentialException;
 
 public class UserAuthentication {
 
+    /*
     static public UserDTO login(String username, String plaintextPassword) throws CredentialException, NotFoundException {
         UserDTO ret = null;
         // First, go to database to get stored hash via query executor
@@ -38,5 +39,5 @@ public class UserAuthentication {
         }
         return ret;
     }
-
+    */
 }

@@ -13,8 +13,6 @@ public class Constants {
     /*** Query Constants
      * These should really be moved to their own file at some point.
      * */
-    static public String FINANCIALS_DB = "financial_db";
-    static public String POSTGRE_SQL = "postgresql";
     static public String TRANSACTION = "transaction";
     static public String ID = "id";
     static public String USR_ID = "uid";
@@ -22,7 +20,6 @@ public class Constants {
     static public String ACCOUNT = "account";
     /***/
     static public String DB_HOST = "";
-    static public int FINANCIALS_DB_PORT = 5432;
     static public int CONNCETION_POOL_MAX_CONNECTIONS_PER_PARTITION = 10;
     static public int CONNECTION_POOL_MIN_CONNECTIONS_PER_PARTITION = 5;
     static public int CONNECTION_POOL_PARTITION_COUNT = 1;
@@ -40,13 +37,12 @@ public class Constants {
 
     static public int JSON_INDENT_FACTOR = 4;
 
-    static public String adminUser = "postgres";
-    static public String adminPassword = "postgres";
+    static public String adminUser = "admin";
+    static public String adminPassword = "admin";
 
-    static public String getFinancialsDbPath(boolean localHost) {
-        if (localHost) {
-            return Constants.JDBC + ":" + POSTGRE_SQL + "://" + LOCAL_HOST + ':' + Integer.toString(FINANCIALS_DB_PORT)  + "/" + FINANCIALS_DB;
-        }
-        return Constants.JDBC + ":" + POSTGRE_SQL + "://" + DB_HOST + "/" + FINANCIALS_DB;
+    static public String getDbPath(boolean localHost) {
+       // if (localHost) {
+            return Constants.JDBC + ":" + "mysql" + "://" + LOCAL_HOST + ':' + "3306"  + "/" + "socialdb";
+        //}
     }
 }

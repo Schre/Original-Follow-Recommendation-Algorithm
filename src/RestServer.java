@@ -4,8 +4,7 @@ import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.servlets.CrossOriginFilter;
 import server.etc.Constants;
-import server.restapi.financialqueryrestservice.QueryRestService;
-import server.restapi.hellorestservice.HelloRestService;
+import server.restapi.databaserestservice.*;
 import shared.SharedObjects;
 
 /**
@@ -56,7 +55,6 @@ public class RestServer {
 
         jerseyServlet.setInitParameter(
                 "jersey.config.server.provider.classnames",
-                HelloRestService.class.getCanonicalName() +
-                        ',' + QueryRestService.class.getCanonicalName());
+                        QueryRestService.class.getCanonicalName());
     }
 }

@@ -48,7 +48,7 @@ public class ThreadContext {
         try {
             // Set up the connection pool
             BoneCPConfig config = new BoneCPConfig();
-            config.setJdbcUrl(Constants.getFinancialsDbPath(true));
+            config.setJdbcUrl(Constants.getDbPath(true));
             config.setUsername(Constants.adminUser);
             config.setPassword(Constants.adminPassword);
             config.setMinConnectionsPerPartition(Constants.CONNECTION_POOL_MIN_CONNECTIONS_PER_PARTITION);
@@ -60,10 +60,10 @@ public class ThreadContext {
 
             if (connection != null) {
                 // Assign connection pool to current thread
-                System.out.println("Successfully connected to database: " + Constants.getFinancialsDbPath(true));
+                System.out.println("Successfully connected to database: " + Constants.getDbPath(true));
                 this.financialDbConnectionPool = connectionPool;
             } else {
-                System.err.println("Failed to establish a connection with database: " + Constants.getFinancialsDbPath(true));
+                System.err.println("Failed to establish a connection with database: " + Constants.getDbPath(true));
                 return;
             }
 

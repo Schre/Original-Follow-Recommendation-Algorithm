@@ -2,20 +2,531 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a2aba4d-5f02-4b85-a054-e0273f3c9542" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/RestServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/RestServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/seniorproj.tar" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/seniorproj.tar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/distributions/seniorproj.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/distributions/seniorproj.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/scripts/seniorproj" beforeDir="false" afterPath="$PROJECT_DIR$/build/scripts/seniorproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/scripts/seniorproj.bat" beforeDir="false" afterPath="$PROJECT_DIR$/build/scripts/seniorproj.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/.idea/libraries/distributions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/.idea/libraries/gradle_wrapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/.idea/libraries/gs_gradle_0_1_0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/seniorproj/seniorproj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/seniorproj.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/server/Database/QueryEngine/QueryExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/server/Database/QueryEngine/QueryExecutor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/server/RestServices/MessengerRestService/MessengerRestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/server/RestServices/MessengerRestService/MessengerRestService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/seniorproj.iml" beforeDir="false" afterPath="$PROJECT_DIR$/seniorproj.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/RestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RestServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/database/queryengine/QueryExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/database/queryengine/QueryExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/dto/Serializers/TransactionItemSerializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/dto/Serializers/TransactionItemSerializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/etc/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/etc/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/restapi/financialqueryrestservice/QueryRestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/restapi/financialqueryrestservice/QueryRestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/security/UserAuthentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/security/UserAuthentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/SharedObjects.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/SharedObjects.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/thread/ThreadContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/thread/ThreadContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/src/containers/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/react/isomorphic/src/containers/App/App.js" afterDir="false" />
     </list>
+    <list id="70a38bad-6ca6-440b-bd3b-b8d15bdd966e" name="BuildStuff" comment="">
+      <change beforePath="$PROJECT_DIR$/build/libs/gs-gradle-0.1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/gs-gradle-0.1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/RestServer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/seniorproj/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/server/etc/Constants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/CRA.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/ISSUE_TEMPLATE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/REACT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/launchApp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/assets/img/avatars/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/assets/img/avatars/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/assets/img/avatars/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/assets/img/avatars/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/assets/img/avatars/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/assets/img/avatars/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/assets/img/avatars/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/assets/img/avatars/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/assets/img/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/_nav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/assets/img/brand/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/assets/img/brand/sygnet.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/containers/DefaultLayout/DefaultAside.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/containers/DefaultLayout/DefaultFooter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/containers/DefaultLayout/DefaultHeader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/containers/DefaultLayout/DefaultLayout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/containers/DefaultLayout/__tests__/DefaultAside.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/containers/DefaultLayout/__tests__/DefaultFooter.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/containers/DefaultLayout/__tests__/DefaultHeader.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/containers/DefaultLayout/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/containers/DefaultLayout/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/containers/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/polyfill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/registerServiceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/routes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/scss/_custom.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/scss/_ie-fix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/scss/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/scss/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/scss/vendors/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/scss/vendors/chart.js/chart.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/scss/vendors/chart.js/chart.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Breadcrumbs/Breadcrumbs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Breadcrumbs/Breadcrumbs.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Breadcrumbs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Cards/Cards.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Cards/Cards.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Cards/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Carousels/Carousels.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Carousels/Carousels.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Carousels/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Collapses/Collapses.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Collapses/Collapses.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Collapses/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Dropdowns/Dropdowns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Dropdowns/Dropdowns.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Dropdowns/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Forms/Forms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Forms/Forms.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Forms/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Jumbotrons/Jumbotrons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Jumbotrons/Jumbotrons.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Jumbotrons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/ListGroups/ListGroups.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/ListGroups/ListGroups.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/ListGroups/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Navbars/Navbars.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Navbars/Navbars.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Navbars/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Navs/Navs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Navs/Navs.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Navs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Paginations/Paginations.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Paginations/Pagnations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Paginations/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Popovers/Popovers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Popovers/Popovers.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Popovers/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/ProgressBar/ProgressBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/ProgressBar/ProgressBar.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/ProgressBar/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Switches/Switches.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Switches/Switches.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Switches/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Tables/Tables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Tables/Tables.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Tables/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Tabs/Tabs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Tabs/Tabs.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Tabs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Tooltips/Tooltips.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Tooltips/Tooltips.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/Tooltips/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Base/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/BrandButtons/BrandButtons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/BrandButtons/BrandButtons.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/BrandButtons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/ButtonDropdowns/ButtonDropdowns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/ButtonDropdowns/ButtonDropdowns.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/ButtonDropdowns/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/ButtonGroups/ButtonGroups.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/ButtonGroups/ButtonGroups.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/ButtonGroups/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/Buttons/Buttons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/Buttons/Buttons.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/Buttons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Buttons/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Charts/Charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Charts/Charts.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Charts/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Dashboard/Dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Dashboard/Dashboard.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Dashboard/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/CoreUIIcons/CoreUIIcons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/CoreUIIcons/CoreUIIcons.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/CoreUIIcons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/Flags/Flags.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/Flags/Flags.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/Flags/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/FontAwesome/FontAwesome.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/FontAwesome/FontAwesome.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/FontAwesome/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/SimpleLineIcons/SimpleLineIcons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/SimpleLineIcons/SimpleLineIcons.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/SimpleLineIcons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Icons/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Notifications/Alerts/Alerts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Notifications/Alerts/Alerts.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Notifications/Alerts/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Notifications/Badges/Badges.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Notifications/Badges/Badges.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Notifications/Badges/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Notifications/Modals/Modals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Notifications/Modals/Modals.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Notifications/Modals/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Notifications/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/Login/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/Login/Login.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/Login/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/Page404/Page404.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/Page404/Page404.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/Page404/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/Page500/Page500.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/Page500/Page500.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/Page500/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/Register/Register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/Register/Register.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/Register/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Pages/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Theme/Colors/Colors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Theme/Colors/Colors.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Theme/Colors/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Theme/Typography/Typography.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Theme/Typography/Typography.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Theme/Typography/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Theme/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Users/User.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Users/Users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Users/Users.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Users/UsersData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Users/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Widgets/Widget01.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Widgets/Widget02.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Widgets/Widget03.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Widgets/Widget04.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Widgets/Widgets.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Widgets/Widgets.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/Widgets/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/src/ui/react/src/views/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/CHANGELOG.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/CRA.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/ISSUE_TEMPLATE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/REACT.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/launchApp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/assets/img/avatars/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/assets/img/avatars/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/assets/img/avatars/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/assets/img/avatars/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/assets/img/avatars/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/assets/img/avatars/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/assets/img/avatars/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/assets/img/avatars/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/assets/img/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/_nav.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/assets/img/brand/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/assets/img/brand/sygnet.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/containers/DefaultLayout/DefaultAside.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/containers/DefaultLayout/DefaultFooter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/containers/DefaultLayout/DefaultHeader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/containers/DefaultLayout/DefaultLayout.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/containers/DefaultLayout/__tests__/DefaultAside.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/containers/DefaultLayout/__tests__/DefaultFooter.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/containers/DefaultLayout/__tests__/DefaultHeader.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/containers/DefaultLayout/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/containers/DefaultLayout/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/containers/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/polyfill.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/registerServiceWorker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/routes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/scss/_custom.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/scss/_ie-fix.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/scss/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/scss/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/scss/style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/scss/vendors/_variables.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/scss/vendors/chart.js/chart.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/scss/vendors/chart.js/chart.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Breadcrumbs/Breadcrumbs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Breadcrumbs/Breadcrumbs.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Breadcrumbs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Cards/Cards.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Cards/Cards.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Cards/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Carousels/Carousels.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Carousels/Carousels.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Carousels/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Collapses/Collapses.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Collapses/Collapses.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Collapses/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Dropdowns/Dropdowns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Dropdowns/Dropdowns.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Dropdowns/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Forms/Forms.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Forms/Forms.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Forms/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Jumbotrons/Jumbotrons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Jumbotrons/Jumbotrons.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Jumbotrons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/ListGroups/ListGroups.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/ListGroups/ListGroups.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/ListGroups/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Navbars/Navbars.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Navbars/Navbars.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Navbars/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Navs/Navs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Navs/Navs.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Navs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Paginations/Paginations.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Paginations/Pagnations.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Paginations/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Popovers/Popovers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Popovers/Popovers.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Popovers/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/ProgressBar/ProgressBar.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/ProgressBar/ProgressBar.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/ProgressBar/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Switches/Switches.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Switches/Switches.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Switches/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Tables/Tables.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Tables/Tables.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Tables/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Tabs/Tabs.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Tabs/Tabs.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Tabs/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Tooltips/Tooltips.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Tooltips/Tooltips.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/Tooltips/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Base/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/BrandButtons/BrandButtons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/BrandButtons/BrandButtons.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/BrandButtons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/ButtonDropdowns/ButtonDropdowns.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/ButtonDropdowns/ButtonDropdowns.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/ButtonDropdowns/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/ButtonGroups/ButtonGroups.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/ButtonGroups/ButtonGroups.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/ButtonGroups/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/Buttons/Buttons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/Buttons/Buttons.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/Buttons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Buttons/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Charts/Charts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Charts/Charts.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Charts/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Dashboard/Dashboard.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Dashboard/Dashboard.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Dashboard/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/CoreUIIcons/CoreUIIcons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/CoreUIIcons/CoreUIIcons.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/CoreUIIcons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/Flags/Flags.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/Flags/Flags.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/Flags/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/FontAwesome/FontAwesome.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/FontAwesome/FontAwesome.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/FontAwesome/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/SimpleLineIcons/SimpleLineIcons.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/SimpleLineIcons/SimpleLineIcons.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/SimpleLineIcons/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Icons/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Notifications/Alerts/Alerts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Notifications/Alerts/Alerts.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Notifications/Alerts/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Notifications/Badges/Badges.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Notifications/Badges/Badges.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Notifications/Badges/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Notifications/Modals/Modals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Notifications/Modals/Modals.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Notifications/Modals/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Notifications/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/Login/Login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/Login/Login.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/Login/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/Page404/Page404.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/Page404/Page404.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/Page404/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/Page500/Page500.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/Page500/Page500.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/Page500/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/Register/Register.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/Register/Register.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/Register/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Pages/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Theme/Colors/Colors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Theme/Colors/Colors.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Theme/Colors/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Theme/Typography/Typography.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Theme/Typography/Typography.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Theme/Typography/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Theme/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Users/User.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Users/Users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Users/Users.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Users/UsersData.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Users/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Widgets/Widget01.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Widgets/Widget02.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Widgets/Widget03.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Widgets/Widget04.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Widgets/Widgets.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Widgets/Widgets.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/Widgets/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/seniorproj/ui/react/src/views/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/react/isomorphic/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/react/isomorphic/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/react/isomorphic/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/0.c3e1a320.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/1.5a38f7cb.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/10.b8a87187.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/11.4be96c86.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/12.58037903.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/13.79bfcbfc.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/14.1c0f17ce.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/15.d5845c25.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/16.eb0eaa6c.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/17.83ecfb05.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/18.3cf65875.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/19.8d08cad9.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/2.153d22ac.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/20.24a79207.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/21.113cabf6.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/22.f22c201e.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/23.54a1b7bf.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/24.c0a98f84.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/25.42019879.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/26.26990d42.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/27.2eb31948.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/28.825a6b6d.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/29.8ec40962.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/3.2469d22f.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/30.10360eef.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/31.3cf63c2e.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/32.8cf821f1.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/33.18702df8.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/34.50461d04.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/35.127a1a4a.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/36.10797ff5.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/37.743d3bc3.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/38.12e56be9.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/39.01c0971e.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/4.cf1bbe41.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/40.79216196.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/41.31f7fb19.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/42.d02f0d7d.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/43.7fcc7077.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/44.db4427f3.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/45.7f7e3e7c.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/46.eb03c2b9.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/47.ff74836a.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/48.a85773ac.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/49.2529f2c7.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/5.4c41316a.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/50.089df972.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/51.56df4a5a.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/52.eaac58f1.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/53.8f530fe7.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/54.200a7a08.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/55.d2766f7e.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/56.2691b31b.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/57.85d1c196.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/58.5fc29d9a.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/59.779ec52d.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/6.6972533f.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/60.ccd7e363.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/61.8296baa2.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/62.850e5af9.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/63.1c80c428.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/64.8091d077.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/65.ed3031e0.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/66.fef610aa.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/67.c451b505.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/68.fec12fc9.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/69.e0c9114e.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/7.d287698d.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/70.fbf25210.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/71.3e28295f.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/72.4ef8f1e4.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/73.3ce9834c.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/74.342c23e5.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/8.687b8cb4.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/9.15c70af0.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/LeafletMapWithCustomHtmlMarker.9c8950df.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/LeafletMapWithCustomMarker.71db6040.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/LeafletMapWithMarkerCluster.2da8f9e7.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-Doughnut.fbe6454f.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-bar.07523960.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-box.1360e977.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-bubble.a5be58c7.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-contentHolder.1707cbbd.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-dynamic-doughnut.da61a191.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-horizontalBar.52321a8d.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-layoutWrapper.62e56b4f.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-line.710f213a.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-mix.013342ac.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-pageHeader.c08bafb3.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-pie.b4592fee.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-polar.22ff5d04.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-radar.418bfaa6.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/ReactChart2-randomizedLine.b4897888.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/basicLeafletMap.50da6c12.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/basicLeafletMapWithMarker.21290159.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/forms-editor.81320ce4.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/googleChart.15aa050f.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/main.eabfdbe4.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-trend.acec75a9.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-animatedSunburst.4f17ab46.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-basicSunburst.87616774.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-candleStick.4a2ac9b6.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-circularGridLines.3948b78e.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-clusteredStackedBarChart.3a13cb8a.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-complexChart.a5686808.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-customRadius.881deaf6.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-customScales.dbf31337.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-dynamicCrosshairScatterplot.57a40ea6.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-dynamicProgrammaticRightedgehints.677c8fb3.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-dynamicTreeMap.6348bedf.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-lineMark.7f8abe23.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-lineSeries.e6288187.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-simpleDonutChart.30e5d415.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-simpleRadialChart.02f45611.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-simpleTreeMap.5648b901.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-stackedHorizontalBarChart.51a884fb.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/react-vis-streamGraph.79f8d0c2.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-biaxialBarChart.f1aa78f0.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-customActiveShapePieChart.a57176ab.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-customShapeBarChart.f7cf3d3a.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-customizedDotLineChart.d86b653c.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-legendEffectOpacity.f488435b.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-lineBarAreaComposedChart.b1fec821.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-mixBarChart.3644c4ec.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-simpleAreaChart.83290edc.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-simpleBarChart.5a252589.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-simpleLineCharts.5a3107ad.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-simpleRadialBarChart.7a2e0cbd.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-specifiedDomainRadarChart.423a992a.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/js/rechartx-stackedAreaChart.191b282c.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/media/bucket.545fd26b.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/media/china.4e4d59b7.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/media/france.bcd389de.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/media/italy.604345b4.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/media/spain.6a9dc11f.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/react/isomorphic/build/static/media/uk.bc48afcc.svg" beforeDir="false" />
+    </list>
+    <list id="f706b33c-eed7-4a76-82b9-fb1f32ccc0dd" name="Project Files" comment="Project Files" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -28,100 +539,145 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/seniorproj$RestServer.ic" NAME="RestServer Coverage Results" MODIFIED="1536381467756" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="seniorproj" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-486613575">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.14" value="1" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.17" value="1" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.14" value="3" />
+          <entry key="project.open.time.15" value="3" />
+          <entry key="project.open.time.16" value="4" />
+          <entry key="project.open.time.17" value="4" />
+          <entry key="project.open.time.18" value="2" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="class" value="1" />
           <entry key="css" value="1" />
-          <entry key="gradle" value="1" />
-          <entry key="iml" value="1" />
-          <entry key="java" value="18" />
-          <entry key="js" value="1" />
+          <entry key="gradle" value="4" />
+          <entry key="iml" value="4" />
+          <entry key="java" value="67" />
+          <entry key="js" value="4" />
+          <entry key="seniorproj" value="1" />
           <entry key="txt" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="CLASS" value="1" />
           <entry key="CSS" value="1" />
-          <entry key="Groovy" value="1" />
-          <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="18" />
-          <entry key="JavaScript" value="1" />
-          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Groovy" value="4" />
+          <entry key="IDEA_MODULE" value="4" />
+          <entry key="JAVA" value="67" />
+          <entry key="JavaScript" value="4" />
+          <entry key="PLAIN_TEXT" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="9" />
-          <entry key="gradle" value="3" />
-          <entry key="java" value="5969" />
-          <entry key="txt" value="952" />
+          <entry key="dummy" value="45" />
+          <entry key="gradle" value="6" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="20548" />
+          <entry key="txt" value="1897" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Groovy" value="3" />
-          <entry key="JAVA" value="5969" />
-          <entry key="PLAIN_TEXT" value="961" />
+          <entry key="Groovy" value="6" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="20548" />
+          <entry key="PLAIN_TEXT" value="1942" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-1421845626">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gradle" value="1" />
+          <entry key="gradlew" value="1" />
+          <entry key="iml" value="1" />
+          <entry key="java" value="25" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Groovy" value="1" />
+          <entry key="IDEA_MODULE" value="1" />
+          <entry key="JAVA" value="25" />
+          <entry key="PLAIN_TEXT" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gradle" value="1" />
+          <entry key="java" value="634" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Groovy" value="1" />
+          <entry key="JAVA" value="634" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/RestServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/thread/ThreadContext.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
-              <folding>
-                <element signature="e#195#337#0" expanded="true" />
-                <element signature="e#336#337#0" expanded="true" />
-                <element signature="e#590#591#0" expanded="true" />
-                <element signature="e#636#637#0" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-                <element signature="e#688#689#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ui/react/src/scss/style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30855">
-              <caret line="2057" column="21" selection-start-line="2057" selection-start-column="21" selection-end-line="2057" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/Messenger/Message.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            <state relative-caret-position="252">
+              <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
             </state>
           </provider>
         </entry>
@@ -129,17 +685,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/etc/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
+            <state relative-caret-position="352">
+              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/RestServices/MessengerRestService/MessengerRestService.java">
+        <entry file="file://$PROJECT_DIR$/src/server/database/queryengine/QueryExecutor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="187">
+              <caret line="32" selection-start-line="32" selection-end-line="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -148,19 +704,58 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/shared/SharedObjects.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#495#496#0" expanded="true" />
+                <element signature="e#532#533#0" expanded="true" />
+                <element signature="e#1672#1673#0" expanded="true" />
+                <element signature="e#1709#1710#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/seniorproj.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="92" column="83" selection-start-line="92" selection-start-column="75" selection-end-line="92" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gradlew">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+            <state relative-caret-position="172">
+              <caret line="24" column="74" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.aggregate/jetty-all/9.3.0.M1/65f2ac85f3a70a77f20a967c9bd7ef5ae04af1e8/jetty-all-9.3.0.M1-sources.jar!/org/eclipse/jetty/servlet/ServletHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+            <state relative-caret-position="187">
+              <caret line="1657" selection-start-line="1657" selection-end-line="1657" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/restapi/financialqueryrestservice/QueryRestService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -169,10 +764,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryBuilder.java">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.aggregate/jetty-all/9.3.0.M1/65f2ac85f3a70a77f20a967c9bd7ef5ae04af1e8/jetty-all-9.3.0.M1-sources.jar!/org/eclipse/jetty/servlets/CrossOriginFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+            <state relative-caret-position="157">
+              <caret line="220" selection-start-line="220" selection-end-line="220" />
             </state>
           </provider>
         </entry>
@@ -188,17 +783,60 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>financial_db</find>
+      <find>userdto</find>
+      <find>web.xml</find>
+      <find>ACCOUNT</find>
+      <find>login</find>
+      <find>loging</find>
+      <find>cost_obj</find>
+      <find>costobject</find>
+      <find>inserttrans</find>
+      <find>cOSToBJECT</find>
+      <find>cos</find>
+      <find>bytransa</find>
+      <find>runQuery</find>
+      <find>queryexecutor</find>
+      <find>runquery</find>
+      <find>json.tos</find>
+      <find>COST_OBJ</find>
+      <find>Constant.JSON_INDENT_FACTOR</find>
+      <find>todo</find>
+      <find>4</find>
+      <find>insert</find>
+      <find>financialdbconnectionpool</find>
+      <find>finan</find>
+      <find>pass</find>
+      <find>socialdb</find>
+      <find>getfin</find>
+      <find>shared</find>
+      <find>setupc</find>
+      <find>class</find>
+      <find>jdbc</find>
+      <find>postgres</find>
     </findStrings>
+    <replaceStrings>
+      <replace>TransactionalItem</replace>
+      <replace>Constants.JSON_INDENT_FACTOR</replace>
+      <replace>TransactionalItemDTO</replace>
+      <replace>JSON_INDENT_FACTOR</replace>
+      <replace>transactionalItem</replace>
+      <replace>connectionPool</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$/.gradle" value="0" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3423205522" />
+        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="4171081951" />
+      </map>
+    </option>
     <option name="projectSyncType">
       <map>
         <entry key="$USER_HOME$/pfm" value="PREVIEW" />
-        <entry key="$PROJECT_DIR$" value="PREVIEW" />
       </map>
     </option>
   </component>
@@ -215,13 +853,36 @@
         <option value="$PROJECT_DIR$/src/server/etc/OptionalFeatures.java" />
         <option value="$PROJECT_DIR$/src/server/Database/POJO/CostObject.java" />
         <option value="$PROJECT_DIR$/src/server/Database/QueryEngine/QueryBuilder.java" />
-        <option value="$PROJECT_DIR$/src/server/RestServices/MessengerRestService/MessengerRestService.java" />
         <option value="$PROJECT_DIR$/src/ThreadContext.java" />
-        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/src/server/RestServices/MessengerRestService/MessengerRestService.java" />
         <option value="$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java" />
-        <option value="$PROJECT_DIR$/src/server/etc/Constants.java" />
-        <option value="$PROJECT_DIR$/src/thread/ThreadContext.java" />
+        <option value="$PROJECT_DIR$/src/server/database/POJO/User.java" />
+        <option value="$PROJECT_DIR$/src/server/database/pojo/User.java" />
+        <option value="$PROJECT_DIR$/seniorproj.iml" />
+        <option value="$PROJECT_DIR$/src/server/database/pojo/CostObject.java" />
+        <option value="$PROJECT_DIR$/src/server/restapi/queryrestservice.java" />
+        <option value="$PROJECT_DIR$/src/server/restapi/queryrestservice/queryRestService.java" />
+        <option value="$PROJECT_DIR$/src/server/restapi/queryrestservice/QueryRestService.java" />
+        <option value="$PROJECT_DIR$/src/server/dto/Serializers/UserSerializer.java" />
+        <option value="$PROJECT_DIR$/src/server/database/queryengine/QueryBuilder.java" />
+        <option value="$PROJECT_DIR$/src/server/restapi/hellorestservice/HelloRestService.java" />
+        <option value="$PROJECT_DIR$/src/ui/react/isomorphic/src/containers/App/App.js" />
+        <option value="$PROJECT_DIR$/src/security/PasswordHasher.java" />
+        <option value="$PROJECT_DIR$/src/server/restapi/financialqueryrestservice/FinancialQueryRestService.java" />
+        <option value="$PROJECT_DIR$/src/server/security/Password.java" />
         <option value="$PROJECT_DIR$/src/RestServer.java" />
+        <option value="$PROJECT_DIR$/src/server/dto/dto/CostObjectDTO.java" />
+        <option value="$PROJECT_DIR$/src/server/dto/Serializers/CostObjectSerializer.java" />
+        <option value="$PROJECT_DIR$/src/server/dto/dto/TransactionalItemDTO.java" />
+        <option value="$PROJECT_DIR$/src/server/dto/dto/UserDTO.java" />
+        <option value="$PROJECT_DIR$/src/server/dto/Serializers/TransactionItemSerializer.java" />
+        <option value="$PROJECT_DIR$/src/server/database/queryengine/QueryExecutor.java" />
+        <option value="$PROJECT_DIR$/src/thread/ThreadContext.java" />
+        <option value="$PROJECT_DIR$/src/server/security/UserAuthentication.java" />
+        <option value="$PROJECT_DIR$/src/server/restapi/financialqueryrestservice/QueryRestService.java" />
+        <option value="$PROJECT_DIR$/src/server/etc/Constants.java" />
+        <option value="$PROJECT_DIR$/src/shared/SharedObjects.java" />
+        <option value="$PROJECT_DIR$/build.gradle" />
       </list>
     </option>
   </component>
@@ -231,57 +892,24 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
   <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/src/ui/react/node_modules" />
+    <handled-path value="$PROJECT_DIR$/src/ui/react/isomorphic/node_modules" />
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths>
-      <path value="$PROJECT_DIR$/src/ui/react/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/containers/DefaultLayout/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Breadcrumbs/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Cards/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Carousels/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Collapses/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Dropdowns/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Forms/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Jumbotrons/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/ListGroups/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Navbars/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Navs/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Paginations/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Popovers/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/ProgressBar/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Switches/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Tables/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Tabs/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Base/Tooltips/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Buttons/BrandButtons/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Buttons/ButtonDropdowns/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Buttons/ButtonGroups/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Buttons/Buttons/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Charts/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Dashboard/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Icons/CoreUIIcons/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Icons/Flags/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Icons/FontAwesome/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Icons/SimpleLineIcons/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Notifications/Alerts/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Notifications/Badges/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Notifications/Modals/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Pages/Login/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Pages/Page404/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Pages/Page500/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Pages/Register/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Theme/Colors/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Theme/Typography/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Users/package.json" />
-      <path value="$PROJECT_DIR$/src/ui/react/src/views/Widgets/package.json" />
+      <path value="$PROJECT_DIR$/src/ui/react/isomorphic/package.json" />
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="4">
-    <option name="x" value="67" />
+    <option name="x" value="994" />
     <option name="y" value="25" />
-    <option name="width" value="927" />
+    <option name="width" value="926" />
     <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -290,86 +918,32 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="seniorproj" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="seniorproj" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="seniorproj" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="seniorproj" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="seniorproj" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-              <item name="QueryEngine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="seniorproj" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="thread" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="jetty-server-9.1.1.v20140108.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="jetty-server-9.1.1.v20140108.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="seniorproj" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="jetty-server-9.1.1.v20140108.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
-              <item name="jetty-server" type="462c0819:PsiDirectoryNode" />
+              <item name="requestNode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="requestNode" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="thread&#9;FILE&#9;file:///home/samuel/seniorproj/src/thread/ThreadContext.java&#10;const&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/etc/Constants.java&#10;consta&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/etc/Constants.java&#10;constants&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/etc/Constants.java&#10;jettyser&#9;FILE&#9;jar:///home/samuel/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.1.1.v20140108/59cbe94bceb7916119103b24d3576570f1413e0/jetty-server-9.1.1.v20140108.jar!/META-INF/maven/org.eclipse.jetty/jetty-server&#10;postgresql&#9;FILE&#9;jar:///home/samuel/.gradle/caches/modules-2/files-2.1/postgresql/postgresql/9.0-801.jdbc4/dbcd12f02b9527ab56b4ee7bd599d7a90999d260/postgresql-9.0-801.jdbc4-sources.jar!/org/postgresql&#10;postgre&#9;FILE&#9;jar:///home/samuel/.gradle/caches/modules-2/files-2.1/postgresql/postgresql/9.0-801.jdbc4/dbcd12f02b9527ab56b4ee7bd599d7a90999d260/postgresql-9.0-801.jdbc4-sources.jar!/org/postgresql&#10;e&#9;FILE&#9;file:///home/samuel/seniorproj/src/RestServer.java" />
+    <property name="SearchEverywhereHistoryKey" value="rest&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/RestServer.java&#10;const&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/etc/Constants.java&#10;restser&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/RestServer.java&#10;quer&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/financialqueryrestservice/QueryRestService.java&#10;queryex&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/database/queryengine/QueryExecutor.java&#10;constant&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/etc/Constants.java&#10;shared&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/shared/SharedObjects.java&#10;execu&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/database/queryengine/QueryExecutor.java&#10;server&#9;FILE&#9;file:///home/samuel/seniorproj/src/RestServer.java&#10;constan&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/etc/Constants.java&#10;restservi&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/restapi/financialqueryrestservice/QueryRestService.java&#10;querye&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/database/queryengine/QueryExecutor.java&#10;query&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/restapi/financialqueryrestservice/QueryRestService.java&#10;constants&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/etc/Constants.java&#10;transa&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/dto/dto/TransactionalItemDTO.java&#10;userdto&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/dto/dto/UserDTO.java&#10;transaction&#9;PSI&#9;JAVA://server.dto.dto.TransactionalItemDTO&#10;queryExec&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/database/queryengine/QueryExecutor.java&#10;costob&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/dto/dto/CostObjectDTO.java&#10;consta&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/etc/Constants.java&#10;cons&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/etc/Constants.java&#10;obj&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/dto/dto/CostObjectDTO.java&#10;dto&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/dto/dto/CostObjectDTO.java&#10;DTO&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/dto/dto/UserDTO.java&#10;restservice&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/restapi/financialqueryrestservice/QueryRestService.java&#10;builder&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/database/queryengine/QueryBuilder.java&#10;queryrest&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/restapi/financialqueryrestservice/QueryRestService.java&#10;CostObject&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/dto/dto/CostObjectDTO.java&#10;restse&#9;FILE&#9;file:///home/samuel/seniorproj/src/server/restapi/financialqueryrestservice/QueryRestService.java&#10;thread&#9;FILE&#9;file:///home/samuel/seniorproj/src/thread/ThreadContext.java&#10;jettyser&#9;FILE&#9;jar:///home/samuel/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty/jetty-server/9.1.1.v20140108/59cbe94bceb7916119103b24d3576570f1413e0/jetty-server-9.1.1.v20140108.jar!/META-INF/maven/org.eclipse.jetty/jetty-server&#10;postgresql&#9;FILE&#9;jar:///home/samuel/.gradle/caches/modules-2/files-2.1/postgresql/postgresql/9.0-801.jdbc4/dbcd12f02b9527ab56b4ee7bd599d7a90999d260/postgresql-9.0-801.jdbc4-sources.jar!/org/postgresql&#10;postgre&#9;FILE&#9;jar:///home/samuel/.gradle/caches/modules-2/files-2.1/postgresql/postgresql/9.0-801.jdbc4/dbcd12f02b9527ab56b4ee7bd599d7a90999d260/postgresql-9.0-801.jdbc4-sources.jar!/org/postgresql&#10;e&#9;FILE&#9;file:///home/samuel/seniorproj/src/RestServer.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1536545886023" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539059792544" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
@@ -404,6 +978,8 @@
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="7a2aba4d-5f02-4b85-a054-e0273f3c9542" name="Default Changelist" comment="" />
+      <changelist id="70a38bad-6ca6-440b-bd3b-b8d15bdd966e" name="BuildStuff" comment="" />
+      <changelist id="f706b33c-eed7-4a76-82b9-fb1f32ccc0dd" name="Project Files" comment="" />
       <created>1535486506301</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -411,7 +987,26 @@
       <workItem from="1535486509354" duration="7928000" />
       <workItem from="1536257703425" duration="4285000" />
       <workItem from="1536342658243" duration="9803000" />
-      <workItem from="1536544272898" duration="1613000" />
+      <workItem from="1536544272898" duration="8461000" />
+      <workItem from="1536600761869" duration="1964000" />
+      <workItem from="1536604080351" duration="161000" />
+      <workItem from="1536604269331" duration="23000" />
+      <workItem from="1536604309490" duration="317000" />
+      <workItem from="1536604662878" duration="217000" />
+      <workItem from="1536604923214" duration="377000" />
+      <workItem from="1536605321360" duration="1467000" />
+      <workItem from="1536693330234" duration="8234000" />
+      <workItem from="1536866977690" duration="15092000" />
+      <workItem from="1537113681303" duration="266000" />
+      <workItem from="1537292655349" duration="614000" />
+      <workItem from="1537464093570" duration="5204000" />
+      <workItem from="1537507992510" duration="8273000" />
+      <workItem from="1538082327470" duration="820000" />
+      <workItem from="1538416892505" duration="803000" />
+      <workItem from="1538863589166" duration="12281000" />
+      <workItem from="1539279840921" duration="722000" />
+      <workItem from="1545331578196" duration="244000" />
+      <workItem from="1550123306417" duration="3019000" />
     </task>
     <task id="LOCAL-00001" summary="Add thread context for tracking objects">
       <created>1536385388215</created>
@@ -420,17 +1015,96 @@
       <option name="project" value="LOCAL" />
       <updated>1536385388215</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added BoneCP for managing database connection pool for each thread">
+      <created>1536549686643</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1536549686643</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Deleted unnecessary files. Performed basic code refactor">
+      <created>1536552597895</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1536552597895</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fixed bug where each thread gets its own JDBC pool (made it shared)">
+      <created>1536601608910</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1536601608910</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added financialqueryrestservice for posting cost objects for a given user. Added Jackson dependency">
+      <created>1536696681430</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1536696681430</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Can now query DB for CostObject, deserialize it into CostObjectDTO, serialize it back into JSON format, and pass it the the UI. The necessary RestAPIs are surfaced for the UI to perform the CostObject query.">
+      <created>1536881598605</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1536881598605</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add some files that I forgot to push">
+      <created>1537468251037</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1537468251037</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add some files that I forgot to push">
+      <created>1537468978112</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1537468978112</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Project Files">
+      <created>1537469524588</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1537469524588</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Surface restAPI for getting all user's transactionalItems&#10;Added password hashing capabilities (not yet integrated)">
+      <created>1538868637976</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1538868637976</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Commit some files I forgot to include">
+      <created>1538868761428</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1538868761428</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23629000" />
+    <option name="totallyTimeSpent" value="90575000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="927" height="1055" extended-state="4" />
+    <frame x="994" y="25" width="926" height="1055" extended-state="4" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24971624" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24886364" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -439,29 +1113,66 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4980631" weight="0.32972974" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4982974" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4875484" weight="0.32777777" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48808172" visible="true" weight="0.41777778" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49942595" weight="0.32928678" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50056756" side_tool="true" weight="0.32972974" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49943247" weight="0.32972974" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5124516" side_tool="true" weight="0.32864866" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4903519" weight="0.32444444" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49602723" visible="true" weight="0.3708108" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.4903519" weight="0.14262295" />
+      <window_info anchor="bottom" id="Build" order="13" sideWeight="0.4997233" visible="true" weight="0.32972974" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.3291714" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3295063" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Theme Preview" order="7" />
+      <window_info anchor="right" id="Database" order="8" weight="0.32872164" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.67650396" />
+      <window_info anchor="right" id="Gradle" order="11" weight="0.3295063" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16934144" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4875484" visible="true" weight="0.32864866" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48808172" weight="0.41837838" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49942595" weight="0.32928678" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5124516" side_tool="true" visible="true" weight="0.32864866" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.4903519" weight="0.32540542" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.4903519" weight="0.26702702" />
+      <window_info anchor="bottom" id="Build" order="13" sideWeight="0.4997233" visible="true" weight="0.32972974" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.3291714" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3295063" />
+      <window_info anchor="right" id="Database" order="6" weight="0.3291714" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" />
       <window_info anchor="right" id="Coverage" order="10" side_tool="true" weight="0.67650396" />
-    </layout>
+      <window_info anchor="right" id="Gradle" order="11" weight="0.3295063" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -471,213 +1182,377 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Add thread context for tracking objects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add thread context for tracking objects" />
+    <MESSAGE value="Added BoneCP for managing database connection pool for each thread" />
+    <MESSAGE value="Deleted unnecessary files. Performed basic code refactor" />
+    <MESSAGE value="Fixed bug where each thread gets its own JDBC pool (made it shared)" />
+    <MESSAGE value="Added financialqueryrestservice for posting cost objects for a given user. Added Jackson dependency" />
+    <MESSAGE value="Can now query DB for CostObject, deserialize it into CostObjectDTO, serialize it back into JSON format, and pass it the the UI. The necessary RestAPIs are surfaced for the UI to perform the CostObject query." />
+    <MESSAGE value="Add some files that I forgot to push" />
+    <MESSAGE value="Project Files" />
+    <MESSAGE value="Surface restAPI for getting all user's transactionalItems&#10;Added password hashing capabilities (not yet integrated)" />
+    <MESSAGE value="Commit some files I forgot to include" />
+    <option name="LAST_COMMIT_MESSAGE" value="Commit some files I forgot to include" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java</url>
-          <line>39</line>
+          <url>file://$PROJECT_DIR$/src/thread/ThreadContext.java</url>
+          <line>49</line>
           <properties />
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/server/RestServices/MessengerRestService/MessengerRestService.java</url>
-          <line>20</line>
+          <url>file://$PROJECT_DIR$/src/server/restapi/financialqueryrestservice/QueryRestService.java</url>
+          <line>36</line>
           <properties />
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java</url>
-          <line>29</line>
+          <url>file://$PROJECT_DIR$/src/server/database/queryengine/QueryExecutor.java</url>
+          <line>41</line>
           <properties />
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/server/restapi/financialqueryrestservice/QueryRestService.java</url>
+          <line>24</line>
+          <properties />
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/server/database/queryengine/QueryExecutor.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/shared/SharedObjects.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
-        <expression-string>rs.getString(1)</expression-string>
+        <expression-string>queryReturnValue</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rs.next()</expression-string>
+        <expression-string>j</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rs.getString(2)</expression-string>
+        <expression-string>ret</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rs.getString(&quot;2&quot;)</expression-string>
+        <expression-string>rs.</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rs.getString(&quot;1&quot;)</expression-string>
+        <expression-string>rsmd.getColumnName(1)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rs.getString(&quot;*&quot;)</expression-string>
+        <expression-string>rsmd.getColumnName(0)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rs.getString(0)</expression-string>
+        <expression-string>rs.get(0)</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>((Jdbc4ResultSet) rs).current_row</expression-string>
+        <expression-string>rs.get</expression-string>
         <language-id>JAVA</language-id>
-        <custom-info>org.postgresql.jdbc4.Jdbc4ResultSet</custom-info>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>rs.getString(&quot;message&quot;)</expression-string>
+        <expression-string>message = ((Array) rs).getResultSet().getString(0);</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/seniorproj.iml">
+    <entry file="file://$PROJECT_DIR$/src/server/messenger/MessageQueue.java" />
+    <entry file="file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryEngineConstants.java" />
+    <entry file="file://$PROJECT_DIR$/src/ui/react/src/views/Dashboard/Dashboard.js" />
+    <entry file="file://$PROJECT_DIR$/src/ui/react/src/scss/style.css" />
+    <entry file="file://$PROJECT_DIR$/src/server/messenger/Message.java" />
+    <entry file="file://$PROJECT_DIR$/src/server/Database/DataBaseConstants.java" />
+    <entry file="file://$PROJECT_DIR$/src/server/ServiceManager.java" />
+    <entry file="file://$PROJECT_DIR$/out/production/seniorproj/RestServer.class" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jolbox/bonecp/0.8.0.RELEASE/f8b6d5414837c881740594109e0400dfb65d4c0b/bonecp-0.8.0.RELEASE-sources.jar!/com/jolbox/bonecp/AbstractConnectionStrategy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
+        <state relative-caret-position="1140">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Database/usage.txt">
+    <entry file="file://$PROJECT_DIR$/src/server/restapi/queryrestservice.java" />
+    <entry file="file://$PROJECT_DIR$/build/scripts/seniorproj">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/seniorproj/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/database/queryengine/QueryBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="69" selection-start-column="69" selection-end-column="69" />
+        <state relative-caret-position="-180">
+          <caret line="15" column="24" lean-forward="true" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Engine/usage.txt">
+    <entry file="file://$PROJECT_DIR$/src/ui/react/isomorphic/src/containers/App/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="50" selection-start-column="50" selection-end-column="50" />
+        <state relative-caret-position="258">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/DTOManager/usage.txt">
+    <entry file="file://$PROJECT_DIR$/src/ui/react/isomorphic/src/redux/app/actions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
+        <state relative-caret-position="41">
+          <caret line="12" column="34" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/RestServices/RestService.java">
+    <entry file="file://$PROJECT_DIR$/src/server/restapi/hellorestservice/HelloRestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="20" column="94" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/restapi/RestService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Database/POJO/CostObject.java">
+    <entry file="file://$PROJECT_DIR$/src/security/PasswordHasher.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.aggregate/jetty-all/9.3.0.M1/65f2ac85f3a70a77f20a967c9bd7ef5ae04af1e8/jetty-all-9.3.0.M1-sources.jar!/org/eclipse/jetty/servlet/Holder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="1605">
+          <caret line="152" column="37" selection-start-line="152" selection-start-column="37" selection-end-line="152" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Engine/DataAnalysis/BvsA.java">
+    <entry file="file://$PROJECT_DIR$/src/server/security/Password.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+        <state relative-caret-position="210">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Database/POJO/User.java">
+    <entry file="file://$PROJECT_DIR$/src/server/dto/dto/UserDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="135">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Messenger/MessageQueue.java">
+    <entry file="file://$PROJECT_DIR$/src/server/dto/dto/TransactionalItemDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="195">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryEngineConstants.java" />
-    <entry file="file://$PROJECT_DIR$/src/server/ServiceManager.java">
+    <entry file="file://$PROJECT_DIR$/src/server/dto/Serializers/TransactionItemSerializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="206">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/server/dto/Serializers/UserSerializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="165">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/react/src/views/Dashboard/Dashboard.js">
+    <entry file="file://$PROJECT_DIR$/src/server/dto/dto/CostObjectDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+        <state relative-caret-position="195">
+          <caret line="13" column="7" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jolbox/bonecp/0.8.0.RELEASE/f8b6d5414837c881740594109e0400dfb65d4c0b/bonecp-0.8.0.RELEASE-sources.jar!/com/jolbox/bonecp/BoneCP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="551" column="22" selection-start-line="551" selection-start-column="22" selection-end-line="551" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/thread/ThreadContext.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="65" column="97" selection-start-line="65" selection-start-column="97" selection-end-line="65" selection-end-column="97" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#575#576#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#1068#1069#0" expanded="true" />
+            <element signature="e#1116#1117#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ui/react/src/scss/style.css">
+    <entry file="file://$PROJECT_DIR$/src/server/security/UserAuthentication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30855">
-          <caret line="2057" column="21" selection-start-line="2057" selection-start-column="21" selection-end-line="2057" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Messenger/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/RestServices/MessengerRestService/MessengerRestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="450">
+          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryBuilder.java">
+    <entry file="jar://$USER_HOME$/Documents/jdk-10.0.2/lib/src.zip!/java.base/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="31" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
+        <state relative-caret-position="390">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.json/json/20180813/60753006d96d5fc85b61b0897f3326b5c4e1c4f0/json-20180813-sources.jar!/org/json/JSONObject.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+        <state relative-caret-position="285">
+          <caret line="177" selection-start-line="177" selection-end-line="177" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/Database/QueryEngine/QueryExecutor.java">
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="33" column="9" lean-forward="true" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+        <state relative-caret-position="270">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/model/internal/JavaResourceMethodDispatcherProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="151" selection-start-line="151" selection-end-line="151" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/model/internal/AbstractJavaResourceMethodDispatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/model/ResourceMethodInvoker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="349" selection-start-line="349" selection-end-line="349" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.7/fbdd400fa1b008772510c6e99c67634dc2db1974/jersey-common-2.7-sources.jar!/org/glassfish/jersey/internal/Errors.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="274" selection-start-line="274" selection-end-line="274" />
+          <folding>
+            <element signature="e#10195#10354#0" expanded="true" />
+            <element signature="e#10353#10354#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-common/2.7/fbdd400fa1b008772510c6e99c67634dc2db1974/jersey-common-2.7-sources.jar!/org/glassfish/jersey/process/internal/RequestScope.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="324" selection-start-line="324" selection-end-line="324" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/ServerRuntime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="272" selection-start-line="272" selection-end-line="272" />
+          <folding>
+            <element signature="e#10635#12304#0" expanded="true" />
+            <element signature="e#12303#12304#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/ApplicationHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="167">
+          <caret line="1028" selection-start-line="1028" selection-end-line="1028" />
+          <folding>
+            <element signature="e#48054#48055#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet-core/2.7/a15d4484a32ca949c6067a9c2f663c1db4615871/jersey-container-servlet-core-2.7-sources.jar!/org/glassfish/jersey/servlet/WebComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="374" selection-start-line="374" selection-end-line="374" />
+          <folding>
+            <element signature="e#16668#16850#0" expanded="true" />
+            <element signature="e#16849#16850#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.containers/jersey-container-servlet-core/2.7/a15d4484a32ca949c6067a9c2f663c1db4615871/jersey-container-servlet-core-2.7-sources.jar!/org/glassfish/jersey/servlet/ServletContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="219" selection-start-line="219" selection-end-line="219" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.aggregate/jetty-all/9.3.0.M1/65f2ac85f3a70a77f20a967c9bd7ef5ae04af1e8/jetty-all-9.3.0.M1-sources.jar!/org/eclipse/jetty/servlet/ServletHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="820" selection-start-line="820" selection-end-line="820" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.aggregate/jetty-all/9.3.0.M1/65f2ac85f3a70a77f20a967c9bd7ef5ae04af1e8/jetty-all-9.3.0.M1-sources.jar!/org/eclipse/jetty/servlets/CrossOriginFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="220" selection-start-line="220" selection-end-line="220" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.jetty.aggregate/jetty-all/9.3.0.M1/65f2ac85f3a70a77f20a967c9bd7ef5ae04af1e8/jetty-all-9.3.0.M1-sources.jar!/org/eclipse/jetty/servlet/ServletHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="1657" selection-start-line="1657" selection-end-line="1657" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/restapi/financialqueryrestservice/QueryRestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="18" column="8" lean-forward="true" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -686,33 +1561,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/etc/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
+        <state relative-caret-position="352">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/thread/ThreadContext.java">
+    <entry file="file://$PROJECT_DIR$/src/server/database/queryengine/QueryExecutor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+        <state relative-caret-position="187">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
           <folding>
-            <element signature="e#195#337#0" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#590#591#0" expanded="true" />
-            <element signature="e#636#637#0" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#688#689#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/RestServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="67" column="31" lean-forward="true" selection-start-line="67" selection-start-column="31" selection-end-line="67" selection-end-column="31" />
+        <state relative-caret-position="252">
+          <caret line="28" column="69" selection-start-line="28" selection-start-column="69" selection-end-line="28" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shared/SharedObjects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+            <element signature="e#1672#1673#0" expanded="true" />
+            <element signature="e#1709#1710#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/seniorproj.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="92" column="83" selection-start-line="92" selection-start-column="75" selection-end-line="92" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradlew">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="24" column="74" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
         </state>
       </provider>
     </entry>

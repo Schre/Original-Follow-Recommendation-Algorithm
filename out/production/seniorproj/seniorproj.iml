@@ -145,6 +145,17 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
+          <root url="jar:///home/samuel/.gradle/caches/modules-2/files-2.1/org.mindrot/jbcrypt/0.3m/fe2d9c5f23767d681a7e38fc8986b812400ec583/jbcrypt-0.3m.jar!/"/>
+        </CLASSES>
+        <JAVADOC/>
+        <SOURCES>
+          <root url="jar:///home/samuel/.gradle/caches/modules-2/files-2.1/org.mindrot/jbcrypt/0.3m/a846e415cf6593433c7d3d23c1b0699e30c124f4/jbcrypt-0.3m-sources.jar!/"/>
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
           <root url="jar:///home/samuel/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-client/2.7/fb973800c0329e5fd51b1b3ea8d5dd8835ec191d/jersey-client-2.7.jar!/"/>
         </CLASSES>
         <JAVADOC/>

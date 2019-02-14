@@ -18,7 +18,6 @@ public class TransactionItemSerializer {
         objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
     }
 
-    // TODO: Implement this
     public String serialize(TransactionalItemDTO co) throws Exception {
         String ret = "";
         try {
