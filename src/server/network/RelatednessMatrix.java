@@ -3,6 +3,7 @@ package server.network;
 import java.security.InvalidParameterException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /***
  * These matrix values are hard-coded for now
@@ -33,6 +34,10 @@ public class RelatednessMatrix {
          *  Engineer      .5          1
          *
          ***/
+    }
+
+    public static Set<String> getSupportedFields() {
+        return matrix.keySet();
     }
 
     public static double getRelatedness(String a, String b) throws InvalidParameterException {

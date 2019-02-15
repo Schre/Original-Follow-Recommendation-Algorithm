@@ -18,7 +18,7 @@ public class FollowerRecommendationSystem {
     private double calculateMutualFollowerScore(Map<NetworkNode, Integer> mutualFollowers, NetworkNode a) {
         return mutualFollowers.get(a) * RelatednessMatrix.getRelatedness(a.getField(), user.getField());
     }
-    // Returns the top K most relevent users that our user should consider following
+    // Returns the top K most relevant users that our user should consider following
     public List<NetworkNode> getTopKRecommendations(int K) {
         List<NetworkNode> topK = new ArrayList<>();
 
