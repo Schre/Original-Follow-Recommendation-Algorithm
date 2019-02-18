@@ -15,7 +15,7 @@ import java.util.List;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Path("query")
-public class QueryRestService extends RestService {
+public class UserRestService extends RestService {
     @GET
     @Path("users")
     public Response getUsers() {
@@ -31,21 +31,14 @@ public class QueryRestService extends RestService {
         return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
     }
 
-
-    /*public Response postTransactionalItem(String body) {
-        TransactionalItemDTO co = null;
-        JSONObject json = new JSONObject();
-
-        try {
-            TransactionItemSerializer serializer = new TransactionItemSerializer();
-            co = serializer.deserialize(body);
-            QueryExecutor.insertTransactionalItem(co);
-            json.put("posted", "true");
-        } catch (Exception e) {
-            System.out.print(e.getMessage());
-            json.put("posted", "false");
-            return okJSON(Response.Status.INTERNAL_SERVER_ERROR, json.toString(Constants.JSON_INDENT_FACTOR));
-        }
-        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
-    }*/
+    @GET
+    @Path("users/{uid}/followrecommendations/{K}")
+    public Response getTopKFollowRecommendations(@PathParam("uid") String uid, @PathParam("K") int K) {
+        /*
+            TODO: Extract a sample of our user network from db and use FollowerRecommendationSystem to return best matches!
+            For now we will extract a network consisting of our user, user's follower's, and user's follower's follower's
+            In the future, we should only sample a maximum of a certain amount of data to reduce computation time and number of database queries
+         */
+        return null;
+    }
 }

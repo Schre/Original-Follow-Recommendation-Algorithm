@@ -55,6 +55,6 @@ public class RestServer {
 
         jerseyServlet.setInitParameter(
                 "jersey.config.server.provider.classnames",
-                        QueryRestService.class.getCanonicalName());
+                        UserRestService.class.getCanonicalName());
     }
 }
