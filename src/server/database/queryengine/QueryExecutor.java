@@ -93,4 +93,39 @@ public class QueryExecutor {
         }
         return jsonObject;
     }
+
+    public static boolean execute(String query) throws SQLException {
+        Statement stmt = null;
+        Connection con = null;
+        boolean executed = false;
+
+        try {
+            con = getConnection();
+            if (con == null) {
+                throw new SQLException("Failed to establish a connection with the local database");
+            }
+
+            stmt = con.createStatement();
+            executed =  stmt.execute(query);
+
+        } catch (Exception e) {
+            System.err.println("Error executing query: " + e.getMessage());
+        } finally {
+            /* Close an clean up connection. Upon closing this connection, we will
+               return the connection back to the connection pool.
+             */
+            try {
+                stmt.close();
+            } catch (SQLException e) {
+
+            }
+            }
+            try {
+                con.close();
+            } catch (SQLException e) {
+
+            }
+
+            return executed;
+        }
 }

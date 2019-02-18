@@ -13,7 +13,7 @@ import java.util.Set;
 public class RelatednessMatrix {
     public static Map<String, Map<String, Double>> matrix;
 
-    public RelatednessMatrix() {
+    public static void initialize() {
         RelatednessMatrix.matrix = new HashMap<>();
 
         /* Add fields first */
