@@ -1,4 +1,4 @@
-package shared;
+package server.shared;
 
 import com.jolbox.bonecp.BoneCP;
 import com.jolbox.bonecp.BoneCPConfig;
@@ -83,7 +83,7 @@ public class SharedObjects {
             connection = connectionPool.getConnection(); // fetch a connection
 
             if (connection != null) {
-                // Assign connection pool to current thread
+                // Assign connection pool to current server.thread
                 System.out.println("Successfully connected to database: " + Constants.getDbPath(true));
                 SharedObjects.connectionPool = connectionPool;
             } else {

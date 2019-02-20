@@ -1,5 +1,8 @@
 package server.network;
 
+import server.dto.dto.UserDTO;
+import server.service.UserService;
+
 import java.security.InvalidParameterException;
 import java.util.*;
 
@@ -8,11 +11,48 @@ public class FollowerRecommendationSystem {
 
     public FollowerRecommendationSystem(NetworkNode user) {
         this.user = user;
+
+        if (RelatednessMatrix.matrix == null) {
+            RelatednessMatrix.initialize();
+        }
     }
     public NetworkNode getUser() {
         return this.user;
     }
 
+    public NetworkNode loadNetworkForUser() {
+        Map<String, NetworkNode> nodes = new HashMap<>();
+        String user_id = user.getUID();
+        Set<UserDTO> followers;
+        UserService us = new UserService();
+        try {
+            // Fetch users user is following
+            followers = us.getUserFollowings(user_id);
+        }
+        catch (NoSuchElementException nse) {
+            System.out.println(nse.getMessage());
+            return null;
+        }
+
+        NetworkNode root = user;
+
+        for (UserDTO follower : followers) {
+            nodes.putIfAbsent(follower.user_id, new NetworkNode(follower.user_id, follower.field));
+            NetworkNode f = nodes.get(follower.user_id);
+
+            root.addFollowing(f);
+
+            Set<UserDTO> secondDegreeFollowers = us.getUserFollowings(f.getUID());
+            for (UserDTO secondDegreeFollower : secondDegreeFollowers) {
+                nodes.putIfAbsent(secondDegreeFollower.user_id, new NetworkNode(secondDegreeFollower.user_id, secondDegreeFollower.field));
+                NetworkNode sdf = nodes.get(secondDegreeFollower.user_id);
+                f.addFollowing(sdf);
+            }
+        }
+
+
+        return root;
+    }
 
     /* Assumes the user has already followed some users */
     private double calculateMutualFollowerScore(Map<NetworkNode, Integer> mutualFollowers, NetworkNode a) {
@@ -60,11 +100,12 @@ public class FollowerRecommendationSystem {
 
                 // Increment mutual follower count
                 mutualFollowers.put(mutualFollower, oldCount + 1);
+                mutualFollower.incrementMutualFollowings();
             }
         }
 
         for (NetworkNode mutualFollower : mutualFollowers.keySet()) {
-            if (pq.size() < K) {
+            if (pq.size() < K || pq.contains(mutualFollower)) {
                 pq.add(mutualFollower);
                 continue;
             }

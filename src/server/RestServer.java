@@ -1,3 +1,5 @@
+package server;
+
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.FilterHolder;
 import org.eclipse.jetty.servlet.ServletContextHandler;
@@ -5,7 +7,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.servlets.CrossOriginFilter;
 import server.etc.Constants;
 import server.restapi.databaserestservice.*;
-import shared.SharedObjects;
+import server.shared.SharedObjects;
 
 /**
  Register your rest services here! ( in registerRestServices() )
@@ -34,7 +36,7 @@ public class RestServer {
 
         registerRestServices(jerseyServlet);
 
-        // Initialized shared objects
+        // Initialized server.shared objects
         SharedObjects.initialize();
 
         try {
@@ -45,7 +47,7 @@ public class RestServer {
         }
     }
 
-    /* Add rest service to the map to register it */
+    /* Add rest server.service to the map to register it */
     private static void registerRestServices(ServletHolder jerseyServlet) {
 /*        restServices.put("jersey.config.server.provider.classnames.HelloRestService",
                 HelloRestService.class.getCanonicalName());

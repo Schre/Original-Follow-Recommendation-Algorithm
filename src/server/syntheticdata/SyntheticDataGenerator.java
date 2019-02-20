@@ -1,12 +1,10 @@
-package syntheticdata;
+package server.syntheticdata;
 
 import server.database.queryengine.QueryExecutor;
-import server.dto.dto.UserDTO;
 import server.network.FollowerRecommendationSystem;
 import server.network.NetworkNode;
 import server.network.RelatednessMatrix;
-import shared.SharedObjects;
-import org.json.*;
+import server.shared.SharedObjects;
 
 import java.io.*;
 import java.sql.SQLException;
@@ -15,10 +13,10 @@ import java.util.*;
 
 /***
  * This will generate synthetic data, upload the data to our database,
- * and output it to the syntheticdata.sql file
+ * and output it to the server.syntheticdata.sql file
  */
 
-// TODO: Output our network to syntheticdata.sql
+// TODO: Output our network to server.syntheticdata.sql
 
 /** TODO: Maybe we should not use NetworkNode and create a network
  *  that creates all of the attributes of a user to make adding them
@@ -32,7 +30,7 @@ public class SyntheticDataGenerator {
 
     // Initializes names
     private static void loadNames() throws FileNotFoundException, IOException {
-        FileReader reader = new FileReader("src/syntheticdata/names.txt");
+        FileReader reader = new FileReader("src/server/syntheticdata/names.txt");
         BufferedReader br = new BufferedReader(reader);
         String name;
 
@@ -53,7 +51,7 @@ public class SyntheticDataGenerator {
     // arg2 = density of network D (Probability of connecting two users if the relatedness was 1)
     public static void main(String[] args) {
 
-        // Set up connection pool so that we can execute queries
+        // Set up connection pool so that we can execute server.queries
         SharedObjects.initialize();
         RelatednessMatrix.initialize();
 
@@ -112,7 +110,7 @@ public class SyntheticDataGenerator {
                 }
 
                 // Add follower
-                node.addFollow(adj);
+                node.addFollowing(adj);
             }
         }
 
@@ -138,7 +136,7 @@ public class SyntheticDataGenerator {
         BufferedWriter bw;
 
         try {
-            bw = new BufferedWriter(new FileWriter("src/syntheticdata/syntheticdata.sql"));
+            bw = new BufferedWriter(new FileWriter("src/server/syntheticdata/syntheticdata.sql"));
         }
         catch (IOException ioe) {
             System.out.println("FATAL: Could not open file output file. " + ioe.getMessage());

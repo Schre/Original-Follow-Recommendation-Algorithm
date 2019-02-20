@@ -10,11 +10,13 @@ public class NetworkNode {
     private Set<NetworkNode> follows;
     private String uid;
     private String field;
+    private int mutual_followings;
 
     public NetworkNode(String uid, String field) {
         this.uid = uid;
         follows = new HashSet<>();
         this.field = field;
+        this.mutual_followings = 0;
     }
 
     public Set<NetworkNode> getUsersFollowed() {
@@ -25,7 +27,15 @@ public class NetworkNode {
         return field;
     }
 
-    public boolean addFollow(NetworkNode node) {
+    public int getMutualFollowings() {
+        return mutual_followings;
+    }
+
+    public void incrementMutualFollowings() {
+        mutual_followings++;
+    }
+
+    public boolean addFollowing(NetworkNode node) {
         return follows.add(node);
     }
 

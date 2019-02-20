@@ -3,7 +3,7 @@ package server.database.queryengine;
 
 import java.util.List;
 
-// Use this to construct queries. The queries will execute through the QueryExecutor
+// Use this to construct server.queries. The server.queries will execute through the QueryExecutor
 public class QueryBuilder {
     private String query = "";
 

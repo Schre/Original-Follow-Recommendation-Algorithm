@@ -1,12 +1,5 @@
 package server.security;
 
-import javassist.NotFoundException;
-import server.database.queryengine.QueryExecutor;
-import server.dto.dto.UserDTO;
-import shared.SharedObjects;
-
-import javax.security.auth.login.CredentialException;
-
 public class UserAuthentication {
 
     /*

@@ -1,4 +1,4 @@
-package thread;
+package server.thread;
 
 import com.jolbox.bonecp.BoneCP;
 import com.jolbox.bonecp.BoneCPConfig;
@@ -8,8 +8,8 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- * All objects which a thread will need access to
- * will be instantiated in thread context.
+ * All objects which a server.thread will need access to
+ * will be instantiated in server.thread context.
  *
  */
 public class ThreadContext {
@@ -59,7 +59,7 @@ public class ThreadContext {
             connection = connectionPool.getConnection(); // fetch a connection
 
             if (connection != null) {
-                // Assign connection pool to current thread
+                // Assign connection pool to current server.thread
                 System.out.println("Successfully connected to database: " + Constants.getDbPath(true));
                 this.financialDbConnectionPool = connectionPool;
             } else {

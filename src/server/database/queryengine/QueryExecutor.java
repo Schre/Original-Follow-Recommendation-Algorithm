@@ -1,7 +1,7 @@
 package server.database.queryengine;
 
 import org.json.JSONObject;
-import shared.SharedObjects;
+import server.shared.SharedObjects;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,8 +9,8 @@ import java.util.ArrayList;
 /**
  * TODO:
  * This is only for local db. We are only assuming the db is local for now.
- * We will want to expand this so that it can run queries against multiple
- * databases, but for now just running queries on our financial database will
+ * We will want to expand this so that it can run server.queries against multiple
+ * databases, but for now just running server.queries on our financial database will
  * suffice.
  *
  * We do not actually want this to have static functions. In the future, we will

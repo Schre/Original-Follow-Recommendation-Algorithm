@@ -16,7 +16,7 @@ public class UserDTO {
     public String profile_picture_url;
     public String birth_date;
     public String date_created;
-
+    public String field;
     public static String generateUserId() {
         return UUID.randomUUID().toString().substring(0, 20);
     }
