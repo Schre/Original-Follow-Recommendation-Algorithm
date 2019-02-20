@@ -25,7 +25,7 @@ public class QueryExecutor {
         Connection conn = null;
         try {
             conn = SharedObjects.getConnectionPool().getConnection();
-            System.out.println("Obtained connection from connection pool.");
+            //System.out.println("Obtained connection from connection pool.");
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

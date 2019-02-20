@@ -87,12 +87,18 @@ public class UserRestService extends RestService {
         frs.loadNetworkForUser();
         List<NetworkNode> topK = frs.getTopKRecommendations(K);
 
+        UserService userService = new UserService();
         int indx = K;
         for (NetworkNode node : topK) {
+            UserDTO userDTO = userService.getUser(node.getUID());
             JSONObject obj = new JSONObject();
             obj.put("user_id", node.getUID());
             obj.put("field", node.getField());
             obj.put("mutual_followings", node.getMutualFollowings());
+            obj.put("first_name", userDTO.first_name);
+            obj.put("last_name", userDTO.last_name);
+            obj.put("gender", userDTO.gender);
+            obj.put("username", userDTO.username);
             ret.put(Integer.toString(K), obj);
             --K;
         }
