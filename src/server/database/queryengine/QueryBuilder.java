@@ -23,6 +23,19 @@ public class QueryBuilder {
         return new QueryBuilder(query + "SELECT ");
     }
 
+    public QueryBuilder delete() {
+        return new QueryBuilder(query + "DELETE ");
+    }
+
+    public QueryBuilder insert() {
+        return new QueryBuilder(query + "INSERT ");
+    }
+
+    public QueryBuilder into() {
+        return new QueryBuilder(query + "INTO ");
+    }
+
+
     public QueryBuilder where() {
         return new QueryBuilder(query + "WHERE ");
     }
@@ -31,9 +44,14 @@ public class QueryBuilder {
         return new QueryBuilder(query + "=");
     }
 
-    public QueryBuilder addString(String s) {
+    public QueryBuilder string(String s) {
+        return new QueryBuilder(query + "\"" + s + "\"");
+    }
+
+    public QueryBuilder literal(String s) {
         return new QueryBuilder(query + s);
     }
+
 
     public QueryBuilder accessMember(String member) {
         return new QueryBuilder(query + "." + member + " ");
@@ -63,13 +81,13 @@ public class QueryBuilder {
         return new QueryBuilder(query + " in ");
     }
 
-    public QueryBuilder cartesianProduct(List<String> tablesToJoin) {
+    public QueryBuilder commaSeparatedStrings(List<String> tablesToJoin) {
         for (int i = 0; i < tablesToJoin.size(); ++i) {
             String table = tablesToJoin.get(i);
             if (i < tablesToJoin.size() - 1) {
-                query += table + ',';
+                query += "\"" + table + "\"" + ',';
             } else {
-                query += table + " ";
+                query += "\"" + table + "\"" + " ";
             }
         }
         return new QueryBuilder(query);
@@ -80,7 +98,7 @@ public class QueryBuilder {
     }
 
     public QueryBuilder from() {
-        return new QueryBuilder(query + " from ");
+        return new QueryBuilder(query + " FROM ");
     }
 
 }

@@ -1,6 +1,11 @@
 package server.restapi.databaserestservice;
 
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonSerializer;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
+import server.database.queryengine.QueryBuilder;
 import server.database.queryengine.QueryExecutor;
 import server.dto.Serializers.TransactionItemSerializer;
 import server.dto.dto.TransactionalItemDTO;
@@ -11,13 +16,18 @@ import server.network.NetworkNode;
 import server.network.UserNetworkStatistics;
 import server.restapi.RestService;
 import server.service.UserService;
+import server.shared.SharedObjects;
+import trie.TrieHard.AutoComplete;
+import trie.TrieHard.TrieNode;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
 
 @Produces(MediaType.APPLICATION_JSON)
 @Path("users")
@@ -31,7 +41,7 @@ public class UserRestService extends RestService {
         }
         catch (Exception e) {
             System.out.print(e.getMessage());
-            return okJSON(Response.Status.INTERNAL_SERVER_ERROR, json.toString(Constants.JSON_INDENT_FACTOR));
+            return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
         }
         return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
     }
@@ -50,8 +60,6 @@ public class UserRestService extends RestService {
         }
         return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
     }
-
-    // TODO: Fix this query
 
     @GET
     @Path("{uid}/followings")
@@ -72,6 +80,133 @@ public class UserRestService extends RestService {
             System.out.println(e.getMessage());
             //return okJSON(Response.Status.INTERNAL_SERVER_ERROR, json.toString(Constants.JSON_INDENT_FACTOR));
         }
+        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+    }
+
+    //TODO: test this
+    @DELETE
+    @Path("{uid}/followings/{fid}")
+    public Response deleteFollowing(@PathParam("uid") String uid, @PathParam("fid") String fid) {
+        // Post new following
+        QueryBuilder queryBuilder = new QueryBuilder();
+        queryBuilder = queryBuilder.delete().from().literal("Followings ").where()
+                .literal(" user_id=").string(uid).and().literal(" following_id=").string(fid);
+
+        JSONObject obj = new JSONObject();
+
+        try {
+            QueryExecutor.execute(queryBuilder.build());
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            obj.put("posted", "false");
+            return okJSON(Response.Status.OK, obj.toString(Constants.JSON_INDENT_FACTOR));
+        }
+
+        obj.put("posted", "true");
+        return okJSON(Response.Status.OK, obj.toString(Constants.JSON_INDENT_FACTOR));
+    }
+
+    @POST
+    @Path("{uid}/followings/{fid}")
+    public Response followUser(@PathParam("uid") String uid, @PathParam("fid") String fid) {
+        // Post new following
+        QueryBuilder queryBuilder = new QueryBuilder();
+        queryBuilder = queryBuilder.insert().into().literal("Followings ").literal("(user_id, following_id) ")
+                .literal("VALUES ( ").commaSeparatedStrings(new ArrayList<>(Arrays.asList(new String[]{
+                        uid, fid
+        }))).literal(" )");
+
+        JSONObject obj = new JSONObject();
+
+        try {
+            QueryExecutor.execute(queryBuilder.build());
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+            obj.put("posted", "false");
+            return okJSON(Response.Status.OK, obj.toString(Constants.JSON_INDENT_FACTOR));
+        }
+
+        obj.put("posted", "true");
+        return okJSON(Response.Status.OK, obj.toString(Constants.JSON_INDENT_FACTOR));
+    }
+
+    /*
+        Assume content is correct format
+     */
+    @POST
+    public Response createUser(String content) {
+        JSONObject userJson = new JSONObject(content);
+        ObjectMapper serializer = new ObjectMapper();
+        Exception ex = null;
+        try {
+            UserDTO userDTO = serializer.readValue(userJson.toString(), UserDTO.class);
+
+            String dateCreated = new SimpleDateFormat("yyyy-MM-dd").format((new Date()));
+            userDTO.date_created = dateCreated;
+
+            if (userDTO.birth_date == null) {
+                userDTO.birth_date = dateCreated;
+            }
+
+            List<String> fields = new ArrayList<>(Arrays.asList(new String[]{userDTO.user_id, userDTO.email, userDTO.username, userDTO.password, userDTO.first_name,
+            userDTO.last_name, userDTO.gender.toString(), userDTO.profile_picture_url, userDTO.birth_date, userDTO.date_created, userDTO.field}));
+
+            QueryBuilder builder = new QueryBuilder();
+
+            builder = builder.insert().into().literal("Users ").literal("(user_id, email, username, password, first_name, last_name, gender, profile_picture_url, birth_date, date_created, field)")
+                    .literal(" Values ( ").commaSeparatedStrings(fields).literal(")");
+            QueryExecutor.execute(builder.build());
+
+        }catch (JsonGenerationException e) {
+            ex = e;
+            e.printStackTrace();
+        }
+        catch (JsonMappingException e){
+            ex = e;
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            ex = e;
+            e.printStackTrace();
+        }
+        catch (Exception e) {
+            ex = e;
+            e.printStackTrace();
+        }
+
+        JSONObject res = new JSONObject();
+
+        // send error response
+        if (ex != null) {
+            res.put("posted", "false");
+            return okJSON(Response.Status.OK, res.toString(Constants.JSON_INDENT_FACTOR));
+        }
+        res.put("posted", "true");
+        return okJSON(Response.Status.OK, res.toString(Constants.JSON_INDENT_FACTOR));
+    }
+
+    @GET
+    @Path("{uid}/searchforuser/{query}")
+    public Response searchForUser(@PathParam("uid") String uid, @PathParam("query") String query) {
+        AutoComplete ac = SharedObjects.getUserQueryAutoComplete();
+        JSONObject json = new JSONObject();
+
+        if (!ac.containsUser(uid)) {
+            populateUserTrie(uid);
+        }
+
+        Set<TrieNode<String, String>> res = ac.getNodesMatchingPattern(uid, query);
+
+        int hit = 0;
+        for (TrieNode node : res) {
+            JSONObject val = new JSONObject();
+            val.put((String)node.getKey(), node.getValue());
+            json.put(Integer.toString(hit), val);
+            ++hit;
+        }
+
         return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
     }
 
@@ -117,5 +252,21 @@ public class UserRestService extends RestService {
         ret.put("statistics", statistics);
 
         return okJSON(Response.Status.OK, ret.toString(Constants.JSON_INDENT_FACTOR));
+    }
+
+    private void populateUserTrie(String uid) {
+        // populate trie with recommendations
+        AutoComplete ac = SharedObjects.getUserQueryAutoComplete();
+        UserService service = new UserService();
+        UserDTO user = service.getUser(uid);
+        NetworkNode root = new NetworkNode(user.user_id, user.field);
+        FollowerRecommendationSystem frs = new FollowerRecommendationSystem(root);
+        frs.loadNetworkForUser();
+        List<NetworkNode> topK = frs.getTopKRecommendations(1000);
+
+        for (NetworkNode node : topK) {
+            UserDTO temp = service.getUser(node.getUID());
+            ac.add(uid, temp.user_id, temp.first_name + " " + temp.last_name);
+        }
     }
 }

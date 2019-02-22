@@ -3,10 +3,13 @@ package server.shared;
 import com.jolbox.bonecp.BoneCP;
 import com.jolbox.bonecp.BoneCPConfig;
 import server.etc.Constants;
+import trie.TrieHard.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -16,9 +19,15 @@ import java.util.Set;
 public class SharedObjects {
     private static BoneCP connectionPool;
     private static Set<String> loggedInUsers;
+    private static AutoComplete userQueryAutoComplete;
 
     public static synchronized void initialize() {
         setUpconnectionPool();
+        userQueryAutoComplete = new AutoComplete();
+    }
+
+    public static AutoComplete getUserQueryAutoComplete() {
+        return userQueryAutoComplete;
     }
 
     public static synchronized void setconnectionPool(BoneCP connectionPool) {
