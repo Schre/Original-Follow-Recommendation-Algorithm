@@ -202,12 +202,14 @@ public class UserRestService extends RestService {
         int hit = 0;
         for (TrieNode node : res) {
             JSONObject val = new JSONObject();
-            val.put((String)node.getKey(), node.getValue());
+            val.put("name", node.getKey());
+            val.put("user_id", node.getValue());
             json.put(Integer.toString(hit), val);
             ++hit;
         }
-
-        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+        JSONObject response = new JSONObject();
+        response.put("response", json);
+        return okJSON(Response.Status.OK, response.toString(Constants.JSON_INDENT_FACTOR));
     }
 
     @GET
