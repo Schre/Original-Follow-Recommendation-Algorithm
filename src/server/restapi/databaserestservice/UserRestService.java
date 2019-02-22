@@ -8,13 +8,16 @@ import server.dto.dto.UserDTO;
 import server.etc.Constants;
 import server.network.FollowerRecommendationSystem;
 import server.network.NetworkNode;
+import server.network.UserNetworkStatistics;
 import server.restapi.RestService;
 import server.service.UserService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 
 @Produces(MediaType.APPLICATION_JSON)
 @Path("users")
@@ -102,6 +105,17 @@ public class UserRestService extends RestService {
             ret.put(Integer.toString(K), obj);
             --K;
         }
+
+        Map<String, Double> stats = UserNetworkStatistics.computeFieldPercentages(new HashSet<>(topK));
+
+        JSONObject statistics = new JSONObject();
+        for (String profession : stats.keySet()) {
+            Double percentage = stats.get(profession);
+            statistics.put(profession, percentage);
+        }
+
+        ret.put("statistics", statistics);
+
         return okJSON(Response.Status.OK, ret.toString(Constants.JSON_INDENT_FACTOR));
     }
 }
