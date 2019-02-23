@@ -257,7 +257,7 @@ public class UserRestService extends RestService {
     }
 
     private void populateUserTrie(String uid) {
-        // populate trie with recommendations
+        // populate trie with recommendations, and followings, and top professional's first and last name
         AutoComplete ac = SharedObjects.getUserQueryAutoComplete();
         UserService service = new UserService();
         UserDTO user = service.getUser(uid);
@@ -266,9 +266,17 @@ public class UserRestService extends RestService {
         frs.loadNetworkForUser();
         List<NetworkNode> topK = frs.getTopKRecommendations(1000);
 
+        Set<UserDTO> followings = service.getUserFollowings(uid);
+
+        /* Add topK to trie */
         for (NetworkNode node : topK) {
             UserDTO temp = service.getUser(node.getUID());
             ac.add(uid, temp.user_id, temp.first_name + " " + temp.last_name);
+        }
+
+        /* Add followings to trie */
+        for (UserDTO following : followings) {
+            ac.add(uid, following.user_id, following.first_name + " " + following.last_name);
         }
     }
 }
