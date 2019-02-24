@@ -2,13 +2,12 @@ package server.restapi.databaserestservice;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
+import server.TrieHard.AutoComplete;
+import server.TrieHard.TrieNode;
 import server.database.queryengine.QueryBuilder;
 import server.database.queryengine.QueryExecutor;
-import server.dto.Serializers.TransactionItemSerializer;
-import server.dto.dto.TransactionalItemDTO;
 import server.dto.dto.UserDTO;
 import server.etc.Constants;
 import server.network.FollowerRecommendationSystem;
@@ -17,8 +16,6 @@ import server.network.UserNetworkStatistics;
 import server.restapi.RestService;
 import server.service.UserService;
 import server.shared.SharedObjects;
-import server.TrieHard.AutoComplete;
-import server.TrieHard.TrieNode;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -140,9 +137,11 @@ public class UserRestService extends RestService {
         JSONObject userJson = new JSONObject(content);
         ObjectMapper serializer = new ObjectMapper();
         Exception ex = null;
+        String user_id = "";
         try {
             UserDTO userDTO = serializer.readValue(userJson.toString(), UserDTO.class);
-
+            userDTO.username = userDTO.email;
+            userDTO.user_id = UserDTO.generateUserId();
             String dateCreated = new SimpleDateFormat("yyyy-MM-dd").format((new Date()));
             userDTO.date_created = dateCreated;
 
@@ -158,6 +157,7 @@ public class UserRestService extends RestService {
             builder = builder.insert().into().literal("Users ").literal("(user_id, email, username, password, first_name, last_name, gender, profile_picture_url, birth_date, date_created, field)")
                     .literal(" Values ( ").commaSeparatedStrings(fields).literal(")");
             QueryExecutor.execute(builder.build());
+            user_id = userDTO.user_id;
 
         }catch (JsonGenerationException e) {
             ex = e;
@@ -184,6 +184,7 @@ public class UserRestService extends RestService {
             return okJSON(Response.Status.OK, res.toString(Constants.JSON_INDENT_FACTOR));
         }
         res.put("posted", "true");
+        res.put("user_id", user_id);
         return okJSON(Response.Status.OK, res.toString(Constants.JSON_INDENT_FACTOR));
     }
 

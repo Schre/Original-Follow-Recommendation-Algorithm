@@ -18,7 +18,7 @@ public class UserNetworkStatistics {
             // update frequency count
             professionalFrequencies.put(following.getField(), newCount);
             // update percentage
-            mappings.put(following.getField(), new Double(newCount ) / totalFollowings);
+            mappings.put(following.getField(), new Double(newCount) / totalFollowings);
         }
 
         return mappings;
