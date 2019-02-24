@@ -4,6 +4,8 @@ import com.jolbox.bonecp.BoneCP;
 import com.jolbox.bonecp.BoneCPConfig;
 import server.etc.Constants;
 import server.TrieHard.*;
+import server.network.FollowerRecommendationSystem;
+import server.network.RelatednessMatrix;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -18,10 +20,10 @@ public class SharedObjects {
     private static BoneCP connectionPool;
     private static Set<String> loggedInUsers;
     private static AutoComplete userQueryAutoComplete;
-
     public static synchronized void initialize() {
         setUpconnectionPool();
         userQueryAutoComplete = new AutoComplete();
+        RelatednessMatrix.initialize();
     }
 
     public static AutoComplete getUserQueryAutoComplete() {

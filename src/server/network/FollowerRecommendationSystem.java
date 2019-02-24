@@ -12,9 +12,9 @@ public class FollowerRecommendationSystem {
     public FollowerRecommendationSystem(NetworkNode user) {
         this.user = user;
 
-        if (RelatednessMatrix.matrix == null) {
+        /*if (RelatednessMatrix.matrix == null) {
             RelatednessMatrix.initialize();
-        }
+        }*/
     }
     public NetworkNode getUser() {
         return this.user;
