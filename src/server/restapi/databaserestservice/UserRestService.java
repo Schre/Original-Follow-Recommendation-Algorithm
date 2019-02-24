@@ -17,8 +17,8 @@ import server.network.UserNetworkStatistics;
 import server.restapi.RestService;
 import server.service.UserService;
 import server.shared.SharedObjects;
-import trie.TrieHard.AutoComplete;
-import trie.TrieHard.TrieNode;
+import server.TrieHard.AutoComplete;
+import server.TrieHard.TrieNode;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
