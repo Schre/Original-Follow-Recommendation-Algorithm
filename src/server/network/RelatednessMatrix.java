@@ -1,12 +1,21 @@
 package server.network;
 
+import com.fasterxml.jackson.core.JsonParser;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import server.network.relatednesstree.RelatednessTree;
 import server.network.relatednesstree.RelatednessTreeNode;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.security.InvalidParameterException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+
+// TODO: Instead of having mutliple nodes with the same field, have single node with potentially multiple parents and calculate LCA that minimizes distance
+// TODO: Alternatively, if have multiple nodes that have same field, make their subtrees identical. Wastes space, but easier to implement for now.
 
 /***
  * These matrix values are hard-coded for now
@@ -33,107 +42,102 @@ public class RelatednessMatrix {
         matrix.get(first).put(second, value);
         //matrix.get(second).put(first, value);
     }
+
+   private static void copyFromSubtree(RelatednessTreeNode from, RelatednessTreeNode to) {
+        for (RelatednessTreeNode node : from.getSubfields().values()) {
+            // Copy subtree
+            if (!to.getSubfields().containsKey(node.getField())) {
+                RelatednessTreeNode cpy = new RelatednessTreeNode(node.getField());
+                copyFromSubtree(node, cpy);
+                to.addSubtree(cpy);
+            }
+        }
+    }
+
+    public static void loadTreeFromJSON(RelatednessTree tree, RelatednessTreeNode root, JSONObject json) {
+        for (Object key : json.keySet()) {
+            String field = key.toString();
+            JSONObject children = (JSONObject) json.get(field);
+            RelatednessTreeNode node = new RelatednessTreeNode(field);
+            loadTreeFromJSON(tree, node, children);
+            root.addSubtree(node);
+            tree.addField(node);
+
+            RelatednessTreeNode dup = null;
+            // if multiple nodes with same field, make sure they have equivalent stucture
+            if (tree.getFields().containsKey(field) && tree.getFields().get(field).size() > 1) {
+                dup = tree.getFields().get(field).get(0);
+                // copy differences into dup
+                copyFromSubtree(node, dup);
+                // update structure of all trees
+                for (RelatednessTreeNode toUpdate : tree.getFields().get(field)) {
+                    copyFromSubtree(dup, toUpdate);
+                }
+            }
+        }
+    }
     public static void initialize() {
         RelatednessTree relatednessTree = new RelatednessTree();
         RelatednessTreeNode root = relatednessTree.getRoot();
-        Map<String, RelatednessTreeNode> fields = new HashMap<>();
 
+        /* Get fields from json file */
+        try {
+            JSONParser parser = new JSONParser();
+            FileReader reader = new FileReader("src/server/network/relatednessTree.json");
 
+            Object obj = parser.parse(reader);
+            JSONObject json = (JSONObject) obj;
+            loadTreeFromJSON(relatednessTree, root, json);
+        }
+        catch (ParseException e) {
+            e.printStackTrace();
+            return;
+        }
+        catch (FileNotFoundException e) {
+            e.printStackTrace();
+            return;
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+            return;
+        }
+        root.calculateHeights();
         /* Hard coded for now */
-        RelatednessTreeNode Scientist = new RelatednessTreeNode("Scientist");
-        RelatednessTreeNode Engineer = new RelatednessTreeNode("Engineer");
-        Scientist.addField("Computer Scientist");
-        Scientist.addField("Biologist");
-        Engineer.addField("Bio Engineer");
-        Engineer.addField("Computer Engineer");
-
-        root.addSubtree(Scientist);
-        root.addSubtree(Engineer);
-
-        fields.put(Scientist.getField(), Scientist);
-        fields.put(Engineer.getField(), Engineer);
-
-        for (RelatednessTreeNode node : Scientist
-                .getSubfields()) {
-            fields.put(node.getField(), node);
-        }
-        for (RelatednessTreeNode node : Engineer.getSubfields()) {
-            fields.put(node.getField(), node);
-        }
-
-
-        relatednessTree.addFields(fields);
-
         RelatednessMatrix.matrix = new HashMap<>();
         for (String field : relatednessTree.getFields().keySet()) {
             addField(field);
         }
         // compute all matrix values
-        for (RelatednessTreeNode n1 : relatednessTree.getFields().values()) {
-            for (RelatednessTreeNode n2: relatednessTree.getFields().values()) {
-                double score = relatednessTree.findRelatedness(n1, n2);
-                System.out.println(n1.getField() + ", " + n2.getField() + " -> " + score);
-                addRelation(n1.getField(), n2.getField(), score);
+        for (String f1 : relatednessTree.getFields().keySet()) {
+            for (String f2: relatednessTree.getFields().keySet()) {
+                double bestScore = 0;
+                RelatednessTreeNode first = null;
+                RelatednessTreeNode second = null;
+
+                /* Find best score amongst all pairs */
+                for (int i = 0; i < relatednessTree.getFields().get(f1).size(); ++i) {
+                    for (int j = 0; j < relatednessTree.getFields().get(f2).size(); ++j) {
+                        RelatednessTreeNode n1 = relatednessTree.getFields().get(f1).get(i);
+                        RelatednessTreeNode n2 = relatednessTree.getFields().get(f2).get(j);
+
+                        double score = relatednessTree.findRelatedness(n1, n2);
+                        if (score > bestScore) {
+                            bestScore = score;
+                            first = n1;
+                            second = n2;
+                        }
+                    }
+                }
+                System.out.println(first.getField() + ", " + second.getField() + " -> " + bestScore);
+                addRelation(first.getField(), second.getField(), bestScore);
             }
         }
 
- /*       *//*RelatednessMatrix.matrix = new HashMap<>();
-
-        /* Add fields first *//*
-        addField("Scientist");
-        addField("Engineer");
-        addField("Computer Scientist");
-        addField("Computer Engineer");
-        addField("Biologist");
-        addField("Bio Engineer");
-
-        *//***
-         * Scientist relationships
-         *//*
-        addRelation("Scientist", "Engineer", .5);
-        addRelation("Scientist", "Computer Scientist", .6);
-        addRelation("Scientist", "Computer Engineer", .3);
-        addRelation("Scientist", "Biologist", .5);
-        addRelation("Scientist", "Bio Engineer", .4);
-
-
-        *//***
-         * Engineer relationships
-         *//*
-        addRelation("Engineer", "Computer Scientist", .5);
-        addRelation("Engineer", "Computer Engineer", .7);
-        addRelation("Engineer", "Biologist", .2);
-        addRelation("Engineer", "Bio Engineer", .7);
-
-        *//***
-         * Computer Scientist relationships
-         *//*
-        addRelation("Computer Scientist", "Computer Engineer", .8);
-        addRelation("Computer Scientist", "Biologist", .1);
-        addRelation("Computer Scientist", "Bio Engineer", .4);
-
-        *//***
-         * Computer Engineer relationships
-         *//*
-        addRelation("Computer Engineer", "Biologist", .1);
-        addRelation("Computer Engineer", "Bio Engineer", .5);
-
-        *//***
-         * Biologist relationships
-         *//*
-        addRelation("Biologist", "Bio Engineer", .7);
-
-
-
-
-        *//*** Matrix pictorial interpretation:
-         *            Scientist   Engineer
-         *
-         *  Scientist     1          .5
-         *
-         *  Engineer      .5          1
-         *
+        /***
+            Add exceptions to algorithm here
          ***/
+
+        System.out.println("Created matrix");
     }
 
     public static Set<String> getSupportedFields() {
@@ -143,10 +147,6 @@ public class RelatednessMatrix {
     public static double getRelatedness(String a, String b) throws InvalidParameterException {
         if (!matrix.containsKey(a) || !matrix.containsKey(b)) {
             throw new InvalidParameterException();
-        }
-
-        if (a.equals(b)) {
-            return 1.0;
         }
 
         return matrix.get(a).get(b);

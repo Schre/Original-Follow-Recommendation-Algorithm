@@ -7,6 +7,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.servlets.CrossOriginFilter;
 import server.etc.Constants;
 import server.restapi.databaserestservice.*;
+import server.restapi.etc.RelatednessMatrixRestService;
 import server.shared.SharedObjects;
 
 /**
@@ -58,6 +59,7 @@ public class RestServer {
         jerseyServlet.setInitParameter(
                 "jersey.config.server.provider.classnames",
                         UserRestService.class.getCanonicalName() + ","
-                            + PostRestService.class.getCanonicalName());
+                            + PostRestService.class.getCanonicalName() + ","
+                            + RelatednessMatrixRestService.class.getCanonicalName());
     }
 }

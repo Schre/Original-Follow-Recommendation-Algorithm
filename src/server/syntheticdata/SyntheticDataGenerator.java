@@ -61,7 +61,7 @@ public class SyntheticDataGenerator {
         List<String> fields = new ArrayList<>(RelatednessMatrix.getSupportedFields());
         Set<NetworkNode> data = new HashSet<>();
 
-        int nodeCount = Integer.parseInt(args[0]);
+        long nodeCount = Integer.parseInt(args[0]);
         double D = Double.parseDouble(args[1]);
         boolean writeToDB = false;
 
@@ -73,10 +73,15 @@ public class SyntheticDataGenerator {
          * a profession according to our set of fields.
          */
 
+        System.out.println("Creating synthetic network where nodeCount=" + nodeCount + "" +
+                ", Density=" + D);
+
+        System.out.println("Creating nodes...");
+
         Random r = new Random();
 
         NetworkNode test = null;
-        for (int i = 0; i < nodeCount; ++i) {
+        for (long i = 0; i < nodeCount; ++i) {
 
             // Generate a unique uid
             String uid = UUID.randomUUID().toString().substring(0, 20);
@@ -98,6 +103,8 @@ public class SyntheticDataGenerator {
          * connection determined by our RelatednessMatrix (and mutual followers?)
          */
 
+        long numConnections = 0;
+        System.out.println("Connecting nodes...");
         for (NetworkNode node : data) {
 
             for (NetworkNode adj : data) {
@@ -111,14 +118,18 @@ public class SyntheticDataGenerator {
 
                 // Add follower
                 node.addFollowing(adj);
+                ++numConnections;
             }
         }
+
+        System.out.println("number of connections created: " + numConnections);
 
         /***
          * Step 3. Insert all of the nodes into the database
          * and randomly make up names for required fields
          */
 
+        System.out.println("Writing nodes to database...");
         try {
             loadNames();
         }
@@ -130,7 +141,7 @@ public class SyntheticDataGenerator {
             System.out.println("FATAL: IO Exception reading file. " + ioe.getMessage());
         }
 
-        int count = 0;
+        long count = 0;
         Character[] genders = {'M', 'F', 'O'};
 
         BufferedWriter bw;
@@ -151,7 +162,7 @@ public class SyntheticDataGenerator {
 
             // email does not matter
             String email = UUID.randomUUID().toString().substring(0, 20);
-            String username = "syntheticUser" + Integer.toString(count);
+            String username = "syntheticUser" + Long.toString(count);
             String password = "synthetic";
             String first_name = getRandom(names);
             String last_name = getRandom(names);
@@ -180,7 +191,7 @@ public class SyntheticDataGenerator {
                 System.out.println("Error writing query");
             }
 
-            System.out.println(query);
+            //System.out.println(query);
         }
 
         try {
@@ -196,7 +207,12 @@ public class SyntheticDataGenerator {
          * database
          */
 
+        System.out.println("Writing connections to database...");
         for (NetworkNode node : data) {
+            if (nodeCount % 1000 == 0) {
+                System.out.println(nodeCount + " remaining nodes to write connections remaining...");
+            }
+            --nodeCount;
             String user_id = node.getUID();
             /* Add all of the followers into the db */
             for (NetworkNode adj : node.getUsersFollowed()) {

@@ -57,9 +57,13 @@ import java.util.*;
  *
  */
 public class RelatednessTree {
-    private static double P = .75; // divergence penalty
+    private static double downPenalty = .96;
+    private static double upPenalty = .7;
+    private static double heightPenalty = .99;
+
+
     private RelatednessTreeNode root;
-    private Map<String, RelatednessTreeNode> fields;
+    private Map<String, List<RelatednessTreeNode>> fields;
     private Map<RelatednessTreeNode, Map<RelatednessTreeNode,List<RelatednessTreeNode>>> pathDP;
     public RelatednessTree(RelatednessTreeNode root) {
         this.root = root;
@@ -75,14 +79,15 @@ public class RelatednessTree {
     }
 
     public void addField(RelatednessTreeNode node) {
-        this.fields.put(node.getField(), node);
+        this.fields.putIfAbsent(node.getField(), new ArrayList<>());
+        this.fields.get(node.getField()).add(node);
     }
 
-    public void addFields(Map<String, RelatednessTreeNode> fields) {
+    public void addFields(Map<String, List<RelatednessTreeNode>> fields) {
         this.fields.putAll(fields);
     }
 
-    public Map<String, RelatednessTreeNode> getFields() {
+    public Map<String, List<RelatednessTreeNode>> getFields() {
         return this.fields;
     }
 
@@ -93,8 +98,6 @@ public class RelatednessTree {
         RelatednessTreeNode moreGeneric = null;
         RelatednessTreeNode lessGeneric = null;
 
-        distance = Math.max(distance, 1);
-
         if (n1.getDepth() > n2.getDepth()) {
             moreGeneric = n2;
             lessGeneric = n1;
@@ -103,23 +106,24 @@ public class RelatednessTree {
             moreGeneric = n1;
             lessGeneric = n2;
         }
+        if (n1.getField().equals("science") && n2.getField().equals("science")) {
+            System.out.print("here");
+        }
         // Case A:
         if (lca == moreGeneric || lca == lessGeneric) {
-
-            // lessGeneric is under the subtree where root = moreGeneric
-
-            // TODO: Consider changing this equation to be more lenient?
             // Going from moreGeneric to less generic
             if (n1 == moreGeneric) {
-                return 1 / distance;
+                return Math.pow(downPenalty, distance) * Math.pow(heightPenalty, n2.getHeight());
             } // Less generic to more generic
             else if (n1 == lessGeneric) {
-                return 1 / distance;
+                return Math.pow(upPenalty, distance) * Math.pow(heightPenalty, n2.getHeight());
             }
         }
 
         // Case B:
-        return (1/distance) * RelatednessTree.P;
+        int upMoves = n1.getDepth() - lca.getDepth();
+        int downMoves = (int)distance - upMoves;
+        return Math.pow(upPenalty, upMoves) * Math.pow(downPenalty, downMoves) * Math.pow(heightPenalty, n2.getHeight());
     }
 
     public RelatednessTreeNode getRoot() {
@@ -179,16 +183,16 @@ public class RelatednessTree {
             path.addAll(pathDP.get(current).get(destination));
             return true;
         }
-        if (current.getField().equals(destination.getField())) {
+        if (current == destination) {
             path.add(destination);
             return true;
         }
 
-        for (RelatednessTreeNode adjacent : current.getSubfields()) {
+        for (RelatednessTreeNode adjacent : current.getSubfields().values()) {
             /* Found path */
             if (getPathToNode(destination, adjacent, path) == true) {
                 // may have already been added
-                if (!path.get(path.size() - 1).getField().equals(adjacent.getField())) {
+                if (!(path.get(path.size() - 1) == adjacent)) {
                     path.add(adjacent);
                 }
 

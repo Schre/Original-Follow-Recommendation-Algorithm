@@ -1,32 +1,31 @@
 package server.network.relatednesstree;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 
 public class RelatednessTreeNode {
-    private Set<RelatednessTreeNode> subfields;
+    private HashMap<String,RelatednessTreeNode> subfields;
     private String field;
     private Integer depth;
+    private int height;
 
     public RelatednessTreeNode(String field) {
         this.field = field;
-        this.subfields = new HashSet<>();
+        this.subfields = new HashMap<>();
         this.depth = 0;
+        this.height = -1;
     }
 
-    public RelatednessTreeNode(String field, Set<RelatednessTreeNode> children) {
-        this.field = field;
-        this.subfields = children;
-        this.depth = 0;
-    }
 
     public int getDepth() {
         return this.depth;
     }
 
-    public Set<RelatednessTreeNode> getSubfields() {
+    public int getHeight() {
+        return this.height;
+    }
+
+    public Map<String,RelatednessTreeNode> getSubfields() {
         return this.subfields;
     }
 
@@ -35,21 +34,39 @@ public class RelatednessTreeNode {
     }
 
     public void addSubtree(RelatednessTreeNode node) {
+        /*if (this.getField().equals("computer science")) {
+            System.out.print("cs");
+        }*/
+        this.subfields.put(node.getField(), node);
+        //calculateHeights();
         incrementDepths(node);
-        this.subfields.add(node);
     }
 
-    private void incrementDepths(RelatednessTreeNode node) {
-        node.depth++;
+    public int calculateHeights() {
+        return calculateHeights(this);
+    }
 
-        for (RelatednessTreeNode adj : node.getSubfields()) {
+    private int calculateHeights(RelatednessTreeNode node) {
+        int max = 0;
+
+        for (RelatednessTreeNode adj : node.getSubfields().values()) {
+            int adjHeight = calculateHeights(adj);
+            max = Math.max(max, adjHeight + 1);
+        }
+        node.height = max;
+        return node.height;
+    }
+    private void incrementDepths(RelatednessTreeNode node) {
+        node.depth++;;
+
+        for (RelatednessTreeNode adj : node.getSubfields().values()) {
             incrementDepths(adj);
         }
     }
     public RelatednessTreeNode addField(String field) {
         RelatednessTreeNode node = new RelatednessTreeNode(field);
         node.depth = this.depth + 1;
-        subfields.add(node);
+        subfields.put(node.getField(), node);
         return node;
     }
 }
