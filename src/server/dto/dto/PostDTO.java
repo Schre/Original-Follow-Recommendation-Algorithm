@@ -14,6 +14,7 @@ public class PostDTO implements Comparable<PostDTO>{
     public String type;
     public String date_created;
     public String post_url;
+    public String content;
 
     public static String generateId() {
         return UUID.randomUUID().toString().substring(0, 20);

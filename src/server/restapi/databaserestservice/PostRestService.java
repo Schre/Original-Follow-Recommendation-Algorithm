@@ -8,6 +8,8 @@ import server.database.queryengine.QueryExecutor;
 import server.dto.dto.PostDTO;
 import server.dto.dto.UserDTO;
 import server.etc.Constants;
+import server.filesystem.FileReader;
+import server.filesystem.FileWriter;
 import server.restapi.RestService;
 import server.service.UserService;
 
@@ -93,6 +95,15 @@ public class PostRestService extends RestService {
         return okJSON(Response.Status.OK, ret.toString(Constants.JSON_INDENT_FACTOR));
     }
 
+    @POST
+    @Path("user/{uid}/type/{type}/file/{fid}")
+    public Response writeToFile(@PathParam("uid") String user_id, @PathParam("type") String type, @PathParam("fid") String file_id, String content) {
+        FileWriter writer = new FileWriter();
+        JSONObject json = new JSONObject();
+
+        json.put("posted", writer.writeFile(user_id, file_id, type, content));
+        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+    }
 
     @POST
     @Path("user/{uid}")
@@ -102,15 +113,20 @@ public class PostRestService extends RestService {
         String pid = PostDTO.generateId();
         try {
             PostDTO post = (new ObjectMapper()).readValue(content, PostDTO.class);
+            post.post_id = pid;
+
             QueryBuilder qb = new QueryBuilder().insert()
                     .into().literal("Posts")
                     .literal("(")
                     .literal("post_id, user_id, category, type, post_url, date_created) ")
                     .literal(" VALUES(")
                     .commaSeparatedStrings(Arrays.asList(new String[]{
-                            pid, user_id, post.category, post.type, post.post_url, sqlDate.toString()}))
+                            post.post_id, user_id, post.category, post.type, post.post_url, sqlDate.toString()}))
                     .literal(") ");
             QueryExecutor.execute(qb.build());
+
+            FileWriter fw = new FileWriter();
+            fw.writeFile(user_id, post.post_id, "text", post.content);
         }
         catch (Exception e) {
             System.out.print(e.getMessage());
@@ -118,6 +134,23 @@ public class PostRestService extends RestService {
             return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
         }
         json.put("posted", "true");
+        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+    }
+
+    @GET
+    @Path("user/{uid}/type/{type}/id/{pid}")
+    public Response getUserFile(@PathParam("uid") String user_id, @PathParam("type") String type, @PathParam("pid") String post_id) {
+        JSONObject json = new JSONObject();
+
+        try {
+            FileReader fw = new FileReader();
+            String text = fw.readText(user_id, type, post_id);
+            json.put("content", text);
+        }
+        catch (Exception e) {
+            System.out.print(e.getMessage());
+            return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+        }
         return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
     }
 }

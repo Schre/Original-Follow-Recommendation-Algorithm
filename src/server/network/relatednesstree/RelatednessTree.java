@@ -57,9 +57,9 @@ import java.util.*;
  *
  */
 public class RelatednessTree {
-    private static double downPenalty = .96;
+    private static double downPenalty = .9;
     private static double upPenalty = .7;
-    private static double heightPenalty = .99;
+    private static double heightPenalty = 1.0;
 
 
     private RelatednessTreeNode root;

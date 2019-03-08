@@ -1,5 +1,8 @@
 package server.etc;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 /**
  * We should consider splitting these constants up into different files.
  * I.e., database related constants in one file, jetty related in another.

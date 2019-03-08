@@ -14,13 +14,18 @@ import java.io.IOException;
 import java.security.InvalidParameterException;
 import java.util.*;
 
-// TODO: Instead of having mutliple nodes with the same field, have single node with potentially multiple parents and calculate LCA that minimizes distance
-// TODO: Alternatively, if have multiple nodes that have same field, make their subtrees identical. Wastes space, but easier to implement for now.
 
 /***
  * These matrix values are hard-coded for now
  * In the future these should be read in from
  * a configuration file.
+ *
+ * if have multiple nodes that have same field, make their subtrees identical.
+ * Wastes space, but easier to implement as it preserves the property of a tree.
+ * if we were to simply point to preexisting nodes, some nodes could have multiple parents
+ * and we would not technically have a tree structure.
+ *
+ * TODO: If algorithm starts consuming too much memory, use a graph instead of a tree (for reasons mentioned above)
  */
 
 
@@ -32,12 +37,6 @@ public class RelatednessMatrix {
     private static void addField(String field) {
         matrix.put(field, new HashMap<>());
     }
-
-    /***
-     * Assume symmetric matrix for now:
-     * I.e., if A->B = v,
-     *          B->A = v also
-     */
     private static void addRelation(String first, String second, double value) {
         matrix.get(first).put(second, value);
         //matrix.get(second).put(first, value);
