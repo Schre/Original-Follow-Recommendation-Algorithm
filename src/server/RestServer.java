@@ -43,7 +43,8 @@ public class RestServer {
         try {
             jettyServer.start();
             jettyServer.join();
-        } finally {
+        } catch (Exception e) {
+            e.printStackTrace();
             jettyServer.destroy();
         }
     }

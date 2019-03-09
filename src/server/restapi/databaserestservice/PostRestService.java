@@ -11,6 +11,7 @@ import server.etc.Constants;
 import server.filesystem.FileReader;
 import server.filesystem.FileWriter;
 import server.restapi.RestService;
+import server.service.PostService;
 import server.service.UserService;
 
 import javax.ws.rs.GET;
@@ -28,22 +29,60 @@ public class PostRestService extends RestService {
     @GET
     @Path("user/{uid}")
     public Response getPostsByUser(@PathParam("uid") String user_id) {
+        List<PostDTO> posts = (new PostService()).getPosts(user_id, true);
         JSONObject json = new JSONObject();
-
-        try {
-            QueryBuilder qb = new QueryBuilder().select()
-                    .star().from().literal("Posts ")
-                    .where()
-                    .literal("user_id=")
-                    .string(user_id);
-            json = QueryExecutor.runQuery(qb.build());
-        }
-        catch (Exception e) {
-            System.out.print(e.getMessage());
-            return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+        int id = 0;
+        for (PostDTO post : posts) {
+            try {
+                JSONObject postJson = new JSONObject((new ObjectMapper()).writeValueAsString(post));
+                json.put(Integer.toString(++id), postJson);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
         }
         return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
     }
+
+
+
+    @GET
+    @Path("user/{uid}/recent/{K}")
+    public Response getKMostRecentPostsByUser(@PathParam("uid") String user_id, @PathParam("K") int K) {
+        return null;
+    }
+    @GET
+    @Path("user/{uid}/id/{pid}")
+    public Response getPostByUser(@PathParam("uid") String user_id, @PathParam("pid") String post_id) {
+        PostDTO post = (new PostService()).getPost(user_id, post_id, true);
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            JSONObject json = new JSONObject(mapper.writeValueAsString(post));
+            return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return okJSON(Response.Status.INTERNAL_SERVER_ERROR, "{}");
+        }
+    }
+
+    @GET
+    @Path("user/{uid}/id/{pid}/contentless")
+    public Response getContentlessPostByUser(@PathParam("uid") String user_id, @PathParam("pid") String post_id) {
+        PostDTO post = (new PostService()).getPost(user_id, post_id, false);
+        ObjectMapper mapper = new ObjectMapper();
+
+        try {
+            JSONObject json = new JSONObject(mapper.writeValueAsString(post));
+            return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return okJSON(Response.Status.INTERNAL_SERVER_ERROR, "{}");
+        }
+    }
+
 
     @GET
     @Path("user/{uid}/feed")
@@ -54,6 +93,7 @@ public class PostRestService extends RestService {
         Set<UserDTO> followings = us.getUserFollowings(user_id);
         List<PostDTO> posts = new ArrayList<>();
 
+        //TODO: PostService should handle this
         /* Get all posts by followers */
         for (UserDTO following : followings) {
             JSONObject postsJson = new JSONObject();
@@ -109,32 +149,23 @@ public class PostRestService extends RestService {
     @Path("user/{uid}")
     public Response createUserPost(@PathParam("uid") String user_id, String content) {
         JSONObject json = new JSONObject();
-        java.sql.Date sqlDate = new java.sql.Date(new java.util.Date().getTime());
+        String timestamp = Long.toString(new java.util.Date().getTime());
         String pid = PostDTO.generateId();
+        boolean success;
         try {
             PostDTO post = (new ObjectMapper()).readValue(content, PostDTO.class);
             post.post_id = pid;
-
-            QueryBuilder qb = new QueryBuilder().insert()
-                    .into().literal("Posts")
-                    .literal("(")
-                    .literal("post_id, user_id, category, type, post_url, date_created) ")
-                    .literal(" VALUES(")
-                    .commaSeparatedStrings(Arrays.asList(new String[]{
-                            post.post_id, user_id, post.category, post.type, post.post_url, sqlDate.toString()}))
-                    .literal(") ");
-            QueryExecutor.execute(qb.build());
-
-            FileWriter fw = new FileWriter();
-            fw.writeFile(user_id, post.post_id, "text", post.content);
+            post.date_created = timestamp;
+            post.user_id = user_id;
+            success = (new PostService()).createPost(post);
         }
         catch (Exception e) {
+            e.printStackTrace();
             System.out.print(e.getMessage());
-            json.put("posted", "false");
-            return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+            success = false;
         }
-        json.put("posted", "true");
-        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+        json.put("posted", success);
+        return getContentlessPostByUser(user_id, pid);
     }
 
     @GET
@@ -144,8 +175,25 @@ public class PostRestService extends RestService {
 
         try {
             FileReader fw = new FileReader();
-            String text = fw.readText(user_id, type, post_id);
+            String text = fw.readFile(user_id, type, post_id);
             json.put("content", text);
+        }
+        catch (Exception e) {
+            System.out.print(e.getMessage());
+            return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+        }
+        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+    }
+
+    @GET
+    @Path("user/{uid}/type/{type}")
+    public Response getAllUserFiles(@PathParam("uid") String user_id, @PathParam("type") String type) {
+        JSONObject json = new JSONObject();
+
+        try {
+            FileReader fw = new FileReader();
+            //String text = fw.readText(user_id, type, post_id);
+            //json.put("content", text);
         }
         catch (Exception e) {
             System.out.print(e.getMessage());

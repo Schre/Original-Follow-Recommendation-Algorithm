@@ -1,14 +1,18 @@
 package server.filesystem;
 
+import server.dto.dto.PostDTO;
+import server.restapi.databaserestservice.PostRestService;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.List;
 
 public class FileReader {
-    public String readText(String user_id, String type, String file_id) {
+    public String readFile(String user_id, String type, String file_id) {
         Path textFile = FSUtils.getUserOwnedFile(user_id, type, file_id);
         String ret = null;
         try {
@@ -26,5 +30,23 @@ public class FileReader {
         }
 
         return ret;
+    }
+
+    public List<PostDTO> readFiles(String user_id, String type) {
+        Path typeDirectory = FSUtils.getUserOwnedDirectory(user_id, type);
+        String ret = null;
+        try {
+            // get all files in directory
+            //PostRestService service = new PostRestService();
+            File directory = new File(typeDirectory.toString());
+            for (File file : directory.listFiles()) {
+
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return null;
     }
 }

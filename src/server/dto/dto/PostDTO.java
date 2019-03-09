@@ -23,13 +23,12 @@ public class PostDTO implements Comparable<PostDTO>{
     @Override
     public int compareTo(PostDTO o) {
         try {
-            SimpleDateFormat sdfA = new SimpleDateFormat("yyyy-MM-dd");
-            SimpleDateFormat sdfB = new SimpleDateFormat("yyyy-MM-dd");
-            Date dA = sdfA.parse(this.date_created);
-            Date dB = sdfB.parse(o.date_created);
-            return dA.compareTo(dB);
+            Date dateA = new Date(Long.parseLong(this.date_created));
+            Date dateB = new Date(Long.parseLong(o.date_created));
+
+            return dateA.compareTo(dateB);
         }
-        catch (ParseException e) {
+        catch (Exception e) {
             e.printStackTrace();
             return 0;
         }

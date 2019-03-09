@@ -106,8 +106,8 @@ public class QueryExecutor {
             }
 
             stmt = con.createStatement();
-            executed =  stmt.execute(query);
-
+            stmt.execute(query);
+            executed = true;
         } catch (Exception e) {
             System.err.println("Error executing query: " + e.getMessage());
         } finally {
