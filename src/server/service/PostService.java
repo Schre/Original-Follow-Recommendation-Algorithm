@@ -15,10 +15,7 @@ import server.restapi.databaserestservice.PostRestService;
 
 import javax.ws.rs.core.Response;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class PostService {
 
@@ -45,6 +42,14 @@ public class PostService {
         }
         return true;
     }
+
+    public List<PostDTO> getKMostRecentPosts(String user_id, int K, boolean includeContent) {
+        List<PostDTO> posts = this.getPosts(user_id, includeContent);
+        Collections.sort(posts);
+        K = Math.min(K, posts.size());
+        return posts.subList(0, K);
+    }
+
     public PostDTO getPost(String user_id, String post_id, boolean includeContent) {
 
         JSONObject json;

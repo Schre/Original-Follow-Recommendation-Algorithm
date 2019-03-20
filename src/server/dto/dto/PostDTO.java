@@ -26,7 +26,7 @@ public class PostDTO implements Comparable<PostDTO>{
             Date dateA = new Date(Long.parseLong(this.date_created));
             Date dateB = new Date(Long.parseLong(o.date_created));
 
-            return dateA.compareTo(dateB);
+            return dateB.compareTo(dateA);
         }
         catch (Exception e) {
             e.printStackTrace();

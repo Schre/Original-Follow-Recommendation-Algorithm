@@ -90,10 +90,13 @@ public class FollowerRecommendationSystem {
             by utilizing the min heap
 
          **/
-
+        Set<String> followedIds = new HashSet<>();
+        for (NetworkNode followed : user.getUsersFollowed()) {
+            followedIds.add(followed.getUID());
+        }
         for (NetworkNode userFollowed : user.getUsersFollowed()) {
             for (NetworkNode mutualFollower : userFollowed.getUsersFollowed()) {
-                if (mutualFollower == user)
+                if (mutualFollower == user || followedIds.contains(mutualFollower.getUID()))
                     continue;
                 mutualFollowers.putIfAbsent(mutualFollower, 0);
 

@@ -49,8 +49,21 @@ public class PostRestService extends RestService {
     @GET
     @Path("user/{uid}/recent/{K}")
     public Response getKMostRecentPostsByUser(@PathParam("uid") String user_id, @PathParam("K") int K) {
-        return null;
+        List<PostDTO> posts = (new PostService()).getKMostRecentPosts(user_id, K, true);
+        JSONObject json = new JSONObject();
+        int id = 0;
+        for (PostDTO post : posts) {
+            try {
+                JSONObject postJson = new JSONObject((new ObjectMapper()).writeValueAsString(post));
+                json.put(Integer.toString(++id), postJson);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
     }
+
     @GET
     @Path("user/{uid}/id/{pid}")
     public Response getPostByUser(@PathParam("uid") String user_id, @PathParam("pid") String post_id) {
@@ -59,6 +72,10 @@ public class PostRestService extends RestService {
 
         try {
             JSONObject json = new JSONObject(mapper.writeValueAsString(post));
+            UserDTO userDTO = (new UserService()).getUser(user_id);
+            json.put("first_name", userDTO.first_name);
+            json.put("last_name", userDTO.last_name);
+            json.put("field", userDTO.field);
             return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
         }
         catch (Exception e) {
@@ -75,6 +92,7 @@ public class PostRestService extends RestService {
 
         try {
             JSONObject json = new JSONObject(mapper.writeValueAsString(post));
+            //json.put("first_name")
             return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
         }
         catch (Exception e) {
@@ -85,29 +103,23 @@ public class PostRestService extends RestService {
 
 
     @GET
-    @Path("user/{uid}/feed")
-    public Response getUserFeed(@PathParam("uid") String user_id) {
+    @Path("user/{uid}/feed/from/{I}/to/{J}")
+    public Response getUserFeed(@PathParam("uid") String user_id, @PathParam("I") int I, @PathParam("J") int J) {
         UserService us = new UserService();
         JSONObject ret = new JSONObject();
 
         Set<UserDTO> followings = us.getUserFollowings(user_id);
+        followings.add(us.getUser(user_id));
         List<PostDTO> posts = new ArrayList<>();
 
-        //TODO: PostService should handle this
         /* Get all posts by followers */
         for (UserDTO following : followings) {
             JSONObject postsJson = new JSONObject();
             try {
-                QueryBuilder qb = new QueryBuilder().select()
-                        .star().from().literal("Posts")
-                        .where()
-                        .literal("user_id=")
-                        .string(following.user_id);
-                postsJson = QueryExecutor.runQuery(qb.build());
+                postsJson = new JSONObject(this.getPostsByUser(following.user_id).getEntity().toString());
 
                 for (String postKey : postsJson.keySet()) {
                     JSONObject post = postsJson.getJSONObject(postKey);
-
                     ObjectMapper objectMapper = new ObjectMapper();
                     PostDTO postObj = objectMapper.readValue(post.toString(Constants.JSON_INDENT_FACTOR), PostDTO.class);
                     posts.add(postObj);
@@ -120,19 +132,35 @@ public class PostRestService extends RestService {
 
 
         Collections.sort(posts);
-
+        I = Math.min(I, posts.size());
+        J = Math.min(J, posts.size());
+        posts = posts.subList(I, J);
         int count = 0;
         for (PostDTO postDTO : posts) {
             ObjectMapper objectMapper = new ObjectMapper();
             try {
                 String s = objectMapper.writeValueAsString(postDTO);
-                ret.put(Integer.toString(count), new JSONObject(s));
+                UserDTO user = us.getUser(postDTO.user_id);
+
+                JSONObject json = new JSONObject(s);
+                /* temporary hack. have UI fetch this instead */
+                json.put("first_name", user.first_name);
+                json.put("last_name", user.last_name);
+                json.put("user_id", user.user_id);
+                json.put("field",user.field);
+                json.put("profile_picture_url", user.profile_picture_url);
+                /*                                           */
+                ret.put(Integer.toString(count), json);
+                ++count;
+
             }
             catch (JsonProcessingException e) {
                 e.printStackTrace();
             }
         }
-        return okJSON(Response.Status.OK, ret.toString(Constants.JSON_INDENT_FACTOR));
+        JSONObject response = new JSONObject();
+        response.put("data", ret);
+        return okJSON(Response.Status.OK, response.toString(Constants.JSON_INDENT_FACTOR));
     }
 
     @POST
@@ -165,7 +193,10 @@ public class PostRestService extends RestService {
             success = false;
         }
         json.put("posted", success);
-        return getContentlessPostByUser(user_id, pid);
+        if (success) {
+            return getPostByUser(user_id, pid);
+        }
+        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
     }
 
     @GET

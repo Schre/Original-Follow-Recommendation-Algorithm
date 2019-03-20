@@ -34,6 +34,7 @@ public class RelatednessMatrix {
 
     public static Map<String, Map<String, Double>> matrix;
 
+
     private static void addField(String field) {
         matrix.put(field, new HashMap<>());
     }

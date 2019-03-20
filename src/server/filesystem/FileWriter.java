@@ -26,7 +26,10 @@ public class FileWriter {
         try {
             Files.createFile(textFile);
             java.io.FileWriter writer = new java.io.FileWriter(textFile.toString());
+            BufferedWriter bw = new BufferedWriter(writer);
+
             writer.write(content);
+            writer.flush();
             writer.close();
         }
         catch (IOException ioe) {

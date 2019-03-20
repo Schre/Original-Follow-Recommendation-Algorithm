@@ -26,6 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 
+// TODO: All queries should be in UserService
 @Produces(MediaType.APPLICATION_JSON)
 @Path("users")
 public class UserRestService extends RestService {
@@ -62,7 +63,7 @@ public class UserRestService extends RestService {
     @Path("{uid}/followings")
     public Response getUserFollowings(@PathParam("uid") String user_id) {
         JSONObject json = new JSONObject();
-
+        
         try {
             /* Select all of the follwers for our user */
             String query = "SELECT Users.* FROM " +
@@ -231,6 +232,7 @@ public class UserRestService extends RestService {
         UserService userService = new UserService();
         int indx = K;
         for (NetworkNode node : topK) {
+            --K;
             UserDTO userDTO = userService.getUser(node.getUID());
             JSONObject obj = new JSONObject();
             obj.put("user_id", node.getUID());
@@ -241,20 +243,21 @@ public class UserRestService extends RestService {
             obj.put("gender", userDTO.gender);
             obj.put("username", userDTO.username);
             ret.put(Integer.toString(K), obj);
-            --K;
         }
 
-        Map<String, Double> stats = UserNetworkStatistics.computeFieldPercentages(new HashSet<>(topK));
+        //Map<String, Double> stats = UserNetworkStatistics.computeFieldPercentages(new HashSet<>(topK));
 
-        JSONObject statistics = new JSONObject();
+        /*JSONObject statistics = new JSONObject();
         for (String profession : stats.keySet()) {
             Double percentage = stats.get(profession);
             statistics.put(profession, percentage);
         }
 
-        ret.put("statistics", statistics);
+        ret.put("statistics", statistics);*/
 
-        return okJSON(Response.Status.OK, ret.toString(Constants.JSON_INDENT_FACTOR));
+        JSONObject response = new JSONObject();
+        response.put("response", ret);
+        return okJSON(Response.Status.OK, response.toString(Constants.JSON_INDENT_FACTOR));
     }
 
     private void populateUserTrie(String uid) {
