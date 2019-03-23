@@ -14,11 +14,13 @@ import server.restapi.RestService;
 import server.service.PostService;
 import server.service.UserService;
 
+import javax.activation.MimetypesFileTypeMap;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -44,6 +46,15 @@ public class PostRestService extends RestService {
         return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
     }
 
+    @GET
+    @Path("user/{uid}/icon")
+    public Response getIconForUser(@PathParam("uid") String user_id) {
+        //PostDTO post = (new PostService()).getPost(user_id, "icon",true);
+        FileReader fileReader = new FileReader();
+        File image = fileReader.getImage(user_id, "icon");
+        String mt = new MimetypesFileTypeMap().getContentType(image);
+        return Response.ok(image, mt).build();
+    }
 
 
     @GET

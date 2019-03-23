@@ -11,4 +11,8 @@ public class FSUtils {
     static public Path getUserOwnedDirectory(String uid, String type) {
         return Paths.get("./filesystem/" + type + "/" + uid);
     }
+
+    static public Path getFile(String url) {
+        return Paths.get("./filesystem/" + url);
+    }
 }

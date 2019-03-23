@@ -44,6 +44,9 @@ public class FollowerRecommendationSystem {
 
             Set<UserDTO> secondDegreeFollowers = us.getUserFollowings(f.getUID());
             for (UserDTO secondDegreeFollower : secondDegreeFollowers) {
+                if (secondDegreeFollower.user_id.equals(this.user.getUID())) {
+                    continue;
+                }
                 nodes.putIfAbsent(secondDegreeFollower.user_id, new NetworkNode(secondDegreeFollower.user_id, secondDegreeFollower.field));
                 NetworkNode sdf = nodes.get(secondDegreeFollower.user_id);
                 f.addFollowing(sdf);

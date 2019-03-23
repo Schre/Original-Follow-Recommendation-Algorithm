@@ -59,9 +59,34 @@ public class UserRestService extends RestService {
         return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
     }
 
+    @Path("{user_id}/followings")
     @GET
-    @Path("{uid}/followings")
-    public Response getUserFollowings(@PathParam("uid") String user_id) {
+    public Response getUserFollowingSet(@PathParam("user_id") String user_id) {
+        Set<UserDTO> followingSet = (new UserService()).getUserFollowingSet(user_id);
+        JSONObject ret = new JSONObject();
+        JSONObject response = new JSONObject();
+
+
+        ObjectMapper serializer = new ObjectMapper();
+        int i = 0;
+        for (UserDTO user : followingSet) {
+            try {
+                String temp = serializer.writeValueAsString(user);
+                response.put(Integer.toString(i), new JSONObject(temp));
+
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+                continue;
+            }
+            ++i;
+        }
+
+        ret.put("response", response);
+        return okJSON(Response.Status.OK, ret.toString(Constants.JSON_INDENT_FACTOR));
+    }
+    /* internal */
+    public Response getUserFollowings(String user_id) {
         JSONObject json = new JSONObject();
         
         try {

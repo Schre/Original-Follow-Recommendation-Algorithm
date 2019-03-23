@@ -32,6 +32,16 @@ public class FileReader {
         return ret;
     }
 
+    public File getImage(String user_id, String file_id) {
+        Path textFile = FSUtils.getUserOwnedFile(user_id, "image", file_id);
+        File f = new File(textFile.toString());
+        if (!f.exists()) {
+            f = new File(FSUtils.getFile("image/defaults/newusericon").toString());
+        }
+
+        return f;
+    }
+
     public List<PostDTO> readFiles(String user_id, String type) {
         Path typeDirectory = FSUtils.getUserOwnedDirectory(user_id, type);
         String ret = null;

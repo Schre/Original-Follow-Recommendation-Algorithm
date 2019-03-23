@@ -1,7 +1,11 @@
 package server.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
+import server.database.queryengine.QueryExecutor;
+import server.dto.dto.PostDTO;
 import server.dto.dto.UserDTO;
+import server.etc.Constants;
 import server.restapi.databaserestservice.UserRestService;
 
 import javax.ws.rs.core.Response;
@@ -44,6 +48,39 @@ public class UserService {
         return userDTO;
     }
 
+    public Set<UserDTO> getUserFollowingSet(String uid) {
+        JSONObject json = new JSONObject();
+        Set<UserDTO> ret = new HashSet<>();
+        try {
+            /* Select all of the follwers for our user */
+            String query = "SELECT Users.* FROM " +
+                    "(SELECT following_id FROM Users,Followings WHERE Users.user_id=" + "\"" + uid + "\" " +
+                    "AND Users.user_id=Followings.user_id) temp" +
+                    "," +
+                    "Users " +
+                    "WHERE Users.user_id=temp.following_id";
+            json = QueryExecutor.runQuery(query);
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        for (String key : json.keySet()) {
+            try {
+                UserDTO user = new UserDTO();
+
+                JSONObject jsonObject = json.getJSONObject(key);
+                UserDTO obj = objectMapper.readValue(jsonObject.toString(Constants.JSON_INDENT_FACTOR), UserDTO.class);
+                ret.add(obj);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return ret;
+    }
     public Set<UserDTO> getUserFollowings(String uid) {
         Set<UserDTO> followers = new HashSet<>();
         UserRestService urs = new UserRestService();

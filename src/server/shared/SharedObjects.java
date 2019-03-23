@@ -6,6 +6,7 @@ import server.etc.Constants;
 import server.TrieHard.*;
 import server.network.FollowerRecommendationSystem;
 import server.network.RelatednessMatrix;
+import server.notifications.ActionNotificationManager;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -20,10 +21,13 @@ public class SharedObjects {
     private static BoneCP connectionPool;
     private static Set<String> loggedInUsers;
     private static AutoComplete userQueryAutoComplete;
+    private static ActionNotificationManager actionNotificationManager;
+
     public static synchronized void initialize() {
         setUpconnectionPool();
         userQueryAutoComplete = new AutoComplete();
         RelatednessMatrix.initialize();
+        actionNotificationManager = new ActionNotificationManager();
     }
 
     public static AutoComplete getUserQueryAutoComplete() {
@@ -49,6 +53,10 @@ public class SharedObjects {
         loggedInUsers = new HashSet<>();
         loggedInUsers.add(username);
         return true;
+    }
+
+    public static ActionNotificationManager getActionNotificationManager() {
+        return actionNotificationManager;
     }
 
     public static boolean logoutUser(String username) {
