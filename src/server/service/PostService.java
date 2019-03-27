@@ -140,4 +140,86 @@ public class PostService {
             return null;
         }
     }
+
+    public boolean likePost(String user_id, String post_id) {
+        try {
+            String date_created = Long.toString(new java.util.Date().getTime());
+            QueryBuilder qb = new QueryBuilder().insert()
+                    .into().literal("Likes ")
+                    .literal("(")
+                    .literal("post_id, user_id, date_created) ")
+                    .literal(" VALUES(")
+                    .commaSeparatedStrings(Arrays.asList(new String[]{
+                            post_id, user_id, date_created}))
+                    .literal(") ");
+
+            if (!QueryExecutor.execute(qb.build())) {
+                return false;
+            }
+        }
+        catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean userLikesPost(String user_id, String post_id) {
+        try {
+            QueryBuilder qb = new QueryBuilder().select()
+                    .literal("count(*) as count")
+                    .from()
+                    .literal("Likes ")
+                    .where()
+                    .literal("post_id=")
+                    .string(post_id)
+                    .and()
+                    .literal("user_id=")
+                    .string(user_id);
+
+            JSONObject json = QueryExecutor.runQuery(qb.build());
+            return Integer.parseInt(json.getJSONObject("obj0").getString("count")) == 1;
+        }
+        catch (Exception e) {
+            return false;
+        }
+    }
+    public boolean unlikePost(String user_id, String post_id) {
+        try {
+            QueryBuilder qb = new QueryBuilder().delete()
+                    .from().literal("Likes ")
+                    .where()
+                    .literal("user_id=")
+                    .string(user_id)
+                    .and()
+                    .literal("post_id=")
+                    .string(post_id);
+
+            if (!QueryExecutor.execute(qb.build())) {
+                return false;
+            }
+        }
+        catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
+    public int countLikes(String post_id) {
+        try {
+            String date_created = Long.toString(new java.util.Date().getTime());
+            QueryBuilder qb = new QueryBuilder().select()
+                    .literal("count(*) as count")
+                    .from()
+                    .literal("Likes ")
+                    .where()
+                    .literal("post_id=")
+                    .string(post_id);
+
+            JSONObject json = QueryExecutor.runQuery(qb.build());
+            return Integer.parseInt(json.getJSONObject("obj0").getString("count"));
+        }
+        catch (Exception e) {
+            return 0;
+        }
+    }
 }

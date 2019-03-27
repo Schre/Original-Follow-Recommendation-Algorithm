@@ -215,6 +215,11 @@ public class UserRestService extends RestService {
     }
 
     @GET
+    @Path("{uid}/searchforuser")
+    public Response searchForBlank(@PathParam("uid") String uid) {
+        return getTopKFollowRecommendations(uid, 10);
+    }
+    @GET
     @Path("{uid}/searchforuser/{query}")
     public Response searchForUser(@PathParam("uid") String uid, @PathParam("query") String query) {
         AutoComplete ac = SharedObjects.getUserQueryAutoComplete();

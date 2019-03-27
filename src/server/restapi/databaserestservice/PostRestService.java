@@ -15,6 +15,7 @@ import server.service.PostService;
 import server.service.UserService;
 
 import javax.activation.MimetypesFileTypeMap;
+import javax.annotation.PostConstruct;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -43,6 +44,7 @@ public class PostRestService extends RestService {
                 e.printStackTrace();
             }
         }
+        Collections.sort(posts);
         return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
     }
 
@@ -52,6 +54,16 @@ public class PostRestService extends RestService {
         //PostDTO post = (new PostService()).getPost(user_id, "icon",true);
         FileReader fileReader = new FileReader();
         File image = fileReader.getImage(user_id, "icon");
+        String mt = new MimetypesFileTypeMap().getContentType(image);
+        return Response.ok(image, mt).build();
+    }
+
+    @GET
+    @Path("soltek/icon")
+    public Response getSoltekIcon() {
+        //PostDTO post = (new PostService()).getPost(user_id, "icon",true);
+        FileReader fileReader = new FileReader();
+        File image = fileReader.getImage("defaults", "soltek_icon");
         String mt = new MimetypesFileTypeMap().getContentType(image);
         return Response.ok(image, mt).build();
     }
@@ -241,6 +253,52 @@ public class PostRestService extends RestService {
             System.out.print(e.getMessage());
             return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
         }
+        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+    }
+
+    @POST
+    @Path("user/{uid}/like/{pid}")
+    public Response likePost(@PathParam("uid") String uid, @PathParam("pid") String pid) {
+        PostService postService = new PostService();
+        boolean liked = postService.likePost(uid, pid);
+
+        JSONObject json = new JSONObject();
+        json.put("posted", liked);
+        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+
+    }
+
+    @POST
+    @Path("user/{uid}/unlike/{pid}")
+    public Response unlikePost(@PathParam("uid") String uid, @PathParam("pid") String pid) {
+        PostService postService = new PostService();
+        boolean liked = postService.unlikePost(uid, pid);
+
+        JSONObject json = new JSONObject();
+        json.put("posted", liked);
+        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+
+    }
+
+    @GET
+    @Path("likes/{pid}")
+    public Response countLikesOnPost(@PathParam("pid") String pid) {
+        PostService postService = new PostService();
+        int likes = postService.countLikes(pid);
+
+        JSONObject json = new JSONObject();
+        json.put("count", likes);
+        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+
+    }
+
+    @GET
+    @Path("user/{uid}/like/{pid}")
+    public Response getIfUserLikesPost(@PathParam("uid") String uid, @PathParam("pid") String pid) {
+        PostService postService = new PostService();
+        JSONObject json = new JSONObject();
+
+        json.put("likes", postService.userLikesPost(uid, pid));
         return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
     }
 }
