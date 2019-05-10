@@ -2,12 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a2aba4d-5f02-4b85-a054-e0273f3c9542" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/requestNode/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/requestNode/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/notifications/LikeNotification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/requestNode/server/RestServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/requestNode/server/RestServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/requestNode/server/notifications/ActionNotification.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/requestNode/server/notifications/ActionNotification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/requestNode/server/notifications/ActionNotificationManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/requestNode/server/notifications/ActionNotificationManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/requestNode/server/restapi/databaserestservice/PostRestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/requestNode/server/restapi/databaserestservice/PostRestService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/requestNode/server/restapi/databaserestservice/UserRestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/requestNode/server/restapi/databaserestservice/UserRestService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/requestNode/server/shared/SharedObjects.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/requestNode/server/shared/SharedObjects.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/requestNode/server/restapi/notificationrestservice/NotificationRestService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/requestNode/server/restapi/notificationrestservice/NotificationRestService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/requestNode/server/service/NotificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/requestNode/server/service/NotificationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/requestNode/server/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/requestNode/server/service/PostService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/RestServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/RestServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/dto/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/dto/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/notifications/ActionNotification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/notifications/ActionNotification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/notifications/ActionNotificationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/notifications/ActionNotificationManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/restapi/databaserestservice/PostRestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/restapi/databaserestservice/PostRestService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server/restapi/databaserestservice/UserRestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/restapi/databaserestservice/UserRestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/restapi/notificationrestservice/NotificationRestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/restapi/notificationrestservice/NotificationRestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/service/NotificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/service/NotificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/service/UserService.java" afterDir="false" />
     </list>
     <list id="70a38bad-6ca6-440b-bd3b-b8d15bdd966e" name="BuildStuff" comment="" />
     <list id="f706b33c-eed7-4a76-82b9-fb1f32ccc0dd" name="Project Files" comment="Project Files" />
@@ -127,9 +139,11 @@
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.16" value="2" />
+          <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.24" value="2" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -140,7 +154,7 @@
           <entry key="iml" value="2" />
           <entry key="ipr" value="2" />
           <entry key="iws" value="1" />
-          <entry key="java" value="184" />
+          <entry key="java" value="204" />
           <entry key="jpg" value="1" />
           <entry key="json" value="3" />
           <entry key="sql" value="1" />
@@ -154,7 +168,7 @@
           <entry key="IDEA_PROJECT" value="2" />
           <entry key="IDEA_WORKSPACE" value="1" />
           <entry key="Image" value="1" />
-          <entry key="JAVA" value="184" />
+          <entry key="JAVA" value="204" />
           <entry key="JSON" value="3" />
           <entry key="PLAIN_TEXT" value="8" />
           <entry key="SQL" value="1" />
@@ -164,7 +178,7 @@
         <counts>
           <entry key="dummy" value="7" />
           <entry key="gradle" value="3" />
-          <entry key="java" value="63405" />
+          <entry key="java" value="70144" />
           <entry key="json" value="1913" />
           <entry key="txt" value="509" />
         </counts>
@@ -172,7 +186,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="3" />
-          <entry key="JAVA" value="63405" />
+          <entry key="JAVA" value="70144" />
           <entry key="JSON" value="1913" />
           <entry key="PLAIN_TEXT" value="516" />
         </counts>
@@ -184,8 +198,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/restapi/databaserestservice/PostRestService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+            <state relative-caret-position="360">
+              <caret line="71" column="48" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -193,11 +207,32 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/service/PostService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="118" column="21" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/filesystem/FileWriter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server/restapi/databaserestservice/UserRestService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="244" column="5" selection-start-line="244" selection-start-column="5" selection-end-line="244" selection-end-column="5" />
+            <state relative-caret-position="229">
+              <caret line="142" column="30" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8105#8106#0" expanded="true" />
@@ -208,10 +243,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/restapi/notificationrestservice/NotificationRestService.java">
+        <entry file="file://$PROJECT_DIR$/src/server/service/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+            <state relative-caret-position="195">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server/database/queryengine/QueryExecutor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="93" selection-start-line="93" selection-end-line="93" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -220,40 +264,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/service/NotificationService.java">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="17" column="97" selection-start-line="17" selection-start-column="97" selection-end-line="17" selection-end-column="97" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="345">
+              <caret line="80" selection-start-line="80" selection-end-line="80" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/shared/SharedObjects.java">
+        <entry file="file://$PROJECT_DIR$/src/server/dto/dto/UserDTO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/TrieHard/AutoComplete.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/notifications/ActionNotification.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+              <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+              <folding>
+                <element signature="e#543#544#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -261,29 +288,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/notifications/ActionNotificationManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+            <state relative-caret-position="196">
+              <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/service/PostService.java">
+        <entry file="file://$PROJECT_DIR$/src/server/notifications/ActionNotification.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1485">
-              <caret line="114" column="42" selection-start-line="114" selection-end-line="115" />
+            <state relative-caret-position="450">
+              <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#852#853#0" expanded="true" />
+                <element signature="e#887#888#0" expanded="true" />
+                <element signature="e#934#935#0" expanded="true" />
+                <element signature="e#974#975#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/service/UserService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1050">
-              <caret line="81" selection-start-line="81" selection-end-line="81" />
             </state>
           </provider>
         </entry>
@@ -299,24 +321,12 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.date()</find>
-      <find>jsonpar</find>
-      <find>user/</find>
-      <find>create</find>
-      <find>post</find>
-      <find>user/{uid}</find>
-      <find>user/{uid}&quot;</find>
-      <find>{K}</find>
-      <find>@GET</find>
-      <find>mutualfollower</find>
       <find>getusersfollowed</find>
       <find>new jsonobject</find>
       <find>entity</find>
       <find>.sort</find>
       <find>dist</find>
       <find>@post</find>
-      <find>getpost</find>
-      <find>feed</find>
       <find>recommend</find>
       <find>topk</find>
       <find>image</find>
@@ -329,6 +339,18 @@
       <find>objectmapper</find>
       <find>&quot;response</find>
       <find>getpostsby</find>
+      <find>.selec</find>
+      <find>postdto</find>
+      <find>date</find>
+      <find>like</find>
+      <find>foruser</find>
+      <find>follow</find>
+      <find>getmutualfollow</find>
+      <find>from</find>
+      <find>feed</find>
+      <find>getposts</find>
+      <find>posts</find>
+      <find>getpost</find>
     </findStrings>
     <replaceStrings>
       <replace>TransactionalItem</replace>
@@ -362,10 +384,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/server/network/relatednessMatrixConfig.txt" />
-        <option value="$PROJECT_DIR$/src/server/dto/dto/UserDTO.java" />
-        <option value="$PROJECT_DIR$/src/server/database/queryengine/QueryBuilder.java" />
-        <option value="$PROJECT_DIR$/src/trie/TrieHard/PerfectHashMap.java" />
         <option value="$PROJECT_DIR$/src/trie/TrieHard/TrieMatch.java" />
         <option value="$PROJECT_DIR$/src/trie/TrieHard/TrieNode.java" />
         <option value="$PROJECT_DIR$/src/trie/TrieHard/Tries.java" />
@@ -394,23 +412,27 @@
         <option value="$PROJECT_DIR$/src/server/etc/Constants.java" />
         <option value="$PROJECT_DIR$/src/server/filesystem/Util.java" />
         <option value="$PROJECT_DIR$/src/server/database/queryengine/QueryExecutor.java" />
-        <option value="$PROJECT_DIR$/src/server/RestServer.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/server/network/RelatednessMatrix.java" />
         <option value="$PROJECT_DIR$/src/server/dto/dto/PostDTO.java" />
         <option value="$PROJECT_DIR$/src/server/filesystem/FileWriter.java" />
         <option value="$PROJECT_DIR$/src/server/network/FollowerRecommendationSystem.java" />
-        <option value="$PROJECT_DIR$/src/server/service/PostService.java" />
         <option value="$PROJECT_DIR$/src/server/restapi/RestService.java" />
         <option value="$PROJECT_DIR$/src/server/filesystem/FileReader.java" />
         <option value="$PROJECT_DIR$/src/server/filesystem/FSUtils.java" />
-        <option value="$PROJECT_DIR$/src/server/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/extras/ActionNotification.java" />
         <option value="$PROJECT_DIR$/src/extras/ActionNotificationManager.java" />
-        <option value="$PROJECT_DIR$/src/server/restapi/notificationrestservice/NotificationRestService.java" />
-        <option value="$PROJECT_DIR$/src/server/notifications/ActionNotification.java" />
         <option value="$PROJECT_DIR$/src/server/shared/SharedObjects.java" />
+        <option value="$PROJECT_DIR$/src/server/notifications/LikeNotificationDecorator.java" />
+        <option value="$PROJECT_DIR$/src/server/service/PostService.java" />
+        <option value="$PROJECT_DIR$/src/server/RestServer.java" />
         <option value="$PROJECT_DIR$/src/server/service/NotificationService.java" />
+        <option value="$PROJECT_DIR$/src/server/restapi/notificationrestservice/NotificationRestService.java" />
+        <option value="$PROJECT_DIR$/src/server/notifications/LikeNotification.java" />
+        <option value="$PROJECT_DIR$/src/server/notifications/ActionNotification.java" />
+        <option value="$PROJECT_DIR$/src/server/notifications/ActionNotificationManager.java" />
+        <option value="$PROJECT_DIR$/src/server/dto/dto/UserDTO.java" />
+        <option value="$PROJECT_DIR$/src/server/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/server/restapi/databaserestservice/PostRestService.java" />
         <option value="$PROJECT_DIR$/src/server/restapi/databaserestservice/UserRestService.java" />
       </list>
@@ -428,11 +450,11 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="139" />
-    <option name="y" value="27" />
-    <option name="width" value="927" />
-    <option name="height" value="1053" />
+  <component name="ProjectFrameBounds" extendedState="4">
+    <option name="x" value="67" />
+    <option name="y" value="25" />
+    <option name="width" value="926" />
+    <option name="height" value="1055" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -440,8 +462,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -470,7 +490,7 @@
               <item name="requestNode" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="restapi" type="462c0819:PsiDirectoryNode" />
+              <item name="notifications" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="requestNode" type="b2602c69:ProjectViewProjectNode" />
@@ -483,14 +503,16 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="user&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/UserRestService.java&#10;postr&#9;PSI&#9;JAVA://server.restapi.databaserestservice.PostRestService&#10;postrest&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/PostRestService.java&#10;post&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;userser&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/UserService.java&#10;filerea&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/filesystem/FileReader.java&#10;json&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednessTree.json&#10;getuserfollowings&#9;PSI&#9;JAVA://server.restapi.databaserestservice.UserRestService#getUserFollowings&#10;postres&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/PostRestService.java&#10;postre&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/PostRestService.java&#10;postdt&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/dto/dto/PostDTO.java&#10;matri&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/RelatednessMatrix.java&#10;syntheticda&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/syntheticdata/SyntheticDataGenerator.java&#10;userre&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/UserRestService.java&#10;follow&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/FollowerRecommendationSystem.java&#10;userres&#9;PSI&#9;JAVA://server.restapi.databaserestservice.UserRestService&#10;userr&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/UserRestService.java&#10;posts&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;postser&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;servi&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;po&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/PostRestService.java&#10;postserv&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;postdto&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/dto/dto/PostDTO.java&#10;userserv&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/UserService.java&#10;serv&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;rest&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/PostRestService.java&#10;service&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;querybuil&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/database/queryengine/QueryBuilder.java&#10;filere&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/filesystem/FileReader.java&#10;constan&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/etc/Constants.java&#10;filewriter&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/filesystem/FileWriter.java&#10;relatedness&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednesstree/RelatednessTree.java&#10;synthe&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/syntheticdata/SyntheticDataGenerator.java&#10;fol&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/FollowerRecommendationSystem.java&#10;node&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednesstree/RelatednessTreeNode.java&#10;relatedne&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednesstree/RelatednessTree.java&#10;relatednessTr&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednesstree/RelatednessTree.java&#10;relate&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednesstree/RelatednessTreeNode.java&#10;relatedn&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednesstree/RelatednessTreeNode.java&#10;matrix&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/RelatednessMatrix.java&#10;treenod&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednesstree/RelatednessTreeNode.java&#10;relatednesstree&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednesstree/RelatednessTree.java&#10;treen&#9;PSI&#9;JAVA://server.network.relatednesstree.RelatednessTreeNode&#10;user r&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/UserRestService.java&#10;restserver&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/RestServer.java&#10;rel&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednesstree/RelatednessTree.java&#10;synthetic&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/syntheticdata/SyntheticDataGenerator.java&#10;relatednesstreenod&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednesstree/RelatednessTreeNode.java&#10;related&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednesstree/RelatednessTreeNode.java&#10;relatednessno&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednesstree/RelatednessTreeNode.java" />
+    <property name="SearchEverywhereHistoryKey" value="userres&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/UserRestService.java&#10;postrest&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/PostRestService.java&#10;postser&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;userser&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/UserService.java&#10;userrest&#9;PSI&#9;JAVA://server.restapi.databaserestservice.UserRestService&#10;userdt&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/dto/dto/UserDTO.java&#10;usere&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/UserRestService.java&#10;notifi&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/notifications/ActionNotification.java&#10;lik&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/notifications/LikeNotification.java&#10;notificationrest&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/notificationrestservice/NotificationRestService.java&#10;userr&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/UserRestService.java&#10;liken&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/notifications/LikeNotification.java&#10;ac&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/notifications/ActionNotification.java&#10;notification&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/notifications/ActionNotification.java&#10;notificationman&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/notifications/ActionNotificationManager.java&#10;rest&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/notificationrestservice/NotificationRestService.java&#10;like&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/notifications/LikeNotification.java&#10;actionnotif&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/notifications/ActionNotification.java&#10;notificationservice&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/NotificationService.java&#10;restserver&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/RestServer.java&#10;notificationres&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/notificationrestservice/NotificationRestService.java&#10;postr&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/PostRestService.java&#10;likenot&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/notifications/LikeNotification.java&#10;actionnotifi&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/notifications/ActionNotification.java&#10;actionno&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/notifications/ActionNotificationManager.java&#10;post&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/PostRestService.java&#10;actio&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/notifications/ActionNotification.java&#10;postres&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/PostRestService.java&#10;related&#9;PSI&#9;JAVA://server.network.relatednesstree.RelatednessTree&#10;relatedn&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/RelatednessMatrix.java&#10;follow&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/FollowerRecommendationSystem.java&#10;user&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/UserRestService.java&#10;filerea&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/filesystem/FileReader.java&#10;json&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/relatednessTree.json&#10;getuserfollowings&#9;PSI&#9;JAVA://server.restapi.databaserestservice.UserRestService#getUserFollowings&#10;postre&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/PostRestService.java&#10;postdt&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/dto/dto/PostDTO.java&#10;matri&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/network/RelatednessMatrix.java&#10;syntheticda&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/syntheticdata/SyntheticDataGenerator.java&#10;userre&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/UserRestService.java&#10;posts&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;servi&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;po&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/restapi/databaserestservice/PostRestService.java&#10;postserv&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;postdto&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/dto/dto/PostDTO.java&#10;userserv&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/UserService.java&#10;serv&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;service&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/service/PostService.java&#10;querybuil&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/database/queryengine/QueryBuilder.java&#10;filere&#9;FILE&#9;file:///home/samuel/capstone/requestNode/src/server/filesystem/FileReader.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553443947078" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554401704380" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -609,6 +631,8 @@
       <workItem from="1552673410441" duration="18054000" />
       <workItem from="1553291530510" duration="5894000" />
       <workItem from="1553444018591" duration="25000" />
+      <workItem from="1553543935309" duration="17097000" />
+      <workItem from="1554135936098" duration="13766000" />
     </task>
     <task id="LOCAL-00001" summary="Add thread context for tracking objects">
       <created>1536385388215</created>
@@ -698,7 +722,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277023000" />
+    <option name="totallyTimeSpent" value="307886000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -710,9 +734,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="139" y="286" width="927" height="1053" extended-state="0" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24971624" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09905922" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -720,21 +745,21 @@
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.52553916" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.67238516" weight="0.10222222" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.68566686" weight="0.28777778" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.52407306" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.6574433" visible="true" weight="0.14333333" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.6740454" weight="0.40666667" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49942595" weight="0.32928678" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4982974" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.32761484" side_tool="true" visible="true" weight="0.10244989" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.490316" weight="0.22777778" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.34255672" side_tool="true" visible="true" weight="0.14333333" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.48694664" weight="0.2271715" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.48785228" weight="0.62" />
       <window_info anchor="bottom" id="Build" order="13" sideWeight="0.4997233" visible="true" weight="0.32972974" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Maven Projects" order="1" weight="0.3280363" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.1816118" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -825,12 +850,6 @@
           <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/server/restapi/databaserestservice/UserRestService.java</url>
-          <line>155</line>
-          <properties />
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/server/network/relatednesstree/RelatednessTree.java</url>
           <line>174</line>
           <properties />
@@ -849,14 +868,8 @@
           <option name="timeStamp" value="233" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/server/service/PostService.java</url>
-          <line>54</line>
-          <properties />
-          <option name="timeStamp" value="253" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/server/restapi/databaserestservice/PostRestService.java</url>
-          <line>200</line>
+          <line>236</line>
           <properties />
           <option name="timeStamp" value="271" />
         </line-breakpoint>
@@ -887,6 +900,36 @@
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
       <expression>
+        <expression-string>queryBuilder.build()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>json.getJSONObject(&quot;obj0&quot;).getString(&quot;count&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>json.getJSONObject(&quot;obj0&quot;).getString()ring(&quot;count&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>json.getJSONObject(&quot;obj0&quot;).getSTring(&quot;count&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>json.getJSONObject(&quot;obj0&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>qb</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
         <expression-string>new File(FSUtils.getFile(&quot;image/defaults/newusericon&quot;).toString()).exists()</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
@@ -901,46 +944,9 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>Base64.getDecoder().decode(img)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Base64.getDecoder().decode(&quot;fuck&quot;)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>Base64.getDecoder()</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>posts</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>content</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>post.content</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/server/dto/Serializers/UserSerializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/dto/Serializers/TransactionItemSerializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -959,13 +965,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/dto/dto/UserDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="33" selection-start-line="19" selection-end-line="22" />
         </state>
       </provider>
     </entry>
@@ -1046,13 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/restapi/etc/RelatednessMatrixRestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="30" column="66" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/network/relatednesstree/RelatednessTreeNode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1060,22 +1052,6 @@
           <folding>
             <element signature="e#1013#1014#0" expanded="true" />
             <element signature="e#1058#1059#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/network/relatednesstree/RelatednessTree.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2580#2581#0" expanded="true" />
-            <element signature="e#2622#2623#0" expanded="true" />
-            <element signature="e#2687#2688#0" expanded="true" />
-            <element signature="e#2721#2722#0" expanded="true" />
-            <element signature="e#4174#4175#0" expanded="true" />
-            <element signature="e#4206#4207#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1110,40 +1086,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/network/RelatednessMatrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/syntheticdata/SyntheticDataGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3105">
           <caret line="216" column="54" selection-start-line="216" selection-start-column="54" selection-end-line="216" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/RestServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/database/queryengine/QueryExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1158,32 +1104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="105" column="13" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/filesystem/FileWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/network/FollowerRecommendationSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#468#469#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
         </state>
       </provider>
     </entry>
@@ -1203,13 +1123,6 @@
     </entry>
     <entry file="file://$USER_HOME$/416x416.jpg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/model/internal/AbstractJavaResourceMethodDispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1470">
-          <caret line="159" selection-start-line="159" selection-end-line="159" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/restapi/RestService.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1232,20 +1145,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/restapi/databaserestservice/PostRestService.java">
+    <entry file="file://$PROJECT_DIR$/src/server/TrieHard/AutoComplete.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+        <state relative-caret-position="45">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/network/FollowerRecommendationSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#468#469#0" expanded="true" />
+            <element signature="e#500#501#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/restapi/etc/RelatednessMatrixRestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="30" column="66" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/network/RelatednessMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="57" column="42" selection-start-line="57" selection-start-column="42" selection-end-line="57" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/restapi/notificationrestservice/NotificationRestService.java">
+    <entry file="file://$PROJECT_DIR$/src/server/network/relatednesstree/RelatednessTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
+        <state relative-caret-position="256">
+          <caret line="75" column="52" selection-start-line="75" selection-start-column="52" selection-end-line="75" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/model/internal/AbstractJavaResourceMethodDispatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1470">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/shared/SharedObjects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="e#1899#1900#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/RestServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="64" column="53" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1254,46 +1220,86 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/service/NotificationService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="17" column="97" selection-start-line="17" selection-start-column="97" selection-end-line="17" selection-end-column="97" />
+        <state relative-caret-position="90">
+          <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/shared/SharedObjects.java">
+    <entry file="file://$PROJECT_DIR$/src/server/restapi/notificationrestservice/NotificationRestService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="495">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/TrieHard/AutoComplete.java">
+    <entry file="file://$PROJECT_DIR$/src/server/notifications/LikeNotification.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#537#538#0" expanded="true" />
+            <element signature="e#569#570#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/notifications/ActionNotification.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        <state relative-caret-position="450">
+          <caret line="34" column="20" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#852#853#0" expanded="true" />
+            <element signature="e#887#888#0" expanded="true" />
+            <element signature="e#934#935#0" expanded="true" />
+            <element signature="e#974#975#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/notifications/ActionNotificationManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+        <state relative-caret-position="196">
+          <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/service/PostService.java">
+    <entry file="file://$PROJECT_DIR$/src/server/dto/dto/UserDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="114" column="42" selection-start-line="114" selection-end-line="115" />
+        <state relative-caret-position="285">
+          <caret line="22" column="5" selection-start-line="22" selection-start-column="5" selection-end-line="22" selection-end-column="5" />
+          <folding>
+            <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/filesystem/FileWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.7/ee897796be6ca1cdc2be45dd1dfd2a59d6903ad2/jersey-server-2.7-sources.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/database/queryengine/QueryExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="93" selection-start-line="93" selection-end-line="93" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1302,15 +1308,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="81" selection-start-line="81" selection-end-line="81" />
+        <state relative-caret-position="195">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/service/PostService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="118" column="21" selection-start-line="118" selection-start-column="21" selection-end-line="118" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/restapi/databaserestservice/PostRestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="71" column="48" selection-start-line="71" selection-start-column="48" selection-end-line="71" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/restapi/databaserestservice/UserRestService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="244" column="5" selection-start-line="244" selection-start-column="5" selection-end-line="244" selection-end-column="5" />
+        <state relative-caret-position="229">
+          <caret line="142" column="30" selection-start-line="142" selection-start-column="20" selection-end-line="142" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#8105#8106#0" expanded="true" />

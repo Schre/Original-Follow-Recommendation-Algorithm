@@ -3,27 +3,26 @@ package server.restapi.databaserestservice;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
-import server.database.queryengine.QueryBuilder;
-import server.database.queryengine.QueryExecutor;
 import server.dto.dto.PostDTO;
 import server.dto.dto.UserDTO;
 import server.etc.Constants;
 import server.filesystem.FileReader;
 import server.filesystem.FileWriter;
+import server.notifications.ActionNotification;
+import server.notifications.ActionNotificationManager;
+import server.notifications.LikeNotification;
 import server.restapi.RestService;
 import server.service.PostService;
 import server.service.UserService;
+import server.shared.SharedObjects;
 
 import javax.activation.MimetypesFileTypeMap;
-import javax.annotation.PostConstruct;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.core.Response;
 import java.io.File;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Path("post")
@@ -34,6 +33,7 @@ public class PostRestService extends RestService {
     public Response getPostsByUser(@PathParam("uid") String user_id) {
         List<PostDTO> posts = (new PostService()).getPosts(user_id, true);
         JSONObject json = new JSONObject();
+        Collections.sort(posts);
         int id = 0;
         for (PostDTO post : posts) {
             try {
@@ -44,8 +44,42 @@ public class PostRestService extends RestService {
                 e.printStackTrace();
             }
         }
+        JSONObject ret = new JSONObject();
+        ret.put("data", json);
+        return okJSON(Response.Status.OK, ret.toString(Constants.JSON_INDENT_FACTOR));
+    }
+
+    @GET
+    @Path("user/{uid}/from/{from}/to/{to}")
+    public Response getPostsByUserFromTo(@PathParam("uid") String user_id, @PathParam("from") String from, @PathParam("to") String to) {
+        List<PostDTO> posts = (new PostService()).getPosts(user_id, true);
+        JSONObject json = new JSONObject();
+
         Collections.sort(posts);
-        return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
+        int i = Integer.parseInt(from);
+        int j = Integer.parseInt(to);
+        i = Math.min(i, posts.size());
+        j = Math.min(j, posts.size());
+        posts = posts.subList(i, j);
+        int id = 0;
+        for (PostDTO post : posts) {
+            try {
+                UserDTO user = (new UserService()).getUser(user_id);
+                ObjectMapper om = new ObjectMapper();
+                JSONObject postJson = new JSONObject(om.writeValueAsString(post));
+                postJson.put("first_name", user.first_name);
+                postJson.put("last_name", user.last_name);
+                postJson.put("field", user.field);
+
+                json.put(Integer.toString(++id), postJson);
+            }
+            catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        JSONObject ret = new JSONObject();
+        ret.put("data", json);
+        return okJSON(Response.Status.OK, ret.toString(Constants.JSON_INDENT_FACTOR));
     }
 
     @GET
@@ -90,7 +124,7 @@ public class PostRestService extends RestService {
     @GET
     @Path("user/{uid}/id/{pid}")
     public Response getPostByUser(@PathParam("uid") String user_id, @PathParam("pid") String post_id) {
-        PostDTO post = (new PostService()).getPost(user_id, post_id, true);
+        PostDTO post = (new PostService()).getPost(post_id, true);
         ObjectMapper mapper = new ObjectMapper();
 
         try {
@@ -110,7 +144,7 @@ public class PostRestService extends RestService {
     @GET
     @Path("user/{uid}/id/{pid}/contentless")
     public Response getContentlessPostByUser(@PathParam("uid") String user_id, @PathParam("pid") String post_id) {
-        PostDTO post = (new PostService()).getPost(user_id, post_id, false);
+        PostDTO post = (new PostService()).getPost(post_id, false);
         ObjectMapper mapper = new ObjectMapper();
 
         try {
@@ -140,6 +174,7 @@ public class PostRestService extends RestService {
             JSONObject postsJson = new JSONObject();
             try {
                 postsJson = new JSONObject(this.getPostsByUser(following.user_id).getEntity().toString());
+                postsJson = postsJson.getJSONObject("data");
 
                 for (String postKey : postsJson.keySet()) {
                     JSONObject post = postsJson.getJSONObject(postKey);
@@ -264,6 +299,14 @@ public class PostRestService extends RestService {
 
         JSONObject json = new JSONObject();
         json.put("posted", liked);
+
+        if (liked == true) {
+            ActionNotificationManager ams = SharedObjects.getActionNotificationManager();
+            PostDTO post = new PostService().getPost(pid, false);
+            ActionNotification actionNotification = new LikeNotification(post.user_id, uid, post.post_id);
+            ams.addNotification(actionNotification);
+        }
+
         return okJSON(Response.Status.OK, json.toString(Constants.JSON_INDENT_FACTOR));
 
     }

@@ -50,7 +50,7 @@ public class PostService {
         return posts.subList(0, K);
     }
 
-    public PostDTO getPost(String user_id, String post_id, boolean includeContent) {
+    public PostDTO getPost(String post_id, boolean includeContent) {
 
         JSONObject json;
 
@@ -58,10 +58,6 @@ public class PostService {
             QueryBuilder qb = new QueryBuilder().select()
                     .star().from().literal("Posts ")
                     .where()
-                    .literal("user_id=")
-                    .string(user_id)
-                    .literal(" ")
-                    .and()
                     .literal("post_id=")
                     .string(post_id);
             json = QueryExecutor.runQuery(qb.build()).getJSONObject("obj0");
@@ -77,7 +73,7 @@ public class PostService {
         try {
             PostDTO ret = objectMapper.readValue(json.toString(Constants.JSON_INDENT_FACTOR), PostDTO.class);
             if (includeContent) {
-                ret.content = (new FileReader()).readFile(user_id, ret.type, post_id);
+                ret.content = (new FileReader()).readFile(ret.user_id, ret.type, post_id);
             }
             return ret;
         }
@@ -94,6 +90,7 @@ public class PostService {
             return null;
         }
     }
+
 
     public List<PostDTO> getPosts(String user_id, boolean includeContent) {
         JSONObject json;

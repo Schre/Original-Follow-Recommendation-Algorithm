@@ -1,6 +1,7 @@
 package server.dto.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.json.JSONObject;
 
 import java.util.UUID;
 

@@ -85,6 +85,14 @@ public class UserRestService extends RestService {
         ret.put("response", response);
         return okJSON(Response.Status.OK, ret.toString(Constants.JSON_INDENT_FACTOR));
     }
+
+    @Path("{user_id}/followings/{following_id}")
+    @GET
+    public Response getUserFollowingSet(@PathParam("user_id") String user_id, @PathParam("following_id") String following_id) {
+        JSONObject ret = new JSONObject();
+        ret.put("response", (new UserService()).userFollows(user_id, following_id));
+        return okJSON(Response.Status.OK, ret.toString(Constants.JSON_INDENT_FACTOR));
+    }
     /* internal */
     public Response getUserFollowings(String user_id) {
         JSONObject json = new JSONObject();
@@ -244,6 +252,48 @@ public class UserRestService extends RestService {
         return okJSON(Response.Status.OK, response.toString(Constants.JSON_INDENT_FACTOR));
     }
 
+    /* TODO: This is wrong! */
+    @GET
+    @Path("{uid1}/mutualfollowings/{uid2}")
+    public Response getMutualFollowings(@PathParam("uid1") String uid1, @PathParam("uid2") String uid2) {
+        UserService us = new UserService();
+        UserDTO user1 = us.getUser(uid1);
+        UserDTO user2 = us.getUser(uid2);
+
+        NetworkNode user1Network = new FollowerRecommendationSystem(new NetworkNode(user1.user_id, user1.field)).loadNetworkForUser();
+        NetworkNode user2Network = new FollowerRecommendationSystem(new NetworkNode(user2.user_id, user2.field)).loadNetworkForUser();
+
+        Set<String> user1Following = new HashSet<>();
+        Set<String> mutualFollowing = new HashSet<>();
+
+        for (NetworkNode following : user1Network.getUsersFollowed()) {
+            user1Following.add(following.getUID());
+        }
+
+        for (NetworkNode following : user2Network.getUsersFollowed()) {
+            if (user1Following.contains(following.getUID())) {
+                mutualFollowing.add(following.getUID());
+            }
+        }
+
+        JSONObject ret = new JSONObject();
+        int i = 0;
+        for (String mutualId : mutualFollowing) {
+            JSONObject obj = new JSONObject();
+
+            UserDTO mutualUser = us.getUser(mutualId);
+            obj.put("user_id", mutualUser.user_id);
+            obj.put("first_name", mutualUser.first_name);
+            obj.put("last_name", mutualUser.last_name);
+            obj.put("field", mutualUser.field);
+
+            ret.put(Integer.toString(i++), obj);
+        }
+        JSONObject response = new JSONObject();
+        response.put("response", ret);
+        return okJSON(Response.Status.OK, response.toString(Constants.JSON_INDENT_FACTOR));
+    }
+
     @GET
     @Path("{uid}/followrecommendations/{K}")
     public Response getTopKFollowRecommendations(@PathParam("uid") String uid, @PathParam("K") int K) {
@@ -260,7 +310,6 @@ public class UserRestService extends RestService {
         List<NetworkNode> topK = frs.getTopKRecommendations(K);
 
         UserService userService = new UserService();
-        int indx = K;
         for (NetworkNode node : topK) {
             --K;
             UserDTO userDTO = userService.getUser(node.getUID());
@@ -275,15 +324,15 @@ public class UserRestService extends RestService {
             ret.put(Integer.toString(K), obj);
         }
 
-        //Map<String, Double> stats = UserNetworkStatistics.computeFieldPercentages(new HashSet<>(topK));
+        Map<String, Double> stats = UserNetworkStatistics.computeFieldPercentages(new HashSet<>(topK));
 
-        /*JSONObject statistics = new JSONObject();
+        JSONObject statistics = new JSONObject();
         for (String profession : stats.keySet()) {
             Double percentage = stats.get(profession);
             statistics.put(profession, percentage);
         }
 
-        ret.put("statistics", statistics);*/
+        ret.put("statistics", statistics);
 
         JSONObject response = new JSONObject();
         response.put("response", ret);
@@ -313,4 +362,5 @@ public class UserRestService extends RestService {
             ac.add(uid, following.user_id, following.first_name + " " + following.last_name);
         }
     }
+
 }

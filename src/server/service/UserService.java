@@ -2,6 +2,7 @@ package server.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
+import server.database.queryengine.QueryBuilder;
 import server.database.queryengine.QueryExecutor;
 import server.dto.dto.PostDTO;
 import server.dto.dto.UserDTO;
@@ -81,6 +82,19 @@ public class UserService {
         }
         return ret;
     }
+
+    public boolean userFollows(String uid, String followingId) {
+        String query = new QueryBuilder().select().star().from().literal("Followings ").where().literal("user_id=").string(uid).and().literal("following_id=").string(followingId).build();
+
+        try {
+            return QueryExecutor.runQuery(query).length() == 1;
+
+        }
+        catch (Exception e) {
+            return false;
+        }
+    }
+
     public Set<UserDTO> getUserFollowings(String uid) {
         Set<UserDTO> followers = new HashSet<>();
         UserRestService urs = new UserRestService();

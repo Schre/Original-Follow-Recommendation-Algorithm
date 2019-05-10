@@ -8,6 +8,7 @@ import org.eclipse.jetty.servlets.CrossOriginFilter;
 import server.etc.Constants;
 import server.restapi.databaserestservice.*;
 import server.restapi.etc.RelatednessMatrixRestService;
+import server.restapi.notificationrestservice.NotificationRestService;
 import server.shared.SharedObjects;
 
 /**
@@ -61,6 +62,7 @@ public class RestServer {
                 "jersey.config.server.provider.classnames",
                         UserRestService.class.getCanonicalName() + ","
                             + PostRestService.class.getCanonicalName() + ","
+                            + NotificationRestService.class.getCanonicalName() + ","
                             + RelatednessMatrixRestService.class.getCanonicalName());
     }
 }
